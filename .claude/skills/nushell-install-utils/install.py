@@ -11,7 +11,6 @@ import os
 import subprocess
 import sys
 from pathlib import Path
-from typing import Optional
 
 
 class UtilityInstaller:
@@ -24,16 +23,34 @@ class UtilityInstaller:
                 "init_cmd": ["zoxide", "init", "nushell"],
                 "output_file": "zoxide.nu",
                 "check_cmd": ["zoxide", "--version"],
+                "install_info": {
+                    "url": "https://github.com/ajeetdsouza/zoxide",
+                    "windows": "winget install ajeetdsouza.zoxide",
+                    "macos": "brew install zoxide",
+                    "linux": "cargo install zoxide  # or use your package manager",
+                },
             },
             "starship": {
                 "init_cmd": ["starship", "init", "nu"],
                 "output_file": "starship.nu",
                 "check_cmd": ["starship", "--version"],
+                "install_info": {
+                    "url": "https://starship.rs/",
+                    "windows": "winget install Starship.Starship",
+                    "macos": "brew install starship",
+                    "linux": "cargo install starship  # or use your package manager",
+                },
             },
             "carapace": {
                 "init_cmd": ["carapace", "_carapace", "nushell"],
                 "output_file": "carapace.nu",
                 "check_cmd": ["carapace", "--version"],
+                "install_info": {
+                    "url": "https://github.com/carapace-sh/carapace-bin",
+                    "windows": "winget install carapace-sh.carapace",
+                    "macos": "brew install carapace",
+                    "linux": "cargo install carapace  # or download from GitHub releases",
+                },
             },
         }
 
@@ -82,6 +99,21 @@ class UtilityInstaller:
         except (subprocess.CalledProcessError, FileNotFoundError):
             return False
 
+    def _get_install_command(self, utility_name: str) -> str:
+        """Get the appropriate install command for the current platform."""
+        utility_info = self.utilities.get(utility_name)
+        if not utility_info or "install_info" not in utility_info:
+            return ""
+
+        install_info = utility_info["install_info"]
+
+        if sys.platform == "win32":
+            return install_info.get("windows", "")
+        elif sys.platform == "darwin":
+            return install_info.get("macos", "")
+        else:
+            return install_info.get("linux", "")
+
     def _install_utility_config(self, utility_name: str, force: bool = False) -> bool:
         """Install configuration for a specific utility."""
         utility_info = self.utilities.get(utility_name)
@@ -91,8 +123,15 @@ class UtilityInstaller:
 
         # Check if utility is installed
         if not self._is_utility_installed(utility_name):
-            print(f"Warning: {utility_name} is not installed or not in PATH")
-            print(f"  Install it first before running this command")
+            print(f"[!] {utility_name} is not installed or not in PATH")
+
+            install_cmd = self._get_install_command(utility_name)
+            if install_cmd:
+                print(f"    Install it with: {install_cmd}")
+
+            if "install_info" in utility_info:
+                print(f"    More info: {utility_info['install_info']['url']}")
+
             return False
 
         output_path = self.system_config_dir / utility_info["output_file"]
@@ -159,7 +198,7 @@ class UtilityInstaller:
             print("\nNext steps:")
             print("  1. Restart your shell or run: source $nu.config-path")
             print("  2. Ensure utilities are sourced in your config.nu:")
-            for name, info in self.utilities.items():
+            for info in self.utilities.values():
                 output_file = self.system_config_dir / info["output_file"]
                 if output_file.exists():
                     print(f"     source {output_file}")
