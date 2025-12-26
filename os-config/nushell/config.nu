@@ -17,6 +17,8 @@
 # options using:
 #     config nu --doc | nu-highlight | less -R
 
+# DO NOT FORGET SYNC THIS FILE TO km/os-config/nushell/config.nu AFTER EDITING!
+#   km can be pull from https://github.com/austinjan/km
 
 
 source ~/.config/nushell/zoxide.nu
