@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(nu -c:*)",
+      "Bash(echo:*)",
+      "Skill(nushell-config-sync)",
+      "Skill(nushell-config-sync:*)",
+      "Skill(nushell-install-utils)",
+      "Skill(nushell-install-utils:*)",
+      "Bash(carapace:*)",
+      "Bash(where:*)"
     ]
   }
 }

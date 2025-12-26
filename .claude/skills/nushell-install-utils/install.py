@@ -1,0 +1,229 @@
+#!/usr/bin/env python3
+"""
+Nushell Utilities Installation Tool
+
+Installs and configures Nushell utilities like zoxide and starship.
+Handles cross-platform installation and configuration.
+"""
+
+import argparse
+import os
+import subprocess
+import sys
+from pathlib import Path
+from typing import Optional
+
+
+class UtilityInstaller:
+    """Cross-platform Nushell utility installer."""
+
+    def __init__(self):
+        self.system_config_dir = self._get_system_config_dir()
+        self.utilities = {
+            "zoxide": {
+                "init_cmd": ["zoxide", "init", "nushell"],
+                "output_file": "zoxide.nu",
+                "check_cmd": ["zoxide", "--version"],
+            },
+            "starship": {
+                "init_cmd": ["starship", "init", "nu"],
+                "output_file": "starship.nu",
+                "check_cmd": ["starship", "--version"],
+            },
+            "carapace": {
+                "init_cmd": ["carapace", "_carapace", "nushell"],
+                "output_file": "carapace.nu",
+                "check_cmd": ["carapace", "--version"],
+            },
+        }
+
+    def _get_system_config_dir(self) -> Path:
+        """Get the Nushell system config directory."""
+        # Try querying nu first
+        try:
+            result = subprocess.run(
+                ["nu", "-c", "$nu.config-path | path dirname"],
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+            return Path(result.stdout.strip())
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            pass
+
+        # Fallback to known default paths
+        if sys.platform == "win32":
+            appdata = os.environ.get("APPDATA")
+            if appdata:
+                return Path(appdata) / "nushell"
+        else:
+            # Linux/macOS
+            xdg_config = os.environ.get("XDG_CONFIG_HOME")
+            if xdg_config:
+                return Path(xdg_config) / "nushell"
+            return Path.home() / ".config" / "nushell"
+
+        print("Error: Could not determine Nushell config path", file=sys.stderr)
+        sys.exit(1)
+
+    def _is_utility_installed(self, utility_name: str) -> bool:
+        """Check if a utility is installed and available in PATH."""
+        utility_info = self.utilities.get(utility_name)
+        if not utility_info:
+            return False
+
+        try:
+            subprocess.run(
+                utility_info["check_cmd"],
+                capture_output=True,
+                check=True,
+            )
+            return True
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            return False
+
+    def _install_utility_config(self, utility_name: str, force: bool = False) -> bool:
+        """Install configuration for a specific utility."""
+        utility_info = self.utilities.get(utility_name)
+        if not utility_info:
+            print(f"Error: Unknown utility '{utility_name}'", file=sys.stderr)
+            return False
+
+        # Check if utility is installed
+        if not self._is_utility_installed(utility_name):
+            print(f"Warning: {utility_name} is not installed or not in PATH")
+            print(f"  Install it first before running this command")
+            return False
+
+        output_path = self.system_config_dir / utility_info["output_file"]
+
+        # Check if config already exists
+        if output_path.exists() and not force:
+            print(f"Skip: {output_path} already exists (use --force to overwrite)")
+            return False
+
+        # Create config directory if it doesn't exist
+        self.system_config_dir.mkdir(parents=True, exist_ok=True)
+
+        # Run init command and save output
+        try:
+            result = subprocess.run(
+                utility_info["init_cmd"],
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+
+            output_path.write_text(result.stdout, encoding="utf-8")
+            print(f"[OK] Installed: {output_path}")
+            return True
+
+        except subprocess.CalledProcessError as e:
+            print(f"Error running {' '.join(utility_info['init_cmd'])}", file=sys.stderr)
+            print(f"  {e.stderr}", file=sys.stderr)
+            return False
+        except Exception as e:
+            print(f"Error: {e}", file=sys.stderr)
+            return False
+
+    def list_utilities(self) -> None:
+        """List available utilities and their installation status."""
+        print(f"Nushell config directory: {self.system_config_dir}\n")
+        print("Available utilities:\n")
+
+        for name, info in self.utilities.items():
+            installed = self._is_utility_installed(name)
+            output_file = self.system_config_dir / info["output_file"]
+            config_exists = output_file.exists()
+
+            status = "[YES]" if installed else "[NO]"
+            config_status = "[YES]" if config_exists else "[NO]"
+
+            print(f"  {name}")
+            print(f"    Installed: {status}")
+            print(f"    Config:    {config_status} ({info['output_file']})")
+            print()
+
+    def install_all(self, force: bool = False) -> None:
+        """Install all available utilities."""
+        print(f"Installing Nushell utilities to: {self.system_config_dir}\n")
+
+        success_count = 0
+        for utility_name in self.utilities.keys():
+            if self._install_utility_config(utility_name, force):
+                success_count += 1
+
+        print(f"\nInstalled {success_count}/{len(self.utilities)} utilities")
+
+        if success_count > 0:
+            print("\nNext steps:")
+            print("  1. Restart your shell or run: source $nu.config-path")
+            print("  2. Ensure utilities are sourced in your config.nu:")
+            for name, info in self.utilities.items():
+                output_file = self.system_config_dir / info["output_file"]
+                if output_file.exists():
+                    print(f"     source {output_file}")
+
+    def install_specific(self, utility_names: list[str], force: bool = False) -> None:
+        """Install specific utilities by name."""
+        print(f"Installing utilities to: {self.system_config_dir}\n")
+
+        success_count = 0
+        for utility_name in utility_names:
+            if utility_name not in self.utilities:
+                print(f"Warning: Unknown utility '{utility_name}' (skipping)")
+                continue
+
+            if self._install_utility_config(utility_name, force):
+                success_count += 1
+
+        print(f"\nInstalled {success_count}/{len(utility_names)} utilities")
+
+        if success_count > 0:
+            print("\nNext steps:")
+            print("  1. Restart your shell or run: source $nu.config-path")
+            print("  2. Ensure utilities are sourced in your config.nu")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Install Nushell utility configurations (zoxide, starship, etc.)"
+    )
+    parser.add_argument(
+        "utilities",
+        nargs="*",
+        help="Specific utilities to install (e.g., zoxide starship). If none specified, --list or --all is required.",
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Install all available utilities",
+    )
+    parser.add_argument(
+        "--list",
+        action="store_true",
+        help="List available utilities and their status",
+    )
+    parser.add_argument(
+        "--force", "-f",
+        action="store_true",
+        help="Overwrite existing configuration files",
+    )
+
+    args = parser.parse_args()
+
+    installer = UtilityInstaller()
+
+    if args.list:
+        installer.list_utilities()
+    elif args.all:
+        installer.install_all(args.force)
+    elif args.utilities:
+        installer.install_specific(args.utilities, args.force)
+    else:
+        parser.print_help()
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
