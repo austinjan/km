@@ -12,3 +12,12 @@ redirect in nushell
 ```nushell
 "hello" | save output.txt
 ```
+
+# Utiles
+Utiles I recommand to install cause when I use Nu following utilies fix some isseus.
+
+
+Use just https://github.com/casey/just instead of make
+```
+cargo install just
+```
