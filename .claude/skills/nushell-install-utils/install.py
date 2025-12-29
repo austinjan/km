@@ -52,6 +52,15 @@ class UtilityInstaller:
                     "linux": "cargo install carapace  # or download from GitHub releases",
                 },
             },
+            "bat": {
+                "check_cmd": ["bat", "--version"],
+                "install_info": {
+                    "url": "https://github.com/sharkdp/bat",
+                    "windows": "cargo install bat",
+                    "macos": "cargo install bat",
+                    "linux": "cargo install bat",
+                },
+            },
         }
 
     def _get_system_config_dir(self) -> Path:
@@ -133,6 +142,11 @@ class UtilityInstaller:
                 print(f"    More info: {utility_info['install_info']['url']}")
 
             return False
+
+        # If there's no init_cmd, it's just a binary install (like bat)
+        if "init_cmd" not in utility_info:
+            print(f"[OK] {utility_name} is already installed")
+            return True
 
         output_path = self.system_config_dir / utility_info["output_file"]
 
