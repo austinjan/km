@@ -9,7 +9,9 @@
       "Skill(nushell-install-utils)",
       "Skill(nushell-install-utils:*)",
       "Bash(carapace:*)",
-      "Bash(where:*)"
+      "Bash(where:*)",
+      "Bash(cargo install:*)",
+      "Bash(fd:*)"
     ]
   }
 }
