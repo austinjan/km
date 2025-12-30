@@ -1,7 +1,15 @@
-# Knowledge Base
+---
+name: km
+description: knowledge base that consolidates development, code, environment, and learning resources. Uses a simple file-based structure to categorize knowledge, with a README.md in each directory providing navigation and context for all contents in that folder.
+---
 
-這個 Repository 用來記錄我在使用各種工具、程式語言、框架時的設定檔與筆記，並且使用了 Claude Code skills 來協助管理與自動化。
+## Contents
+Main entry of knowledge base. 
 
-比如可以要求 claude code 幫我：
+
+## Quick Start
+Run `python build.py` to set up tools
+
+**Ask for Claude Code**
 - install all utilities I need for nushell
 - setup my nushell configuration
