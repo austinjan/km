@@ -40,7 +40,7 @@ def copy_binaries():
     for binary in binaries:
         dest = ROOT_DIR / binary.name
         print(f"Copying {binary.name} to {dest}")
-        shutil.copy2(binary, dest)
+        _ = shutil.copy2(binary, dest)
 
 
 def main():
