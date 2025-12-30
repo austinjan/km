@@ -3,3 +3,8 @@
 **/target/
 **/*.rs.bk
 *.pdb
+
+# Windows binaries
+*.exe
+*.dll
+*.exe~
