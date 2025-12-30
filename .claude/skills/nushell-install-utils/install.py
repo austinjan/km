@@ -52,6 +52,42 @@ class UtilityInstaller:
                     "linux": "cargo install carapace  # or download from GitHub releases",
                 },
             },
+            "bat": {
+                "check_cmd": ["bat", "--version"],
+                "install_info": {
+                    "url": "https://github.com/sharkdp/bat",
+                    "windows": "cargo install bat",
+                    "macos": "cargo install bat",
+                    "linux": "cargo install bat",
+                },
+            },
+            "ripgrep": {
+                "check_cmd": ["rg", "--version"],
+                "install_info": {
+                    "url": "https://github.com/BurntSushi/ripgrep",
+                    "windows": "cargo install ripgrep",
+                    "macos": "cargo install ripgrep",
+                    "linux": "cargo install ripgrep",
+                },
+            },
+            "fd": {
+                "check_cmd": ["fd", "--version"],
+                "install_info": {
+                    "url": "https://github.com/sharkdp/fd",
+                    "windows": "cargo install fd-find",
+                    "macos": "cargo install fd-find",
+                    "linux": "cargo install fd-find",
+                },
+            },
+            "xh": {
+                "check_cmd": ["xh", "--version"],
+                "install_info": {
+                    "url": "https://github.com/ducaale/xh",
+                    "windows": "cargo install xh",
+                    "macos": "cargo install xh",
+                    "linux": "cargo install xh",
+                },
+            },
         }
 
     def _get_system_config_dir(self) -> Path:
@@ -134,6 +170,11 @@ class UtilityInstaller:
 
             return False
 
+        # If there's no init_cmd, it's just a binary install (like bat)
+        if "init_cmd" not in utility_info:
+            print(f"[OK] {utility_name} is already installed")
+            return True
+
         output_path = self.system_config_dir / utility_info["output_file"]
 
         # Check if config already exists
@@ -172,15 +213,20 @@ class UtilityInstaller:
 
         for name, info in self.utilities.items():
             installed = self._is_utility_installed(name)
-            output_file = self.system_config_dir / info["output_file"]
-            config_exists = output_file.exists()
-
             status = "[YES]" if installed else "[NO]"
-            config_status = "[YES]" if config_exists else "[NO]"
 
             print(f"  {name}")
             print(f"    Installed: {status}")
-            print(f"    Config:    {config_status} ({info['output_file']})")
+
+            # Only show config status if utility generates a config file
+            if "output_file" in info:
+                output_file = self.system_config_dir / info["output_file"]
+                config_exists = output_file.exists()
+                config_status = "[YES]" if config_exists else "[NO]"
+                print(f"    Config:    {config_status} ({info['output_file']})")
+            else:
+                print(f"    Config:    N/A (no config file)")
+
             print()
 
     def install_all(self, force: bool = False) -> None:

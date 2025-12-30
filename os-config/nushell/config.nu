@@ -25,8 +25,11 @@ source ~/.config/nushell/zoxide.nu
 use ~/.config/nushell/starship.nu
 
 # Set VS Code as editor
-$env.EDITOR = "code --wait"
-$env.VISUAL = "code --wait"
+$env.EDITOR = "code"
+$env.VISUAL = "code"
 
 # Set VS Code as buffer editor (for editing command line with ctrl+o)
-$env.config.buffer_editor = "code --wait"
+$env.config.buffer_editor = "code"
+
+# utilities aliases
+alias cat = bat

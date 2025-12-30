@@ -13,6 +13,10 @@ redirect in nushell
 "hello" | save output.txt
 ```
 
+## Q & A
+- 重新載入 config
+  - `source $nu.config-path`
+
 # Utiles
 Utiles I recommand to install cause when I use Nu following utilies fix some isseus.
 
