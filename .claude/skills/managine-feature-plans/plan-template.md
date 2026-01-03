@@ -1,8 +1,6 @@
 # {feature-title}
 
 - Feature name: `{feature-name}`  
-- Plan file: `doc/plan/{feature-name}-plan.md`
-- Owner: {owner}
 - Status: Draft | In Progress | Blocked | Achieved
 - Created: {yyyy-mm-dd}
 - Last updated: {yyyy-mm-dd}
