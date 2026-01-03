@@ -458,8 +458,7 @@ impl LLMProvider for GeminiProvider {
         tools: Option<Vec<Tool>>,
     ) -> Result<ChatLoopHandle, ProviderError> {
         let (event_tx, event_rx) = mpsc::unbounded_channel::<Result<LoopStep, ProviderError>>();
-        let (tool_result_tx, mut tool_result_rx) =
-            mpsc::unbounded_channel::<ToolResultSubmission>();
+        let (command_tx, mut command_rx) = mpsc::unbounded_channel::<ChatLoopCommand>();
 
         let client = self.client.clone();
         let api_key = self.api_key.clone();
@@ -572,6 +571,7 @@ impl LLMProvider for GeminiProvider {
                                     }
                                 }
                                 Err(err) => {
+                                    log::error!("❌ Gemini parse error: {}", err);
                                     let _ = event_tx.send(Err(ProviderError::ApiError(format!(
                                         "Gemini parse error: {}",
                                         err
@@ -581,6 +581,7 @@ impl LLMProvider for GeminiProvider {
                             }
                         }
                         Err(err) => {
+                            log::error!("❌ Gemini stream error: {}", err);
                             let _ = event_tx.send(Err(ProviderError::ApiError(format!(
                                 "Gemini stream error: {}",
                                 err
@@ -613,13 +614,13 @@ impl LLMProvider for GeminiProvider {
                         content: content_accumulator.clone(),
                     }));
 
-                    match tool_result_rx.recv().await {
-                        Some(submission) => {
+                    match command_rx.recv().await {
+                        Some(ChatLoopCommand::SubmitToolResults(results)) => {
                             let _ = event_tx.send(Ok(LoopStep::ToolResultsReceived {
-                                count: submission.results.len(),
+                                count: results.len(),
                             }));
 
-                            for result in submission.results {
+                            for result in results {
                                 history.push(Message {
                                     role: Role::Tool,
                                     content: result.content.clone(),
@@ -628,6 +629,12 @@ impl LLMProvider for GeminiProvider {
                                 });
                             }
 
+                            continue;
+                        }
+                        Some(ChatLoopCommand::UpdateTools(_new_tools)) => {
+                            // Gemini doesn't support dynamic tool updates in the same way
+                            // Tools are specified per-request, not per-session
+                            // TODO: Implement if needed
                             continue;
                         }
                         None => {
@@ -659,7 +666,7 @@ impl LLMProvider for GeminiProvider {
             }
         });
 
-        Ok(ChatLoopHandle::new(event_rx, tool_result_tx))
+        Ok(ChatLoopHandle::new(event_rx, command_tx))
     }
 
     fn prompt_cache(&mut self, _cache_prompt: String) -> Result<(), ProviderError> {
