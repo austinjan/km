@@ -11,3 +11,9 @@
 
 # Log
 *.log
+
+# AAAgent
+.aaagent_index_meta*
+index_*.md
+index.md
+.cache/

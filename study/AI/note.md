@@ -13,4 +13,6 @@
 4. Tool call
    1. 了解 tool call 的運作方式
    
-  
+5. 透過 skill 來完成團隊協作以及流程規範
+6. 正向回饋產品文件
+  - Add review to CLAUDE.md or AGENT.md 等 AI 規範文件
