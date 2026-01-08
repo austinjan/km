@@ -11,7 +11,23 @@
       "Bash(carapace:*)",
       "Bash(where:*)",
       "Bash(cargo install:*)",
-      "Bash(fd:*)"
+      "Bash(fd:*)",
+      "Bash(zoxide --version:*)",
+      "Bash(starship:*)",
+      "Bash(bat:*)",
+      "Bash(xh:*)",
+      "Bash(cargo --version:*)",
+      "Bash(chmod:*)",
+      "Bash(bash:*)",
+      "Bash(curl:*)",
+      "Bash(export PATH=\"$HOME/.local/bin:$PATH\")",
+      "Bash(~/.local/bin/starship:*)",
+      "Bash(~/.local/bin/starship init:*)",
+      "Bash(cat:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git push)"
     ]
   }
 }

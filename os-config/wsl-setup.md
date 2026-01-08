@@ -2,6 +2,8 @@
 
 This document covers the setup process for a development environment on WSL Ubuntu.
 
+Use skill `bash-install-utils` help to install utilities.
+
 ## Prerequisites
 
 - WSL2 with Ubuntu installed
