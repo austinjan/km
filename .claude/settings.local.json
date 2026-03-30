@@ -36,7 +36,16 @@
       "Bash(\"$cmd\" --version)",
       "Bash(gh --version)",
       "Bash(gh auth:*)",
-      "Bash(source ~/.zshrc)"
+      "Bash(source ~/.zshrc)",
+      "Bash(sudo systemsetup:*)",
+      "Bash(launchctl list:*)",
+      "Bash(brew --version)",
+      "Bash(tmux -V)",
+      "Bash(tailscale status:*)",
+      "Bash(scutil --get LocalHostName)",
+      "Bash(scutil --get ComputerName)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)"
     ]
   }
 }

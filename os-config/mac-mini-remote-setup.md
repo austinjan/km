@@ -344,6 +344,31 @@ df -h
 - 在 SSH session 中無法輸入 sudo 密碼時，改用 App Store 安裝
 - 或者在 Mac Mini 本機直接操作（接螢幕鍵盤，或用 Screen Sharing）
 
+### tmux: missing or unsuitable terminal: xterm-ghostty
+
+用 Ghostty terminal SSH 連線時，Mac Mini 可能找不到 `xterm-ghostty` 的 terminfo。
+
+修復方式（在 Mac Mini 上執行）：
+
+```bash
+# 從 Ghostty.app 匯出並安裝 terminfo 到 ~/.terminfo
+infocmp xterm-ghostty | tic -x -o ~/.terminfo -
+```
+
+如果 Mac Mini 沒裝 Ghostty，可以從本地電腦複製 terminfo：
+
+```bash
+# 在本地電腦執行
+infocmp xterm-ghostty | ssh mini 'tic -x -o ~/.terminfo -'
+```
+
+或者在本地 SSH config 設定替代 TERM（失去部分 Ghostty 特性）：
+
+```
+Host mini
+    SetEnv TERM=xterm-256color
+```
+
 ### tmux session 消失
 - Mac Mini 重新開機後 tmux session 會消失，需要重新建立
 - 考慮用 `tmux-resurrect` plugin 來保存 session
