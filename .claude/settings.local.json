@@ -45,7 +45,12 @@
       "Bash(scutil --get LocalHostName)",
       "Bash(scutil --get ComputerName)",
       "Bash(git pull:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(sw_vers)",
+      "Bash(brew:*)",
+      "Bash(/Applications/Tailscale.app/Contents/MacOS/Tailscale status:*)",
+      "Bash(ssh:*)",
+      "Bash(git rebase:*)"
     ]
   }
 }
