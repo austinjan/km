@@ -1,11 +1,11 @@
 ---
 name: bash-install-utils
-description: Install CLI utilities (zoxide, starship, carapace, bat, ripgrep, fd, xh) for Bash with proper integration. Use when user wants to set up these utilities for their bash environment.
+description: Install CLI utilities (zoxide, starship, carapace, bat, ripgrep, fd, xh) with shell integration for bash or zsh on Linux and macOS. Use when user wants to set up these utilities for their shell environment.
 ---
 
-# Bash Utilities Installer
+# Shell Utilities Installer
 
-Cross-platform script to install and configure popular CLI utilities for Bash.
+Cross-platform script to install and configure popular CLI utilities for bash or zsh on Linux and macOS.
 
 ## Supported Utilities
 
@@ -37,9 +37,9 @@ bash .claude/skills/bash-install-utils/install.sh zoxide starship
 bash .claude/skills/bash-install-utils/install.sh --list
 ```
 
-### Setup Bash Integration Only
+### Setup Shell Integration Only
 
-If utilities are already installed, just configure .bashrc:
+If utilities are already installed, just configure the shell rc file:
 
 ```bash
 bash .claude/skills/bash-install-utils/install.sh --setup
@@ -47,8 +47,10 @@ bash .claude/skills/bash-install-utils/install.sh --setup
 
 ## What It Does
 
-1. **Installs utilities** using apt where available, or downloads pre-built binaries from GitHub releases
-2. **Sets up bash integration** by adding initialization to ~/.bashrc:
+1. **Detects OS and architecture** (Linux/macOS, x86_64/arm64) and downloads the correct binaries
+2. **Detects your shell** (bash or zsh via `$SHELL`) and configures the appropriate rc file
+3. **Installs utilities** using apt (Linux) or downloads pre-built binaries from GitHub releases
+4. **Sets up shell integration** by adding initialization to ~/.bashrc or ~/.zshrc:
    - zoxide init
    - starship prompt
    - carapace completions
@@ -56,43 +58,46 @@ bash .claude/skills/bash-install-utils/install.sh --setup
 
 ## Installation Methods
 
-| Utility  | Method |
-|----------|--------|
-| zoxide   | apt or official installer |
-| starship | Official installer script |
-| carapace | GitHub releases binary |
-| bat      | apt (as batcat, symlinked) |
-| ripgrep  | apt |
-| fd       | apt (as fdfind, symlinked) |
-| xh       | GitHub releases binary |
+| Utility  | Linux         | macOS                    |
+|----------|---------------|--------------------------|
+| zoxide   | apt or installer | Official installer     |
+| starship | Official installer | Official installer  |
+| carapace | GitHub binary | GitHub binary            |
+| bat      | apt or GitHub binary | GitHub binary      |
+| ripgrep  | apt or GitHub binary | GitHub binary      |
+| fd       | apt or GitHub binary | GitHub binary      |
+| xh       | GitHub binary | GitHub binary            |
 
 ## After Installation
 
-Run one of:
 ```bash
-source ~/.bashrc
+source ~/.zshrc   # for zsh
+source ~/.bashrc  # for bash
 # or start a new terminal
 ```
 
-## Bash Integration Added
+## Shell Integration Added
 
-The script adds a managed block to ~/.bashrc:
+The script adds a managed block to ~/.zshrc or ~/.bashrc:
 
 ```bash
-# >>> bash-utils-init >>>
-# Zoxide - smarter cd
-eval "$(zoxide init bash)"
-
-# Starship prompt
-eval "$(starship init bash)"
-
-# Carapace completions
-source <(carapace _carapace bash)
+# >>> shell-utils-init >>>
+# Add ~/.local/bin to PATH if not present
+[[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"
 
 # Bat aliases
 alias cat="bat --paging=never"
 alias less="bat"
-# <<< bash-utils-init <<<
+
+# Carapace completions
+source <(carapace _carapace zsh)
+
+# Starship prompt
+eval "$(starship init zsh)"
+
+# Zoxide - smarter cd (must be last)
+eval "$(zoxide init zsh)"
+# <<< shell-utils-init <<<
 ```
 
 Re-running the installer will update this block.

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
-# Bash Utilities Installation Script
+# Shell Utilities Installation Script
 # Installs: zoxide, starship, carapace, bat, ripgrep, fd, xh
-# Sets up bash integration for prompt and completions
+# Sets up shell integration for prompt and completions (bash or zsh)
 #
 
 set -e
@@ -27,6 +27,43 @@ case "$ARCH" in
     aarch64|arm64) ARCH="aarch64" ;;
     *) error "Unsupported architecture: $ARCH"; exit 1 ;;
 esac
+
+# Detect OS
+OS=$(uname -s)
+case "$OS" in
+    Linux) OS="linux" ;;
+    Darwin) OS="darwin" ;;
+    *) error "Unsupported OS: $OS"; exit 1 ;;
+esac
+
+# Detect user's shell
+detect_shell() {
+    local user_shell
+    user_shell=$(basename "$SHELL")
+    case "$user_shell" in
+        zsh) echo "zsh" ;;
+        bash) echo "bash" ;;
+        *) echo "bash" ;; # default to bash
+    esac
+}
+
+USER_SHELL=$(detect_shell)
+info "Detected shell: $USER_SHELL"
+
+# Get the target for download URLs
+get_target() {
+    if [ "$OS" = "darwin" ]; then
+        if [ "$ARCH" = "aarch64" ]; then
+            echo "aarch64-apple-darwin"
+        else
+            echo "x86_64-apple-darwin"
+        fi
+    else
+        echo "${ARCH}-unknown-linux-musl"
+    fi
+}
+
+TARGET=$(get_target)
 
 # ============================================================================
 # Installation functions
@@ -81,7 +118,18 @@ install_carapace() {
         return 1
     fi
 
-    CARAPACE_URL="https://github.com/carapace-sh/carapace-bin/releases/download/v${CARAPACE_VERSION}/carapace-bin_${CARAPACE_VERSION}_linux_amd64.tar.gz"
+    local carapace_os carapace_arch
+    if [ "$OS" = "darwin" ]; then
+        carapace_os="darwin"
+    else
+        carapace_os="linux"
+    fi
+    if [ "$ARCH" = "aarch64" ]; then
+        carapace_arch="arm64"
+    else
+        carapace_arch="amd64"
+    fi
+    CARAPACE_URL="https://github.com/carapace-sh/carapace-bin/releases/download/v${CARAPACE_VERSION}/carapace-bin_${CARAPACE_VERSION}_${carapace_os}_${carapace_arch}.tar.gz"
 
     info "Downloading carapace v${CARAPACE_VERSION}..."
     TMP_DIR=$(mktemp -d)
@@ -109,14 +157,14 @@ install_bat() {
         return 1
     fi
 
-    BAT_URL="https://github.com/sharkdp/bat/releases/download/v${BAT_VERSION}/bat-v${BAT_VERSION}-x86_64-unknown-linux-musl.tar.gz"
+    BAT_URL="https://github.com/sharkdp/bat/releases/download/v${BAT_VERSION}/bat-v${BAT_VERSION}-${TARGET}.tar.gz"
 
     info "Downloading bat v${BAT_VERSION}..."
     TMP_DIR=$(mktemp -d)
     curl -sL "$BAT_URL" | tar xz -C "$TMP_DIR"
 
     mkdir -p ~/.local/bin
-    mv "$TMP_DIR/bat-v${BAT_VERSION}-x86_64-unknown-linux-musl/bat" ~/.local/bin/
+    mv "$TMP_DIR/bat-v${BAT_VERSION}-${TARGET}/bat" ~/.local/bin/
     rm -rf "$TMP_DIR"
 
     info "bat installed to ~/.local/bin/bat"
@@ -136,14 +184,14 @@ install_ripgrep() {
         return 1
     fi
 
-    RG_URL="https://github.com/BurntSushi/ripgrep/releases/download/${RG_VERSION}/ripgrep-${RG_VERSION}-x86_64-unknown-linux-musl.tar.gz"
+    RG_URL="https://github.com/BurntSushi/ripgrep/releases/download/${RG_VERSION}/ripgrep-${RG_VERSION}-${TARGET}.tar.gz"
 
     info "Downloading ripgrep ${RG_VERSION}..."
     TMP_DIR=$(mktemp -d)
     curl -sL "$RG_URL" | tar xz -C "$TMP_DIR"
 
     mkdir -p ~/.local/bin
-    mv "$TMP_DIR/ripgrep-${RG_VERSION}-x86_64-unknown-linux-musl/rg" ~/.local/bin/
+    mv "$TMP_DIR/ripgrep-${RG_VERSION}-${TARGET}/rg" ~/.local/bin/
     rm -rf "$TMP_DIR"
 
     info "ripgrep installed to ~/.local/bin/rg"
@@ -163,14 +211,14 @@ install_fd() {
         return 1
     fi
 
-    FD_URL="https://github.com/sharkdp/fd/releases/download/v${FD_VERSION}/fd-v${FD_VERSION}-x86_64-unknown-linux-musl.tar.gz"
+    FD_URL="https://github.com/sharkdp/fd/releases/download/v${FD_VERSION}/fd-v${FD_VERSION}-${TARGET}.tar.gz"
 
     info "Downloading fd v${FD_VERSION}..."
     TMP_DIR=$(mktemp -d)
     curl -sL "$FD_URL" | tar xz -C "$TMP_DIR"
 
     mkdir -p ~/.local/bin
-    mv "$TMP_DIR/fd-v${FD_VERSION}-x86_64-unknown-linux-musl/fd" ~/.local/bin/
+    mv "$TMP_DIR/fd-v${FD_VERSION}-${TARGET}/fd" ~/.local/bin/
     rm -rf "$TMP_DIR"
 
     info "fd installed to ~/.local/bin/fd"
@@ -191,41 +239,67 @@ install_xh() {
         return 1
     fi
 
-    XH_URL="https://github.com/ducaale/xh/releases/download/v${XH_VERSION}/xh-v${XH_VERSION}-x86_64-unknown-linux-musl.tar.gz"
+    XH_URL="https://github.com/ducaale/xh/releases/download/v${XH_VERSION}/xh-v${XH_VERSION}-${TARGET}.tar.gz"
 
     info "Downloading xh v${XH_VERSION}..."
     TMP_DIR=$(mktemp -d)
     curl -sL "$XH_URL" | tar xz -C "$TMP_DIR"
 
     mkdir -p ~/.local/bin
-    mv "$TMP_DIR/xh-v${XH_VERSION}-x86_64-unknown-linux-musl/xh" ~/.local/bin/
+    mv "$TMP_DIR/xh-v${XH_VERSION}-${TARGET}/xh" ~/.local/bin/
     rm -rf "$TMP_DIR"
 
     info "xh installed to ~/.local/bin/xh"
 }
 
 # ============================================================================
-# Bash integration setup
+# Shell integration setup
 # ============================================================================
 
-BASH_UTILS_BLOCK_START="# >>> bash-utils-init >>>"
-BASH_UTILS_BLOCK_END="# <<< bash-utils-init <<<"
+UTILS_BLOCK_START="# >>> shell-utils-init >>>"
+UTILS_BLOCK_END="# <<< shell-utils-init <<<"
+# Also match old block marker for migration
+OLD_BLOCK_START="# >>> bash-utils-init >>>"
+OLD_BLOCK_END="# <<< bash-utils-init <<<"
 
-setup_bash_integration() {
-    info "Setting up bash integration..."
+setup_shell_integration() {
+    info "Setting up $USER_SHELL integration..."
 
-    BASHRC="$HOME/.bashrc"
+    if [ "$USER_SHELL" = "zsh" ]; then
+        RCFILE="$HOME/.zshrc"
+    else
+        RCFILE="$HOME/.bashrc"
+    fi
 
-    # Remove old block if exists
-    if grep -q "$BASH_UTILS_BLOCK_START" "$BASHRC" 2>/dev/null; then
-        info "Removing old bash-utils integration block..."
-        sed -i "/$BASH_UTILS_BLOCK_START/,/$BASH_UTILS_BLOCK_END/d" "$BASHRC"
+    # Remove old block if exists (check both old and new markers)
+    for marker_start in "$UTILS_BLOCK_START" "$OLD_BLOCK_START"; do
+        if grep -q "$marker_start" "$RCFILE" 2>/dev/null; then
+            info "Removing old utils integration block..."
+            if [ "$OS" = "darwin" ]; then
+                sed -i '' "/$marker_start/,/${marker_start/>>>/<<<}/d" "$RCFILE"
+            else
+                sed -i "/$marker_start/,/${marker_start/>>>/<<<}/d" "$RCFILE"
+            fi
+        fi
+    done
+    # Also clean up old block from .bashrc if we're now using .zshrc
+    if [ "$USER_SHELL" = "zsh" ] && [ -f "$HOME/.bashrc" ]; then
+        for marker_start in "$UTILS_BLOCK_START" "$OLD_BLOCK_START"; do
+            if grep -q "$marker_start" "$HOME/.bashrc" 2>/dev/null; then
+                info "Removing old block from .bashrc..."
+                if [ "$OS" = "darwin" ]; then
+                    sed -i '' "/$marker_start/,/${marker_start/>>>/<<<}/d" "$HOME/.bashrc"
+                else
+                    sed -i "/$marker_start/,/${marker_start/>>>/<<<}/d" "$HOME/.bashrc"
+                fi
+            fi
+        done
     fi
 
     # Build new integration block
     INTEGRATION=""
-    INTEGRATION+="$BASH_UTILS_BLOCK_START\n"
-    INTEGRATION+="# Added by bash-install-utils\n"
+    INTEGRATION+="$UTILS_BLOCK_START\n"
+    INTEGRATION+="# Added by shell-install-utils\n"
     INTEGRATION+="\n"
     INTEGRATION+="# Add ~/.local/bin to PATH if not present\n"
     INTEGRATION+='[[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"'
@@ -243,31 +317,31 @@ setup_bash_integration() {
     # Carapace
     if has_cmd carapace; then
         INTEGRATION+="# Carapace completions\n"
-        INTEGRATION+='source <(carapace _carapace bash)'
+        INTEGRATION+="source <(carapace _carapace $USER_SHELL)"
         INTEGRATION+="\n\n"
     fi
 
     # Starship
     if has_cmd starship; then
         INTEGRATION+="# Starship prompt\n"
-        INTEGRATION+='eval "$(starship init bash)"'
+        INTEGRATION+="eval \"\$(starship init $USER_SHELL)\""
         INTEGRATION+="\n\n"
     fi
 
     # Zoxide (must be last)
     if has_cmd zoxide; then
         INTEGRATION+="# Zoxide - smarter cd (must be last)\n"
-        INTEGRATION+='eval "$(zoxide init bash)"'
+        INTEGRATION+="eval \"\$(zoxide init $USER_SHELL)\""
         INTEGRATION+="\n"
     fi
 
-    INTEGRATION+="$BASH_UTILS_BLOCK_END"
+    INTEGRATION+="$UTILS_BLOCK_END"
 
-    # Append to bashrc
-    echo -e "\n$INTEGRATION" >> "$BASHRC"
+    # Append to rc file
+    echo -e "\n$INTEGRATION" >> "$RCFILE"
 
-    info "Bash integration added to $BASHRC"
-    info "Run 'source ~/.bashrc' or start a new terminal to activate"
+    info "Shell integration added to $RCFILE"
+    info "Run 'source $RCFILE' or start a new terminal to activate"
 }
 
 # ============================================================================
@@ -326,7 +400,7 @@ main() {
             exit 0
             ;;
         --setup)
-            setup_bash_integration
+            setup_shell_integration
             exit 0
             ;;
         --all)
@@ -338,7 +412,7 @@ main() {
             install_ripgrep
             install_fd
             install_xh
-            setup_bash_integration
+            setup_shell_integration
             show_status
             ;;
         *)
@@ -355,7 +429,7 @@ main() {
                     *) warn "Unknown utility: $util" ;;
                 esac
             done
-            setup_bash_integration
+            setup_shell_integration
             show_status
             ;;
     esac
