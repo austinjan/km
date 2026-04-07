@@ -1,0 +1,62 @@
+{
+  "expectations": [
+    {
+      "text": "test.txt content was read and incorporated",
+      "passed": true,
+      "evidence": "The output file study/notes/test-notes.md contains the same repo file listing (AGENTS.md, build.py, coding, os-config, etc.), indicating test.txt content was read and incorporated."
+    },
+    {
+      "text": "File saved to a categorized directory (not repo root)",
+      "passed": true,
+      "evidence": "File saved at study/notes/test-notes.md, inside a categorized directory structure, not at the repo root."
+    },
+    {
+      "text": "Content has been polished or structured for clarity",
+      "passed": true,
+      "evidence": "The content was placed in a markdown file with a heading '# Test Notes', a description line 'Repository root file listing:', and the listing wrapped in a code block. Minimal but present structuring."
+    },
+    {
+      "text": "YAML frontmatter contains title, tags, created, and summary fields",
+      "passed": false,
+      "evidence": "The file has frontmatter but uses 'name' and 'description' fields instead of the required 'title', 'tags', 'created', and 'summary' fields. The frontmatter is: name: test-notes, description: 'Random test notes - repository file listing'. Missing title, tags, created, and summary."
+    },
+    {
+      "text": "README.md and MANIFEST.md updated",
+      "passed": false,
+      "evidence": "A README.md exists at study/notes/README.md but no MANIFEST.md was created anywhere in the outputs. The assertion requires both to be updated."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  },
+  "timing": {
+    "total_duration_seconds": 34.2,
+    "total_tokens": 12180
+  },
+  "claims": [
+    {
+      "claim": "File was categorized under study/notes/",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Output file exists at study/notes/test-notes.md."
+    },
+    {
+      "claim": "A README.md was created for the notes directory",
+      "type": "factual",
+      "verified": true,
+      "evidence": "study/notes/README.md exists with contents listing test-notes.md."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "YAML frontmatter contains title, tags, created, and summary fields",
+        "reason": "The without-skill run used different frontmatter fields (name/description instead of title/tags/created/summary). This clearly demonstrates the skill's value in enforcing the correct schema. Good discriminating assertion."
+      }
+    ],
+    "overall": "Assertions effectively differentiate skill vs no-skill behavior, especially on frontmatter schema and MANIFEST.md."
+  }
+}

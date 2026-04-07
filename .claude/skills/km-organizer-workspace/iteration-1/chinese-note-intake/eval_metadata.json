@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "chinese-note-intake",
+  "prompt": "幫我存這個：在 macOS 上可以用 `pmset` 指令管理電源設定，`pmset -g` 查看目前設定，`sudo pmset displaysleep 10` 設定螢幕 10 分鐘後關閉",
+  "assertions": [
+    {"id": "a1", "text": "File saved under os-config/ or similar appropriate directory", "type": "structural"},
+    {"id": "a2", "text": "Content is written in Chinese (original language preserved)", "type": "content"},
+    {"id": "a3", "text": "YAML frontmatter contains title, tags, created, and summary fields", "type": "structural"},
+    {"id": "a4", "text": "README.md created or updated for the target directory", "type": "structural"},
+    {"id": "a5", "text": "MANIFEST.md created or updated at repo root", "type": "structural"}
+  ]
+}

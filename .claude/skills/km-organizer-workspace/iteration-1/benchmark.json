@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "skill_name": "km-organizer",
+    "skill_path": "/Users/austinjan/km/.claude/skills/km-organizer",
+    "executor_model": "claude-opus-4-6",
+    "analyzer_model": "claude-opus-4-6",
+    "timestamp": "2026-04-06T01:40:00Z",
+    "evals_run": ["chinese-note-intake", "file-intake", "reorganize-audit"],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "configuration": "with_skill",
+      "eval_name": "chinese-note-intake",
+      "pass_rate": 1.0,
+      "passed": 5,
+      "total": 5,
+      "time_seconds": 52.8,
+      "tokens": 16121,
+      "expectations": [
+        {"text": "File saved under os-config/ or similar appropriate directory", "passed": true},
+        {"text": "Content is written in Chinese (original language preserved)", "passed": true},
+        {"text": "YAML frontmatter contains title, tags, created, and summary fields", "passed": true},
+        {"text": "README.md created or updated for the target directory", "passed": true},
+        {"text": "MANIFEST.md created or updated at repo root", "passed": true}
+      ]
+    },
+    {
+      "configuration": "without_skill",
+      "eval_name": "chinese-note-intake",
+      "pass_rate": 0.4,
+      "passed": 2,
+      "total": 5,
+      "time_seconds": 25.8,
+      "tokens": 12081,
+      "expectations": [
+        {"text": "File saved under os-config/ or similar appropriate directory", "passed": true},
+        {"text": "Content is written in Chinese (original language preserved)", "passed": true},
+        {"text": "YAML frontmatter contains title, tags, created, and summary fields", "passed": false},
+        {"text": "README.md created or updated for the target directory", "passed": false},
+        {"text": "MANIFEST.md created or updated at repo root", "passed": false}
+      ]
+    },
+    {
+      "configuration": "with_skill",
+      "eval_name": "file-intake",
+      "pass_rate": 1.0,
+      "passed": 5,
+      "total": 5,
+      "time_seconds": 54.9,
+      "tokens": 15942,
+      "expectations": [
+        {"text": "test.txt content was read and incorporated", "passed": true},
+        {"text": "File saved to a categorized directory (not repo root)", "passed": true},
+        {"text": "Content has been polished or structured for clarity", "passed": true},
+        {"text": "YAML frontmatter contains title, tags, created, and summary fields", "passed": true},
+        {"text": "README.md and MANIFEST.md updated", "passed": true}
+      ]
+    },
+    {
+      "configuration": "without_skill",
+      "eval_name": "file-intake",
+      "pass_rate": 0.6,
+      "passed": 3,
+      "total": 5,
+      "time_seconds": 34.2,
+      "tokens": 12180,
+      "expectations": [
+        {"text": "test.txt content was read and incorporated", "passed": true},
+        {"text": "File saved to a categorized directory (not repo root)", "passed": true},
+        {"text": "Content has been polished or structured for clarity", "passed": true},
+        {"text": "YAML frontmatter contains title, tags, created, and summary fields", "passed": false},
+        {"text": "README.md and MANIFEST.md updated", "passed": false}
+      ]
+    },
+    {
+      "configuration": "with_skill",
+      "eval_name": "reorganize-audit",
+      "pass_rate": 1.0,
+      "passed": 4,
+      "total": 4,
+      "time_seconds": 205.9,
+      "tokens": 34064,
+      "expectations": [
+        {"text": "os-config/ directory contents were read and analyzed", "passed": true},
+        {"text": "Audit findings documented with specific observations", "passed": true},
+        {"text": "Actionable restructuring proposals made (not vague suggestions)", "passed": true},
+        {"text": "Changes proposed but NOT executed without user approval", "passed": true}
+      ]
+    },
+    {
+      "configuration": "without_skill",
+      "eval_name": "reorganize-audit",
+      "pass_rate": 1.0,
+      "passed": 4,
+      "total": 4,
+      "time_seconds": 69.4,
+      "tokens": 23780,
+      "expectations": [
+        {"text": "os-config/ directory contents were read and analyzed", "passed": true},
+        {"text": "Audit findings documented with specific observations", "passed": true},
+        {"text": "Actionable restructuring proposals made (not vague suggestions)", "passed": true},
+        {"text": "Changes proposed but NOT executed without user approval", "passed": true}
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "mean_pass_rate": 1.0,
+      "mean_time_seconds": 104.5,
+      "mean_tokens": 22042
+    },
+    "without_skill": {
+      "mean_pass_rate": 0.67,
+      "mean_time_seconds": 43.1,
+      "mean_tokens": 16014
+    },
+    "delta": {
+      "pass_rate": "+0.33",
+      "time_seconds": "+61.4",
+      "tokens": "+6028"
+    }
+  },
+  "notes": [
+    "The skill adds clear value for intake tasks (+60% pass rate on frontmatter/README/MANIFEST assertions)",
+    "Reorganize task shows no differentiation on current assertions — both score 100%. Consider adding assertions for preview file generation and frontmatter on proposed files.",
+    "With-skill runs take ~2.4x longer and use ~1.4x more tokens, which is expected given the additional navigation file updates."
+  ]
+}

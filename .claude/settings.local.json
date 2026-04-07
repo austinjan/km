@@ -50,7 +50,15 @@
       "Bash(brew:*)",
       "Bash(/Applications/Tailscale.app/Contents/MacOS/Tailscale status:*)",
       "Bash(ssh:*)",
-      "Bash(git rebase:*)"
+      "Bash(git rebase:*)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(find /Users/austinjan/km/.claude/skills/skill-creator -type f -exec wc -c {} \\\\;)",
+      "Bash(sort -t/ -k9)",
+      "Bash([ -f \"$base/outputs/$f\" ])",
+      "Bash([ -f \"$base/$f\" ])",
+      "Bash(python3 -m scripts.aggregate_benchmark /Users/austinjan/km/.claude/skills/km-organizer-workspace/iteration-1 --skill-name km-organizer)",
+      "Bash(kill 61079)"
     ]
   }
 }

@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "file-intake",
+  "prompt": "save the content from test.txt to the knowledge base, it's some random test notes",
+  "assertions": [
+    {"id": "a1", "text": "test.txt content was read and incorporated", "type": "content"},
+    {"id": "a2", "text": "File saved to a categorized directory (not repo root)", "type": "structural"},
+    {"id": "a3", "text": "Content has been polished or structured for clarity", "type": "content"},
+    {"id": "a4", "text": "YAML frontmatter contains title, tags, created, and summary fields", "type": "structural"},
+    {"id": "a5", "text": "README.md and MANIFEST.md updated", "type": "structural"}
+  ]
+}

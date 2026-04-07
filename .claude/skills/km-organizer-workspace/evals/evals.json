@@ -1,0 +1,23 @@
+{
+  "skill_name": "km-organizer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "幫我存這個：在 macOS 上可以用 `pmset` 指令管理電源設定，`pmset -g` 查看目前設定，`sudo pmset displaysleep 10` 設定螢幕 10 分鐘後關閉",
+      "expected_output": "A markdown file saved in os-config/darwin/ or similar, in Chinese, with proper YAML frontmatter, README.md updated, MANIFEST.md created/updated",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "save the content from test.txt to the knowledge base, it's some random test notes",
+      "expected_output": "Content from test.txt read, categorized, polished, saved to appropriate location with frontmatter, README.md and MANIFEST.md updated",
+      "files": ["test.txt"]
+    },
+    {
+      "id": 3,
+      "prompt": "can you check if the os-config/ directory is well organized? suggest improvements if needed",
+      "expected_output": "Audit of os-config/ directory, findings presented, restructure proposed with user confirmation requested before changes",
+      "files": []
+    }
+  ]
+}

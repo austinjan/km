@@ -1,0 +1,62 @@
+{
+  "expectations": [
+    {
+      "text": "File saved under os-config/ or similar appropriate directory",
+      "passed": true,
+      "evidence": "File saved at os-config/darwin/pmset-power-management.md, which is a well-categorized location under the OS-specific darwin subdirectory."
+    },
+    {
+      "text": "Content is written in Chinese (original language preserved)",
+      "passed": true,
+      "evidence": "The file content is in Chinese: title is 'macOS pmset 電源管理指令', body includes '`pmset` 是 macOS 內建的電源管理指令工具' and '設定螢幕休眠時間（例如 10 分鐘後關閉螢幕）'. Original language fully preserved."
+    },
+    {
+      "text": "YAML frontmatter contains title, tags, created, and summary fields",
+      "passed": true,
+      "evidence": "Frontmatter contains: title: 'macOS pmset 電源管理指令', tags: [macos, pmset, power-management, display, sleep], created: 2026-04-05, summary: 'macOS 上使用 pmset 指令查看與設定電源管理選項，包含查看目前設定與設定螢幕休眠時間'. Also includes a 'related' field."
+    },
+    {
+      "text": "README.md created or updated for the target directory",
+      "passed": true,
+      "evidence": "Both os-config/README.md and os-config/darwin/README.md exist in outputs. The darwin/README.md lists the new pmset file: '- [pmset-power-management.md](pmset-power-management.md) — macOS pmset 電源管理指令'."
+    },
+    {
+      "text": "MANIFEST.md created or updated at repo root",
+      "passed": true,
+      "evidence": "MANIFEST.md exists at outputs root. It contains 'Recent Additions' entry: '2026-04-05: os-config/darwin/pmset-power-management.md' and a Tags Index listing pmset, power-management, and macos tags."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "total_duration_seconds": 52.8,
+    "total_tokens": 16121
+  },
+  "claims": [
+    {
+      "claim": "Content is well-structured with code blocks for commands",
+      "type": "quality",
+      "verified": true,
+      "evidence": "The file contains properly formatted bash code blocks for 'pmset -g' and 'sudo pmset displaysleep 10'."
+    },
+    {
+      "claim": "File placed under darwin/ subdirectory (macOS-specific)",
+      "type": "factual",
+      "verified": true,
+      "evidence": "File path is os-config/darwin/pmset-power-management.md."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Content is written in Chinese (original language preserved)",
+        "reason": "This assertion could pass even if most content were translated to English with just one Chinese word remaining. Consider checking that the summary/body are predominantly Chinese, not just that some Chinese exists."
+      }
+    ],
+    "overall": "Assertions cover structure and content well. Minor improvement possible on language preservation check specificity."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "expectations": [
+    {
+      "text": "File saved under os-config/ or similar appropriate directory",
+      "passed": true,
+      "evidence": "File saved at os-config/darwin/pmset-power-management.md, correctly categorized under the macOS-specific darwin subdirectory."
+    },
+    {
+      "text": "Content is written in Chinese (original language preserved)",
+      "passed": true,
+      "evidence": "Content is in Chinese: heading '# macOS 電源管理 - pmset', body '在 macOS 上可以使用 `pmset` 指令管理電源設定', descriptions like '顯示目前所有電源管理設定'. Original language preserved."
+    },
+    {
+      "text": "YAML frontmatter contains title, tags, created, and summary fields",
+      "passed": false,
+      "evidence": "The file has NO YAML frontmatter at all. It starts directly with '# macOS 電源管理 - pmset'. No title, tags, created, or summary fields are present."
+    },
+    {
+      "text": "README.md created or updated for the target directory",
+      "passed": false,
+      "evidence": "No README.md files exist in the outputs. Only the single content file os-config/darwin/pmset-power-management.md was created."
+    },
+    {
+      "text": "MANIFEST.md created or updated at repo root",
+      "passed": false,
+      "evidence": "No MANIFEST.md file exists in the outputs directory."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 3,
+    "total": 5,
+    "pass_rate": 0.4
+  },
+  "timing": {
+    "total_duration_seconds": 25.8,
+    "total_tokens": 12081
+  },
+  "claims": [
+    {
+      "claim": "Content accurately captures the pmset commands from the prompt",
+      "type": "factual",
+      "verified": true,
+      "evidence": "File includes both 'pmset -g' and 'sudo pmset displaysleep 10' with correct descriptions."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "No suggestions, evals look solid. The without-skill run clearly demonstrates the value of the skill for structural conventions (frontmatter, README, MANIFEST)."
+  }
+}
