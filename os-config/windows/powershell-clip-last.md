@@ -1,3 +1,11 @@
+---
+title: PowerShell Clip Last Command + Output (Windows 11)
+tags: [powershell, windows, clipboard, keybinding, productivity]
+created: 2026-04-07
+summary: Ctrl+Y keybinding in PowerShell to re-run the last command and copy its output to clipboard using Set-Clipboard
+related: [os-config/darwin/zsh-clip-last.md]
+---
+
 # PowerShell Clip Last Command + Output (Windows 11)
 
 Copy the last command and its output to clipboard with a keybinding.

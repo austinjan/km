@@ -34,6 +34,10 @@ See also: [claude-code/CLAUDE.md](../claude-code/CLAUDE.md) for globally configu
 - **tig** - Text-mode interface for git
 - **delta** - Syntax-highlighting pager for git
 
+### Terminal Multiplexers
+- **tmux** - [Cheatsheet](tmux-cheatsheet.md)
+- **zellij** - [Layout creation guide](zellij-layouts.md) — KDL-based layouts, Windows 11 config paths
+
 ### Monitoring & Debugging
 - **htop/btop** - Interactive process viewer
 - **glances** - System monitoring tool

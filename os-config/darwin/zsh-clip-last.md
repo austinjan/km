@@ -1,3 +1,11 @@
+---
+title: Zsh Clip Last Command + Output (macOS)
+tags: [zsh, macos, clipboard, keybinding, productivity]
+created: 2026-04-07
+summary: Ctrl+Y keybinding in zsh to re-run the last command and copy its output to clipboard using pbcopy
+related: [os-config/windows/powershell-clip-last.md]
+---
+
 # Zsh Clip Last Command + Output (macOS)
 
 Copy the last command and its output to clipboard with a keybinding.

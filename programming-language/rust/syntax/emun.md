@@ -1,3 +1,10 @@
+---
+title: Rust Enum 語法
+tags: [rust, enum, syntax]
+created: 2026-04-07
+summary: Rust enum 四種 variant 寫法：unit、struct-like、tuple single、tuple multiple，附程式碼範例
+---
+
 ## Enum
 
 ```rust

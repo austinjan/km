@@ -1,3 +1,11 @@
+---
+title: Mac Mini 遠端開發環境設定
+tags: [mac, macos, ssh, tailscale, tmux, remote-dev]
+created: 2026-04-07
+summary: 以 Mac Mini 作為遠端開發機，透過 Tailscale + SSH + tmux 建立穩定開發環境的完整設定指南
+related: [coding/tools/tmux-cheatsheet.md]
+---
+
 # Mac Mini 遠端開發環境設定
 
 Mac Mini 作為遠端開發機，透過 Tailscale + SSH + tmux 建立穩定的開發環境。

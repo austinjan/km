@@ -1,3 +1,11 @@
+---
+title: WSL Ubuntu Development Environment Setup
+tags: [wsl, windows, ubuntu, bash, node, rust, zed, github-cli]
+created: 2026-04-07
+summary: Full setup guide for a dev environment on WSL2 Ubuntu — Node.js, Rust, GitHub CLI, Zed editor, SSH, and modern CLI utilities
+related: [coding/editor/zed/install_wsl.md, coding/tools/README.md]
+---
+
 # WSL Ubuntu Setup Guide
 
 This document covers the setup process for a development environment on WSL Ubuntu.
