@@ -8,6 +8,7 @@
   - `coding/tools/` — CLI and dev tool documentation
     - `tmux-cheatsheet.md` — tmux key bindings and session management
     - `zellij-layouts.md` — Zellij KDL layout creation, Windows 11 config paths
+    - `zellij-win11-setup.md` — Full reproducible zellij setup for Win11 (exact config.kdl + dev.kdl content for LLM-assisted re-setup)
 - `os-config/` — Shell and OS configuration
   - `os-config/darwin/` — macOS config
     - `mac-mini-remote-setup.md` — Mac Mini 遠端開發機（Tailscale + SSH + tmux）
@@ -31,6 +32,7 @@
 
 ## Recent Additions
 
+- 2026-04-10: `coding/tools/zellij-win11-setup.md` — Full reproducible zellij Win11 setup (config.kdl + dev layout)
 - 2026-04-07: `coding/tools/zellij-layouts.md` — Zellij KDL layout guide (Windows 11)
 - 2026-04-07: `os-config/darwin/mac-mini-remote-setup.md` — moved from os-config root
 - 2026-04-07: `os-config/windows/wsl-setup.md` — moved from os-config root
@@ -39,9 +41,9 @@
 
 - ai, llm, prompt: `study/AI/note.md`
 - claude-code, skills: `study/AI/note.md`, `coding/claude-code/`
-- zellij, terminal, multiplexer: `coding/tools/zellij-layouts.md`
+- zellij, terminal, multiplexer: `coding/tools/zellij-layouts.md`, `coding/tools/zellij-win11-setup.md`
 - tmux: `coding/tools/tmux-cheatsheet.md`, `os-config/darwin/mac-mini-remote-setup.md`
-- windows, win11: `coding/tools/zellij-layouts.md`, `os-config/windows/`
+- windows, win11: `coding/tools/zellij-layouts.md`, `coding/tools/zellij-win11-setup.md`, `os-config/windows/`
 - wsl, ubuntu: `os-config/windows/wsl-setup.md`
 - macos, mac: `os-config/darwin/`
 - ssh, tailscale, remote-dev: `os-config/darwin/mac-mini-remote-setup.md`

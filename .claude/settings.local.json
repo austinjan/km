@@ -58,7 +58,10 @@
       "Bash([ -f \"$base/outputs/$f\" ])",
       "Bash([ -f \"$base/$f\" ])",
       "Bash(python3 -m scripts.aggregate_benchmark /Users/austinjan/km/.claude/skills/km-organizer-workspace/iteration-1 --skill-name km-organizer)",
-      "Bash(kill 61079)"
+      "Bash(kill 61079)",
+      "Bash(Start-Process \"C:\\\\Program Files\\\\Tailscale\\\\tailscale-ipn.exe\")",
+      "Bash(\"/mnt/c/Program Files/Tailscale/tailscale.exe\" status)",
+      "Bash(\"/c/Program Files/Tailscale/tailscale.exe\" status)"
     ]
   }
 }

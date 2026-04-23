@@ -37,6 +37,7 @@ See also: [claude-code/CLAUDE.md](../claude-code/CLAUDE.md) for globally configu
 ### Terminal Multiplexers
 - **tmux** - [Cheatsheet](tmux-cheatsheet.md)
 - **zellij** - [Layout creation guide](zellij-layouts.md) — KDL-based layouts, Windows 11 config paths
+  - [Win11 full setup](zellij-win11-setup.md) — Complete reproducible config (config.kdl + dev.kdl) for LLM-assisted setup on a new machine
 
 ### Monitoring & Debugging
 - **htop/btop** - Interactive process viewer
