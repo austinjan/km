@@ -182,11 +182,11 @@ tailscale ip
 ```bash
 # 在本地電腦上
 tailscale status                          # 確認兩台都 online
-tailscale ping macmini-audemac-mini       # 測試連線
-ssh macmini-au@macmini-audemac-mini       # 用 Tailscale hostname 連線
+tailscale ping macmini-aumac-mini       # 測試連線
+ssh macmini-au@macmini-aumac-mini       # 用 Tailscale hostname 連線
 ```
 
-> **Tailscale hostname** 通常是機器的 hostname 小寫化，例如 `macmini-audemac-mini`。
+> **Tailscale hostname** 通常是機器的 hostname 小寫化，例如 `macmini-aumac-mini`。
 > 實際 hostname 請用 `tailscale status` 確認。
 
 ## 7. 本地 SSH Config
@@ -195,7 +195,7 @@ ssh macmini-au@macmini-audemac-mini       # 用 Tailscale hostname 連線
 
 ```
 Host mini
-    HostName macmini-audemac-mini    # Tailscale hostname（用 tailscale status 確認）
+    HostName macmini-aumac-mini    # Tailscale hostname（用 tailscale status 確認）
     User macmini-au
     ForwardAgent yes                 # 轉發 SSH agent（方便 git 操作）
     ServerAliveInterval 60           # 每 60 秒發 keepalive
@@ -221,7 +221,7 @@ tailscale status
 # 2. SSH 連線
 ssh mini                           # 用 SSH config alias
 # 或
-ssh macmini-au@macmini-audemac-mini  # 用完整 Tailscale hostname
+ssh macmini-au@macmini-aumac-mini  # 用完整 Tailscale hostname
 
 # 3. 接回或建立 tmux session
 tmux attach -t dev || tmux new -s dev
