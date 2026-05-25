@@ -4,6 +4,8 @@
 
 - `coding/` — Development tools, editor configs, CLI preferences
   - `coding/claude-code/` — Claude Code global settings and CLI tool preferences
+  - `coding/codex/` — Codex Desktop and CLI workflow notes, hotkeys, skills, and practical usage patterns
+    - `hotkeys.md` — Codex Desktop and CLI keyboard shortcuts with source confidence and local verification notes
   - `coding/editor/zed/` — Zed editor setup, WSL installation
   - `coding/tools/` — CLI and dev tool documentation
     - `tmux-cheatsheet.md` — tmux key bindings and session management
@@ -32,6 +34,7 @@
 
 ## Recent Additions
 
+- 2026-05-25: `coding/codex/hotkeys.md` — Practical Codex Desktop and CLI keyboard shortcuts with source confidence and verification notes.
 - 2026-04-10: `coding/tools/zellij-win11-setup.md` — Full reproducible zellij Win11 setup (config.kdl + dev layout)
 - 2026-04-07: `coding/tools/zellij-layouts.md` — Zellij KDL layout guide (Windows 11)
 - 2026-04-07: `os-config/darwin/mac-mini-remote-setup.md` — moved from os-config root
@@ -40,7 +43,11 @@
 ## Tags Index
 
 - ai, llm, prompt: `study/AI/note.md`
+- ai-tools: `coding/codex/README.md`
 - claude-code, skills: `study/AI/note.md`, `coding/claude-code/`
+- codex, codex-desktop, codex-cli: `coding/codex/README.md`, `coding/codex/hotkeys.md`
+- coding-agent: `coding/codex/README.md`
+- hotkeys, keyboard-shortcuts: `coding/codex/hotkeys.md`
 - zellij, terminal, multiplexer: `coding/tools/zellij-layouts.md`, `coding/tools/zellij-win11-setup.md`
 - tmux: `coding/tools/tmux-cheatsheet.md`, `os-config/darwin/mac-mini-remote-setup.md`
 - windows, win11: `coding/tools/zellij-layouts.md`, `coding/tools/zellij-win11-setup.md`, `os-config/windows/`
