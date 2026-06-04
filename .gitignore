@@ -17,3 +17,10 @@
 index_*.md
 index.md
 .cache/
+
+# aascribe local store, config, and metadata (config dir holds API keys)
+data/memory/
+data/config/
+data/logs/
+**/.aascribe_index_meta.json
+.DS*

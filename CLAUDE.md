@@ -6,6 +6,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a file-based knowledge management repository that consolidates development resources, shell configuration, project documentation, and Claude Code skills. It uses structured directories with README.md files providing navigation and context.
 
+## Answering Questions in This Repo
+
+When the user asks a question in this project, **search this km repo first** before answering from general knowledge. Treat the repo as the primary source of truth.
+
+- Use the **`indexing-folder` skill** (aascribe) to locate relevant content — start with `aascribe map <folder>` for routing, then `aascribe search <query> <folder> --fixed-strings` for exact mentions. If the folder is unindexed or stale, run `aascribe index <folder> --depth 2` first.
+- Do not use `rg` / `fd` / `grep` for question-answering routing in this repo — go through aascribe so the index stays the canonical entry point.
+- Once aascribe points to likely files, **read the actual files** before answering, and cite the path (e.g., `os-config/nushell/README.md`).
+- Only fall back to general knowledge if nothing in the repo covers the topic — and say so explicitly.
+
 ## Key Directories
 
 - `coding/` — Claude Code settings, editor configs, development tool preferences

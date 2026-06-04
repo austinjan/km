@@ -61,7 +61,30 @@
       "Bash(kill 61079)",
       "Bash(Start-Process \"C:\\\\Program Files\\\\Tailscale\\\\tailscale-ipn.exe\")",
       "Bash(\"/mnt/c/Program Files/Tailscale/tailscale.exe\" status)",
-      "Bash(\"/c/Program Files/Tailscale/tailscale.exe\" status)"
+      "Bash(\"/c/Program Files/Tailscale/tailscale.exe\" status)",
+      "Read(//Users/macmini-au/.ssh/**)",
+      "Bash(xattr -l ~/.ssh/authorized_keys)",
+      "Bash(gh repo:*)",
+      "Bash(infocmp xterm-ghostty:*)",
+      "Bash(tic:*)",
+      "Bash(tmux new:*)",
+      "Bash(tmux kill-session:*)",
+      "Bash(ls ~/.terminfo/*/xterm-ghostty)",
+      "Bash(./skills/indexing-folder/bin/aascribe --version)",
+      "Bash(./skills/indexing-folder/bin/aascribe --help)",
+      "Bash(./skills/indexing-folder/bin/aascribe init *)",
+      "Bash(./skills/indexing-folder/bin/aascribe index *)",
+      "Bash(./skills/indexing-folder/bin/aascribe map *)",
+      "Bash($AASCRIBE logs *)",
+      "Bash(./skills/indexing-folder/bin/aascribe chat *)",
+      "Bash(time ./skills/indexing-folder/bin/aascribe index --depth 3 .)",
+      "Read(//tmp/**)",
+      "Bash(./skills/indexing-folder/bin/aascribe --format json map .)",
+      "Bash(rg -iB1 'zsh|zprofile|zshrc')",
+      "Bash(time rg *)",
+      "Bash(mkdir -p /Users/macmini-au/code/km/.claude/skills)",
+      "Bash(mv /Users/macmini-au/code/km/skills/indexing-folder /Users/macmini-au/code/km/.claude/skills/)",
+      "Bash(mv /Users/macmini-au/code/km/skills/.aascribe_index_meta.json /Users/macmini-au/code/km/.claude/skills/)"
     ]
   }
 }
