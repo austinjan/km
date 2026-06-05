@@ -29,6 +29,8 @@
   - `programming-language/rust/syntax/` — Rust syntax snippets (enum variants, etc.)
 - `study/` — Learning resources
   - `study/AI/` — AI/LLM 學習筆記，prompt 設計，context engineering，Claude Code skills
+  - `study/fde-team/` — Forward Deployed Engineering / AI Agent 導入部門研究、playbook 與官網服務頁文案
+    - `fde-website-page-sample.md` — 官網用 FDE 服務頁文案，說明服務內容、客戶價值與客戶投入條件
 - `personal-info/` — Personal notes
   - `personal-info/game/` — 遊戲資訊（卡厄斯夢境）
 - `docs/` — Internal design specs
@@ -38,6 +40,7 @@
 
 - 2026-06-05: `projects/atop/asset-transfer-bob-to-austin.md` — ATOP ASUS PC asset transfer record from Bob's US development use to Austin in Zhonghe
 - 2026-06-05: `projects/atop/nimbl/product-vision-and-roadmap.md` — NIMBL 產品願景與 FDE 現場回饋驅動 Roadmap 等想法
+- 2026-06-05: `study/fde-team/fde-website-page-sample.md` — FDE 官網服務頁文案，說明服務內容、客戶價值與客戶投入條件
 - 2026-05-25: `coding/codex/hotkeys.md` — Practical Codex Desktop and CLI keyboard shortcuts with source confidence and verification notes.
 - 2026-04-10: `coding/tools/zellij-win11-setup.md` — Full reproducible zellij Win11 setup (config.kdl + dev layout)
 - 2026-04-07: `coding/tools/zellij-layouts.md` — Zellij KDL layout guide (Windows 11)
@@ -52,7 +55,8 @@
 - claude-code, skills: `study/AI/note.md`, `coding/claude-code/`
 - codex, codex-desktop, codex-cli: `coding/codex/README.md`, `coding/codex/hotkeys.md`
 - coding-agent: `coding/codex/README.md`
-- fde: `projects/atop/nimbl/product-vision-and-roadmap.md`
+- fde: `projects/atop/nimbl/product-vision-and-roadmap.md`, `study/fde-team/fde-website-page-sample.md`
+- ai-agent, website-copy, service-design: `study/fde-team/fde-website-page-sample.md`
 - hotkeys, keyboard-shortcuts: `coding/codex/hotkeys.md`
 - nimbl: `projects/atop/nimbl/product-vision-and-roadmap.md`
 - product-vision: `projects/atop/nimbl/product-vision-and-roadmap.md`

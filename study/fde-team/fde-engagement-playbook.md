@@ -51,13 +51,29 @@ Phase 可以依案件規模合併，但不應跳過 gate。若跳過某個 phase
 
 ### 4.2 必做活動
 
-- 確認 business owner、workflow owner、IT/security/data owner。
-- 確認是否能提供真實案例、文件、資料樣本或 sandbox。
-- 確認是否有 3-5 位一線 reviewer 或 UAT 使用者。
-- 確認客戶能接受 human-in-the-loop，不要求 agent 一開始完全自動決策。
-- 確認至少一個可量測 success metric，例如 cycle time、人工處理時間、錯誤率、接受率、升級率。
-- 初步判斷哪些 know-how 可能被 skill 化。
-- 初步判斷產品 gap 可能來自哪裡。
+- **確認 business owner、workflow owner、IT/security/data owner**：
+  - 識別決定預算與商業目標的 **Business Owner**。
+  - 識別每天面對此工作流、能定義對錯的 **Workflow Owner**。
+  - 識別能批准系統接入、提供資料與 API 的 **IT/Security/Data Owner**。
+  - *標準*：若任一關鍵角色缺席或由無權力代理人參與，則必須在評分表中列為高風險阻礙（Blocker）。
+- **確認是否能提供真實案例、文件、資料樣本或 sandbox**：
+  - 要求客戶在 Phase 0 結束前提供 10-20 個歷史真實案例（包含輸入、中間判定與最終輸出）或可用於測試的模擬 sandbox 環境。
+  - *標準*：拒絕「上線後才想辦法接資料」或「只看範例截圖就寫 prompt」的盲目開發，確保有足夠的 ground truth 可進行評測。
+- **確認是否有 3-5 位一線 reviewer 或 UAT 使用者**：
+  - 這些使用者必須是每天實際執行此 workflow 的一線人員，而非不碰操作的主管。
+  - *標準*：一線人員需承諾在 Phase 2 與 Phase 3 期間每週投入 2-4 小時參與訪談、審查 Agent 建議、提供真實回饋，並在 Pilot 階段將其納入日常工作。
+- **確認客戶能接受 human-in-the-loop，不要求 agent 一開始完全自動決策**：
+  - 與客戶達成共識：初期 Agent 僅作為副駕駛（Co-pilot）提供建議，所有對外發送、修改狀態、高風險決策必須經過一線人員確認（Human-in-the-loop）才能執行。
+  - *標準*：簽署合作意向或 proposal 時，需明文寫入安全防護機制（guardrails），明確拒絕初期完全自動決策（autonomous decision-making）的要求。
+- **確認至少一個可量測 success metric，例如 cycle time、人工處理時間、錯誤率、接受率、升級率**：
+  - 定義明確的量化指標（如「工單處理時間降低 30%」、「一線人員對 Agent 建議的接受率大於 70%」、「自動分類準確率達 85%」）。
+  - *標準*：不接受「讓系統更聰明」、「提升數位化體驗」等模糊描述，必須有具備明確分母與分子定義的指標。
+- **初步判斷哪些 know-how 可能被 skill 化**：
+  - 分析該工作流是否包含可固化的專家知識（如：SCADA 工單 triage 判斷、特定設備 troubleshooting 順序）。
+  - *標準*：評估專家知識是否能整理成可重複部署的 Prompt、Tooling、MCP 伺服器、Agent Skill、Eval Dataset 或操作 Runbook，作為公司 AI 資產。
+- **初步判斷產品 gap 可能來自哪裡**：
+  - 對照現有產品能力（如 NMS、aaagent / KM system），評估導入此工作流時可能遇到的系統或功能落差。
+  - *標準*：初步分類落差原因，是缺乏特定資料 connector、權限機制不合規，還是客戶資料品質不佳？將這些假設記入 `product-gap-hypothesis`。
 
 ### 4.3 產出文件
 

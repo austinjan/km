@@ -24,3 +24,6 @@ data/config/
 data/logs/
 **/.aascribe_index_meta.json
 .DS*
+
+# Local-only personal secrets
+personal-info/secrets/
