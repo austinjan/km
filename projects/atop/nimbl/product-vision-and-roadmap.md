@@ -3,7 +3,7 @@ title: NIMBL Product Vision and Roadmap Ideas
 tags: [nimbl, product-vision, roadmap, business-model, fde, digital-employee, agent]
 created: 2026-06-05
 summary: Ideas on NIMBL business model (selling application + operator), roadmap generation driven by FDE field feedback, and regular training sessions for Sales and FDE.
-related: [projects/nimbl/README.md]
+related: [projects/atop/nimbl/README.md]
 ---
 
 # NIMBL 產品願景與路線圖想法 (Product Vision & Roadmap Ideas)
