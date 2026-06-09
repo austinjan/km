@@ -6,6 +6,9 @@
   - `coding/claude-code/` — Claude Code global settings and CLI tool preferences
   - `coding/codex/` — Codex Desktop and CLI workflow notes, hotkeys, skills, and practical usage patterns
     - `hotkeys.md` — Codex Desktop and CLI keyboard shortcuts with source confidence and local verification notes
+  - `coding/agent-skills/` — Reusable agent skill/plugin notes across Claude Code, Codex, and related coding agents
+    - `compound-engineering-plugin.md` — Every Compound Engineering plugin overview: skills, agents, Codex install caveats, and knowledge-compounding workflow
+    - `matt-van-horn-claude-code-workflow.md` — Extracted workflow patterns from Matt Van Horn's Claude Code / Compound Engineering usage: plan-first, voice, parallel sessions, context compounding
   - `coding/editor/zed/` — Zed editor setup, WSL installation
   - `coding/tools/` — CLI and dev tool documentation
     - `tmux-cheatsheet.md` — tmux key bindings and session management
@@ -38,6 +41,8 @@
 
 ## Recent Additions
 
+- 2026-06-09: `coding/agent-skills/compound-engineering-plugin.md` — Every Compound Engineering plugin 簡介與 Codex 安裝注意事項
+- 2026-06-09: `coding/agent-skills/matt-van-horn-claude-code-workflow.md` — Matt Van Horn Claude Code 工作流文章的長期價值提取
 - 2026-06-05: `projects/atop/asset-transfer-bob-to-austin.md` — ATOP ASUS PC asset transfer record from Bob's US development use to Austin in Zhonghe
 - 2026-06-05: `projects/atop/nimbl/product-vision-and-roadmap.md` — NIMBL 產品願景與 FDE 現場回饋驅動 Roadmap 等想法
 - 2026-06-05: `study/fde-team/fde-website-page-sample.md` — FDE 官網服務頁文案，說明服務內容、客戶價值與客戶投入條件
@@ -51,6 +56,8 @@
 
 - ai, llm, prompt: `study/AI/note.md`
 - ai-tools: `coding/codex/README.md`
+- agent-skills, compound-engineering: `coding/agent-skills/compound-engineering-plugin.md`, `coding/agent-skills/skills-sh-and-mattpocock-skills.md`
+- claude-code-workflow, plan-first, voice-input: `coding/agent-skills/matt-van-horn-claude-code-workflow.md`
 - atop, asset, asset-transfer: `projects/atop/asset-transfer-bob-to-austin.md`
 - claude-code, skills: `study/AI/note.md`, `coding/claude-code/`
 - codex, codex-desktop, codex-cli: `coding/codex/README.md`, `coding/codex/hotkeys.md`

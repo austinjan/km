@@ -13,4 +13,6 @@ Reusable agent skills are small instruction packages that teach coding agents a 
 ## Files
 
 - [building-a-skill-installer.md](building-a-skill-installer.md) - 中文筆記：如何設計一個把 skills source 直接包進 npm package 的 bundled agent skill installer。
+- [compound-engineering-plugin.md](compound-engineering-plugin.md) - 中文簡介：Every 的 Compound Engineering plugin，包含跨 agent coding 工具的 skills、agents、安裝流程與 knowledge compounding 工作法。
+- [matt-van-horn-claude-code-workflow.md](matt-van-horn-claude-code-workflow.md) - 中文整理：從 Matt Van Horn 的 Claude Code 工作流文章提取 plan-first、語音輸入、並行 sessions、context compounding 等可複製模式。
 - [skills-sh-and-mattpocock-skills.md](skills-sh-and-mattpocock-skills.md) - Notes from inspecting `npx skills@latest add mattpocock/skills`, including repo structure, installer behavior, and Claude/Codex support.
