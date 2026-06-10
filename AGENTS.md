@@ -9,6 +9,14 @@ This file provides guidance to AI coding agents working in this repository.
 
 This is a file-based knowledge management repository that consolidates development resources, shell configuration, project documentation, and Claude Code skills. It uses structured directories with README.md files providing navigation and context.
 
+## Required Project State Files
+
+- `AGENTS.md` MUST stay small: target 50-200 lines, only essential repo overview, first-run commands, global hard constraints, project state files, and topic links. Detailed instructions belong in `instructions/`, one section per file.
+- `PROGRESS.md` is the single source of truth for project progress. It MUST list what is done, pending, in stock/backlog, and currently progressing. Agents MUST update `PROGRESS.md` whenever a task is completed or its status changes.
+- `CONSTRAINS.md` centralizes hard project constraints. It MUST use explicit `MUST` / `MUST NOT` language and SHOULD avoid soft preferences unless they are clearly labeled as non-binding guidance.
+- `ARCHITECTURE.md` describes the service responsibilities, public interfaces, internal dependencies, and important external dependencies. Agents MUST update it when responsibilities, interfaces, or dependency boundaries change.
+- All software repositories SHOULD keep these three files at the repository root and apply the same meanings consistently across projects.
+
 ## Answering Questions in This Repo
 
 When asked a question in this project, **search this km repo first** before answering from general knowledge. Treat the repo as the primary source of truth.
