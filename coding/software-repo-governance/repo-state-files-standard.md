@@ -138,3 +138,25 @@ After changing code or docs:
 2. Update `CONSTRAINS.md` if a new hard rule was introduced.
 3. Update `ARCHITECTURE.md` if service responsibilities, interfaces, or dependencies changed.
 4. Run the repository's normal validation commands and record important validation results in `PROGRESS.md`.
+
+## Commit Atomicity
+
+Purpose: preserve rollback safety.
+
+Rules:
+
+- Every meaningful operation MUST be committed. No exceptions.
+- A meaningful operation means one completed logical unit of work, not every tiny edit.
+- A meaningful operation MUST be coherent enough to understand, revert, or cherry-pick independently.
+- Each commit MUST represent one atomic action.
+- Agents MUST NOT bundle unrelated changes into one commit.
+- Agents MUST NOT leave completed meaningful work uncommitted.
+- Rollback safety depends on commit atomicity. Commit boundaries MUST be treated as part of the implementation, not after-the-fact cleanup.
+
+Examples:
+
+- Good: `Add repo governance audit prompt`.
+- Good: `Update manifest for governance docs`.
+- Bad: `misc updates`.
+- Bad: one commit containing a prompt, an unrelated project note, and shell config changes.
+- Not required: a half-finished typo edit before the file is coherent.

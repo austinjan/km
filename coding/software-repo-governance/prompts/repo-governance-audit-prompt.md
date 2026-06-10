@@ -49,6 +49,9 @@ Audit criteria:
    - MUST centralize hard constraints.
    - Hard constraints MUST use explicit `MUST` or `MUST NOT` language.
    - MUST NOT mix hard constraints with casual preferences unless preferences are clearly labeled separately.
+   - MUST require every meaningful operation to be committed as one atomic action.
+   - MUST define meaningful operation as one completed logical unit, not every tiny edit.
+   - MUST make rollback safety depend on commit atomicity.
 
 4. `ARCHITECTURE.md`
    - MUST exist at the repo root.

@@ -58,6 +58,7 @@ Always prefer these modern replacements in shell commands:
 
 ## Commit & Documentation Conventions
 
+- Every meaningful operation MUST be committed as one atomic action. A meaningful operation is a completed logical unit, not every tiny edit, and MUST be coherent enough to understand, revert, or cherry-pick independently.
 - Commit messages should be imperative and scoped (e.g., `Organize ATOP project notes`).
 - Keep documentation in Markdown; add or update a folder's `README.md` when adding new content so navigation stays accurate.
 - Never commit credentials or API keys — load them via env vars.

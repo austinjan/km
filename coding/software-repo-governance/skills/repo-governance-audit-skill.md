@@ -80,6 +80,9 @@ Check `CONSTRAINS.md`:
 - Hard constraints MUST use explicit `MUST` or `MUST NOT` language.
 - Preferences MUST be separated from hard constraints.
 - Vague language such as "try to", "maybe", or "prefer" MUST NOT appear in hard constraints.
+- It MUST require every meaningful operation to be committed as one atomic action.
+- It MUST define meaningful operation as one completed logical unit, not every tiny edit.
+- It MUST make rollback safety depend on commit atomicity.
 
 Check `ARCHITECTURE.md`:
 

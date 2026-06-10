@@ -33,6 +33,7 @@ Use this checklist when adding the standard repo state files to a software proje
 - [ ] Confirm `AGENTS.md` tells agents to read `CONSTRAINS.md` before risky changes.
 - [ ] Confirm `AGENTS.md` tells agents to update `PROGRESS.md` when task status changes.
 - [ ] Confirm `AGENTS.md` tells agents to update `ARCHITECTURE.md` when service boundaries change.
+- [ ] Confirm `AGENTS.md` or `CONSTRAINS.md` says every meaningful operation MUST be committed as one atomic action.
 - [ ] Confirm validation commands are listed in `AGENTS.md`.
 
 ## Quality Check
@@ -40,6 +41,8 @@ Use this checklist when adding the standard repo state files to a software proje
 - [ ] `PROGRESS.md` can answer "what is happening now?"
 - [ ] `PROGRESS.md` can answer "what was completed recently?"
 - [ ] `CONSTRAINS.md` contains no vague rules such as "try to" or "prefer" in the hard constraints section.
+- [ ] `CONSTRAINS.md` defines meaningful operation as one completed logical unit, not every tiny edit.
+- [ ] Commit rules make rollback safety explicit.
 - [ ] `ARCHITECTURE.md` identifies what the service owns and does not own.
 - [ ] `ARCHITECTURE.md` lists dependencies that can break the service.
 - [ ] `instructions/` has one section per file.

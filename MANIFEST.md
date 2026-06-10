@@ -2,6 +2,9 @@
 
 ## Content Map
 
+- `AGENTS.md` — Canonical agent instructions for this repository; CLAUDE.md imports it
+- `CONSTRAINS.md` — Hard constraints for km maintenance, including atomic commit and rollback-safety rules
+- `PROGRESS.md` — Current progress state for km repository work
 - `coding/` — Development tools, editor configs, CLI preferences
   - `coding/claude-code/` — Claude Code global settings and CLI tool preferences
   - `coding/codex/` — Codex Desktop and CLI workflow notes, hotkeys, skills, and practical usage patterns
@@ -54,6 +57,7 @@
 
 ## Recent Additions
 
+- 2026-06-10: `CONSTRAINS.md` — Hard constraints for km, including the rule that every meaningful operation must be committed as one atomic logical unit
 - 2026-06-10: `docs/repo-structure-convention.md` — Single-source convention for agent instructions (AGENTS.md canonical) and skills (`.agents/skills/` + symlinks)
 - 2026-06-10: `study/harness-engineering/` — Notes from walkinglabs Harness Engineering course (5 subsystems framework + 12 lecture notes)
 - 2026-06-10: `coding/software-repo-governance/prompts/repo-governance-audit-prompt.md` and `skills/repo-governance-audit-skill.md` — Prompt and skill-style workflow for checking whether repos follow the governance standard
@@ -75,6 +79,7 @@
 ## Tags Index
 
 - convention, repo-structure, agents-md, claude-md, symlink: `docs/repo-structure-convention.md`
+- atomic-commit, rollback, constraints: `CONSTRAINS.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/templates/CONSTRAINS.md`
 - ai, llm, prompt: `study/AI/note.md`
 - harness-engineering, ai-agents, agents-md, verification, observability: `study/harness-engineering/five-subsystems-framework.md`, `study/harness-engineering/course-notes.md`
 - ai-tools: `coding/codex/README.md`

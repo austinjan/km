@@ -26,6 +26,7 @@ One or two sentences that make it clear what this repository is and what it owns
 - Use `MUST` / `MUST NOT` language for hard constraints.
 - Move detailed instructions into topic files under `instructions/`.
 - `AGENTS.md` MUST stay between 50 and 200 lines.
+- Every meaningful operation MUST be committed as one atomic action. A meaningful operation is a completed logical unit, not every tiny edit, and MUST be coherent enough to understand, revert, or cherry-pick independently.
 
 ## Required Project State Files
 

@@ -36,6 +36,11 @@ This file centralizes hard constraints. Hard constraints MUST use explicit `MUST
 
 ## Operational Constraints
 
+- Every meaningful operation MUST be committed. No exceptions.
+- A meaningful operation means one completed logical unit of work, not every tiny edit. The unit MUST be coherent enough to understand, revert, or cherry-pick independently.
+- Each commit MUST represent one atomic action. Agents MUST NOT bundle unrelated changes into one commit.
+- Agents MUST NOT leave completed meaningful work uncommitted.
+- Rollback safety depends on commit atomicity. Commit boundaries MUST be treated as part of the implementation, not after-the-fact cleanup.
 - Deployments MUST ...
 - Background jobs MUST ...
 
