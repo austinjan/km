@@ -34,6 +34,9 @@
   - `study/AI/` — AI/LLM 學習筆記，prompt 設計，context engineering，Claude Code skills
   - `study/fde-team/` — Forward Deployed Engineering / AI Agent 導入部門研究、playbook 與官網服務頁文案
     - `fde-website-page-sample.md` — 官網用 FDE 服務頁文案，說明服務內容、客戶價值與客戶投入條件
+  - `study/harness-engineering/` — Harness Engineering course notes (walkinglabs): harness = everything outside model weights, 5 subsystems, 12-lecture per-lecture notes
+    - `five-subsystems-framework.md` — Harness definition, 5 subsystems (Instructions/Tools/Environment/State/Feedback), canonical artifacts, critical assessment
+    - `course-notes.md` — Per-lecture notes for all 12 lectures (problem→principle→artifacts→takeaways) + recurring artifact set
 - `personal-info/` — Personal notes
   - `personal-info/game/` — 遊戲資訊（卡厄斯夢境）
 - `docs/` — Internal design specs
@@ -41,6 +44,7 @@
 
 ## Recent Additions
 
+- 2026-06-10: `study/harness-engineering/` — Notes from walkinglabs Harness Engineering course (5 subsystems framework + 12 lecture notes)
 - 2026-06-09: `coding/agent-skills/compound-engineering-plugin.md` — Every Compound Engineering plugin 簡介與 Codex 安裝注意事項
 - 2026-06-09: `coding/agent-skills/matt-van-horn-claude-code-workflow.md` — Matt Van Horn Claude Code 工作流文章的長期價值提取
 - 2026-06-05: `projects/atop/asset-transfer-bob-to-austin.md` — ATOP ASUS PC asset transfer record from Bob's US development use to Austin in Zhonghe
@@ -55,6 +59,7 @@
 ## Tags Index
 
 - ai, llm, prompt: `study/AI/note.md`
+- harness-engineering, ai-agents, agents-md, verification, observability: `study/harness-engineering/five-subsystems-framework.md`, `study/harness-engineering/course-notes.md`
 - ai-tools: `coding/codex/README.md`
 - agent-skills, compound-engineering: `coding/agent-skills/compound-engineering-plugin.md`, `coding/agent-skills/skills-sh-and-mattpocock-skills.md`
 - claude-code-workflow, plan-first, voice-input: `coding/agent-skills/matt-van-horn-claude-code-workflow.md`
