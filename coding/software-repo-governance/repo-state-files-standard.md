@@ -22,7 +22,7 @@ Rules:
 
 - `AGENTS.md` MUST describe how agents should work in the repository.
 - `AGENTS.md` MUST mention the required project state files and their meanings.
-- `AGENTS.md` MUST tell agents when to update `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md`.
+- `AGENTS.md` MUST tell agents when to update `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`.
 - `AGENTS.md` MUST stay small: target 50-200 lines.
 - `AGENTS.md` MUST contain only the most essential items: a one- or two-sentence project overview, first-run commands, global hard constraints, and links to topic instruction documents.
 - `AGENTS.md` MUST NOT become a giant instruction file.
@@ -110,6 +110,27 @@ Recommended sections:
 - Known Risks
 - Update Log
 
+### `DECISIONS.md`
+
+Purpose: decision rationale log.
+
+Rules:
+
+- `DECISIONS.md` MUST record important decisions whose reasons should survive across sessions.
+- `DECISIONS.md` MUST include what was decided and why.
+- `DECISIONS.md` SHOULD include rejected alternatives, constraints, consequences, and follow-up.
+- Agents MUST update `DECISIONS.md` when a meaningful architecture, product, dependency, workflow, or governance decision would otherwise be lost.
+- `DECISIONS.md` MUST NOT duplicate every small implementation choice. It is for decisions future agents might otherwise re-litigate.
+
+Recommended entry shape:
+
+- Decision
+- Reason
+- Rejected alternatives
+- Constraints
+- Consequences
+- Follow-up
+
 ### `instructions/`
 
 Purpose: detailed instructions split by topic.
@@ -130,14 +151,16 @@ Before changing code:
 1. Read `AGENTS.md`.
 2. Check `CONSTRAINS.md` for hard constraints.
 3. Check `ARCHITECTURE.md` if the task touches design, dependencies, interfaces, or service boundaries.
-4. Check `PROGRESS.md` to avoid duplicating or reopening work.
+4. Check `DECISIONS.md` if the task may revisit prior choices.
+5. Check `PROGRESS.md` to avoid duplicating or reopening work.
 
 After changing code or docs:
 
 1. Update `PROGRESS.md` if task status changed.
 2. Update `CONSTRAINS.md` if a new hard rule was introduced.
 3. Update `ARCHITECTURE.md` if service responsibilities, interfaces, or dependencies changed.
-4. Run the repository's normal validation commands and record important validation results in `PROGRESS.md`.
+4. Update `DECISIONS.md` if an important decision, rejected alternative, or tradeoff should survive across sessions.
+5. Run the repository's normal validation commands and record important validation results in `PROGRESS.md`.
 
 ## Commit Atomicity
 

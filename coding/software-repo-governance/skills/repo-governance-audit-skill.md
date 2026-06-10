@@ -15,10 +15,10 @@ This is a portable skill draft. Convert it into a platform-specific `SKILL.md` w
 Use this workflow when the user asks to:
 
 - audit repo governance
-- check whether a repo follows the `AGENTS.md` / `PROGRESS.md` / `CONSTRAINS.md` / `ARCHITECTURE.md` standard
+- check whether a repo follows the `AGENTS.md` / `PROGRESS.md` / `CONSTRAINS.md` / `ARCHITECTURE.md` / `DECISIONS.md` standard
 - prepare a repo for coding agents
 - verify that project state files are complete and current
-- check whether recent work updated progress, constraints, or architecture docs
+- check whether recent work updated progress, constraints, architecture, or decision docs
 
 ## Inputs
 
@@ -32,7 +32,7 @@ Use this workflow when the user asks to:
 
 - Confirm the current repository root.
 - Inspect the top-level tree.
-- Read `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md` if present.
+- Read `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md` if present.
 - Inspect `instructions/` if present.
 - Check `git status --short` when available.
 - Inspect recent diffs when the user wants current-work consistency checked.
@@ -52,6 +52,7 @@ Required files:
 - `PROGRESS.md`
 - `CONSTRAINS.md`
 - `ARCHITECTURE.md`
+- `DECISIONS.md`
 - `instructions/`
 
 ### 3. Apply Governance Rules
@@ -60,7 +61,7 @@ Check `AGENTS.md`:
 
 - It MUST explain agent workflow for the repo.
 - It MUST mention the required state files.
-- It MUST say when agents update `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md`.
+- It MUST say when agents update `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`.
 - It MUST stay small: target 50-200 lines.
 - It MUST contain only essential items: project overview, first-run commands, global hard constraints, required state files, and links to topic instruction documents.
 - It MUST NOT become a giant instruction file.
@@ -90,6 +91,13 @@ Check `ARCHITECTURE.md`:
 - It MUST describe interfaces and important data flows.
 - It MUST list internal and external dependencies.
 - It SHOULD identify non-responsibilities, runtime assumptions, deployment assumptions, and architecture risks.
+
+Check `DECISIONS.md`:
+
+- It MUST record important decisions whose reasons should survive across sessions.
+- It MUST include what was decided and why.
+- It SHOULD include rejected alternatives, constraints, consequences, and follow-up.
+- It MUST NOT duplicate every small implementation choice.
 
 Check `instructions/`:
 
@@ -131,6 +139,7 @@ When asked to fix:
 - Preserve existing repo-specific instructions.
 - Keep changes scoped to governance docs.
 - Update `PROGRESS.md` after the fix.
+- Update `DECISIONS.md` when the fix makes a durable governance decision.
 - Report validation performed.
 
 ## Output Shape

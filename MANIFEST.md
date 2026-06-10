@@ -3,7 +3,9 @@
 ## Content Map
 
 - `AGENTS.md` — Canonical agent instructions for this repository; CLAUDE.md imports it
+- `ARCHITECTURE.md` — Architecture map for the km file-based knowledge base repository
 - `CONSTRAINS.md` — Hard constraints for km maintenance, including atomic commit and rollback-safety rules
+- `DECISIONS.md` — Important km governance decisions, rationale, rejected alternatives, and consequences
 - `PROGRESS.md` — Current progress state for km repository work
 - `coding/` — Development tools, editor configs, CLI preferences
   - `coding/claude-code/` — Claude Code global settings and CLI tool preferences
@@ -14,7 +16,7 @@
     - `matt-van-horn-claude-code-workflow.md` — Extracted workflow patterns from Matt Van Horn's Claude Code / Compound Engineering usage: plan-first, voice, parallel sessions, context compounding
   - `coding/editor/zed/` — Zed editor setup, WSL installation
   - `coding/software-repo-governance/` — Reusable repo state file standards and templates for software repositories
-    - `repo-state-files-standard.md` — Standard meaning and update rules for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md`
+    - `repo-state-files-standard.md` — Standard meaning and update rules for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`
     - `adoption-checklist.md` — Checklist for adopting the standard in a new or existing software repo
     - `agents-splitting-strategies.md` — Practical strategy for splitting a giant `AGENTS.md` into a compact index plus topic files
     - `prompts/repo-governance-audit-prompt.md` — Pasteable prompt for auditing whether a repo follows the governance standard
@@ -58,13 +60,15 @@
 ## Recent Additions
 
 - 2026-06-10: `CONSTRAINS.md` — Hard constraints for km, including the rule that every meaningful operation must be committed as one atomic logical unit
+- 2026-06-10: `DECISIONS.md` — Decision log for preserving important km governance rationale and rejected alternatives across sessions
+- 2026-06-10: `ARCHITECTURE.md` — Architecture map for km responsibilities, interfaces, dependencies, and risks
 - 2026-06-10: `docs/repo-structure-convention.md` — Single-source convention for agent instructions (AGENTS.md canonical) and skills (`.agents/skills/` + symlinks)
 - 2026-06-10: `study/harness-engineering/` — Notes from walkinglabs Harness Engineering course (5 subsystems framework + 12 lecture notes)
 - 2026-06-10: `coding/software-repo-governance/prompts/repo-governance-audit-prompt.md` and `skills/repo-governance-audit-skill.md` — Prompt and skill-style workflow for checking whether repos follow the governance standard
 - 2026-06-10: `coding/software-repo-governance/prompts/split-agents-md-prompt.md` — Prompt for splitting giant `AGENTS.md` files into compact root guidance plus `instructions/` topic files
 - 2026-06-10: `coding/software-repo-governance/agents-splitting-strategies.md` — Strategy and example for splitting a giant `AGENTS.md` into compact root guidance plus `instructions/` topic files
 - 2026-06-10: `coding/software-repo-governance/templates/instructions-README.md` — Template for keeping `AGENTS.md` small by splitting detailed instructions into one topic per file
-- 2026-06-10: `coding/software-repo-governance/` — Reusable software repository governance standard, checklist, and templates for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md`
+- 2026-06-10: `coding/software-repo-governance/` — Reusable software repository governance standard, checklist, and templates for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`
 - 2026-06-09: `coding/agent-skills/compound-engineering-plugin.md` — Every Compound Engineering plugin 簡介與 Codex 安裝注意事項
 - 2026-06-09: `coding/agent-skills/matt-van-horn-claude-code-workflow.md` — Matt Van Horn Claude Code 工作流文章的長期價值提取
 - 2026-06-05: `projects/atop/asset-transfer-bob-to-austin.md` — ATOP ASUS PC asset transfer record from Bob's US development use to Austin in Zhonghe
@@ -80,6 +84,8 @@
 
 - convention, repo-structure, agents-md, claude-md, symlink: `docs/repo-structure-convention.md`
 - atomic-commit, rollback, constraints: `CONSTRAINS.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/templates/CONSTRAINS.md`
+- decisions, rationale, rejected-alternatives: `DECISIONS.md`, `coding/software-repo-governance/templates/DECISIONS.md`, `coding/software-repo-governance/repo-state-files-standard.md`
+- architecture, knowledge-base, dependencies: `ARCHITECTURE.md`, `coding/software-repo-governance/templates/ARCHITECTURE.md`
 - ai, llm, prompt: `study/AI/note.md`
 - harness-engineering, ai-agents, agents-md, verification, observability: `study/harness-engineering/five-subsystems-framework.md`, `study/harness-engineering/course-notes.md`
 - ai-tools: `coding/codex/README.md`

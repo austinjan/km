@@ -2,7 +2,7 @@
 title: Software Repository Governance
 tags: [software-repo, governance, agents, documentation, progress-tracking]
 created: 2026-06-10
-summary: Reusable repository-level guidance for AGENTS.md, PROGRESS.md, CONSTRAINS.md, and ARCHITECTURE.md across software projects.
+summary: Reusable repository-level guidance for AGENTS.md, PROGRESS.md, CONSTRAINS.md, ARCHITECTURE.md, and DECISIONS.md across software projects.
 related: [coding/software-repo-governance/repo-state-files-standard.md, coding/software-repo-governance/adoption-checklist.md]
 ---
 
@@ -14,7 +14,7 @@ The goal is to make every repo easy for humans and coding agents to resume, audi
 
 ## Files
 
-- [repo-state-files-standard.md](repo-state-files-standard.md) - Standard meaning and update rules for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md`.
+- [repo-state-files-standard.md](repo-state-files-standard.md) - Standard meaning and update rules for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`.
 - [adoption-checklist.md](adoption-checklist.md) - Checklist for adding the standard to a new or existing repository.
 - [agents-splitting-strategies.md](agents-splitting-strategies.md) - Practical strategy for splitting a giant `AGENTS.md` into a compact index plus topic files.
 - [prompts/repo-governance-audit-prompt.md](prompts/repo-governance-audit-prompt.md) - Pasteable prompt for auditing whether a repo follows the governance standard.
@@ -24,6 +24,7 @@ The goal is to make every repo easy for humans and coding agents to resume, audi
 - [templates/PROGRESS.md](templates/PROGRESS.md) - Template for repo progress tracking.
 - [templates/CONSTRAINS.md](templates/CONSTRAINS.md) - Template for hard project constraints.
 - [templates/ARCHITECTURE.md](templates/ARCHITECTURE.md) - Template for service architecture documentation.
+- [templates/DECISIONS.md](templates/DECISIONS.md) - Template for preserving important decision rationale and rejected alternatives.
 - [templates/instructions-README.md](templates/instructions-README.md) - Template for splitting detailed instructions into one topic per file.
 
 ## When To Use

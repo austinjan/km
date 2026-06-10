@@ -24,7 +24,7 @@ Rules:
   - project overview: one or two sentences
   - first-run commands, such as `make setup` and `make test`, adapted to this repo
   - global hard constraints, no more than 15 non-negotiable rules
-  - required project state file rules for `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md`
+  - required project state file rules for `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`
   - topic instruction links with one-line descriptions and applicability conditions
 - Detailed instructions MUST live in root `instructions/`.
 - `instructions/` MUST use one topic/section per file.
@@ -32,6 +32,7 @@ Rules:
 - If a hard rule is project-wide and not agent-specific, put it in `CONSTRAINS.md` or link to the existing rule there.
 - If content describes service responsibilities, interfaces, data flow, or dependencies, put it in `ARCHITECTURE.md` or link to the existing section there.
 - If content describes current status, completed work, blocked work, or next work, put it in `PROGRESS.md`.
+- If content explains why an important decision was made or why alternatives were rejected, put it in `DECISIONS.md`.
 - Update `PROGRESS.md` after the split.
 
 Suggested topic files:
@@ -46,18 +47,20 @@ Suggested topic files:
 Workflow:
 1. Read the current root `AGENTS.md`.
 2. Read `CONSTRAINS.md`, `ARCHITECTURE.md`, and `PROGRESS.md` if they exist.
-3. Inspect the repo tree enough to understand which topic files are actually useful.
-4. Propose the split plan:
+3. Read `DECISIONS.md` if it exists.
+4. Inspect the repo tree enough to understand which topic files are actually useful.
+5. Propose the split plan:
    - what stays in `AGENTS.md`
    - which `instructions/` files will be created
    - what content moves to each file
    - whether anything belongs in `CONSTRAINS.md`, `ARCHITECTURE.md`, or `PROGRESS.md`
-5. If the user asked you to implement directly, apply the split after the plan.
-6. Create or update `instructions/README.md`.
-7. Rewrite root `AGENTS.md` as a compact index.
-8. Create topic files under `instructions/`.
-9. Update `PROGRESS.md` with the completed split and validation result.
-10. Report changed files and any unresolved judgment calls.
+6. If the user asked you to implement directly, apply the split after the plan.
+7. Create or update `instructions/README.md`.
+8. Rewrite root `AGENTS.md` as a compact index.
+9. Create topic files under `instructions/`.
+10. Update `PROGRESS.md` with the completed split and validation result.
+11. Update `DECISIONS.md` if the split encodes a durable governance decision.
+12. Report changed files and any unresolved judgment calls.
 
 Output:
 - If planning only: provide the split plan and stop.

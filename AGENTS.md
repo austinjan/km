@@ -15,7 +15,8 @@ This is a file-based knowledge management repository that consolidates developme
 - `PROGRESS.md` is the single source of truth for project progress. It MUST list what is done, pending, in stock/backlog, and currently progressing. Agents MUST update `PROGRESS.md` whenever a task is completed or its status changes.
 - `CONSTRAINS.md` centralizes hard project constraints. It MUST use explicit `MUST` / `MUST NOT` language and SHOULD avoid soft preferences unless they are clearly labeled as non-binding guidance.
 - `ARCHITECTURE.md` describes the service responsibilities, public interfaces, internal dependencies, and important external dependencies. Agents MUST update it when responsibilities, interfaces, or dependency boundaries change.
-- All software repositories SHOULD keep these three files at the repository root and apply the same meanings consistently across projects.
+- `DECISIONS.md` records important decisions, why they were made, rejected alternatives, and consequences. Agents MUST update it when a meaningful decision would otherwise be lost across sessions.
+- All software repositories SHOULD keep these four state files at the repository root and apply the same meanings consistently across projects.
 
 ## Answering Questions in This Repo
 

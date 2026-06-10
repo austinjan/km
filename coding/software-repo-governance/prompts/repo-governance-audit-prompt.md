@@ -14,13 +14,14 @@ Use this prompt with Codex, Claude Code, or another coding agent when you want i
 You are auditing this software repository for repository governance readiness.
 
 Goal:
-Check whether the repo follows the standard state-file guidance for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md`.
+Check whether the repo follows the standard state-file guidance for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`.
 
 Required references:
 - Read root `AGENTS.md` if it exists.
 - Read root `PROGRESS.md` if it exists.
 - Read root `CONSTRAINS.md` if it exists.
 - Read root `ARCHITECTURE.md` if it exists.
+- Read root `DECISIONS.md` if it exists.
 - Inspect root `instructions/` if it exists.
 - Inspect the repo tree enough to understand whether these docs match the actual project structure.
 - Inspect recent git status/diff if available, so you can tell whether current changes require state-file updates.
@@ -29,7 +30,7 @@ Audit criteria:
 1. `AGENTS.md`
    - MUST exist at the repo root.
    - MUST explain how agents should work in this repo.
-   - MUST mention `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md`.
+   - MUST mention `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`.
    - MUST tell agents when to update those state files.
    - MUST stay small: target 50-200 lines.
    - MUST contain only essential items: project overview, first-run commands, global hard constraints, required state files, and links to topic instruction documents.
@@ -60,14 +61,22 @@ Audit criteria:
    - MUST list internal and external dependencies.
    - SHOULD identify non-responsibilities, runtime/deployment assumptions, and known architecture risks.
 
-5. Consistency
+5. `DECISIONS.md`
+   - MUST exist at the repo root.
+   - MUST record important decisions whose reasons should survive across sessions.
+   - MUST include what was decided and why.
+   - SHOULD include rejected alternatives, constraints, consequences, and follow-up.
+   - MUST NOT duplicate every small implementation choice.
+
+6. Consistency
    - The docs MUST not contradict each other.
    - The docs SHOULD match the actual repo tree and implementation.
    - Recent code or documentation changes SHOULD be reflected in `PROGRESS.md`.
    - Architecture-affecting changes SHOULD be reflected in `ARCHITECTURE.md`.
    - New hard rules SHOULD be reflected in `CONSTRAINS.md`.
+   - Important decisions or tradeoffs SHOULD be reflected in `DECISIONS.md`.
 
-6. `instructions/`
+7. `instructions/`
    - Detailed instructions MUST live in root `instructions/`.
    - `instructions/` MUST use one section per file.
    - Detailed setup, testing, deployment, style, domain, and workflow guidance SHOULD be linked from `AGENTS.md`, not copied into it.

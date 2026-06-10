@@ -21,7 +21,7 @@ Keep root `AGENTS.md` as a small routing document. Move detailed guidance into `
 - Project overview: one or two sentences explaining what the repo is.
 - First-run commands: the fastest path to setup and validation, such as `make setup` and `make test`.
 - Global hard constraints: no more than 15 non-negotiable rules.
-- Required project state files: `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`.
+- Required project state files: `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, `DECISIONS.md`.
 - Topic links: one-line descriptions plus applicability conditions.
 
 ### `instructions/` Receives
@@ -64,6 +64,7 @@ This repository contains the customer-facing web app and API for Example Product
 - `PROGRESS.md` is the single source of truth for project progress. Update it when task status changes.
 - `CONSTRAINS.md` centralizes hard constraints using `MUST` / `MUST NOT`.
 - `ARCHITECTURE.md` describes responsibilities, interfaces, and dependencies.
+- `DECISIONS.md` preserves important decisions, rationale, rejected alternatives, and consequences.
 
 ## Topic Instructions
 
@@ -92,5 +93,7 @@ Move content to `instructions/` if it applies only to a specific activity, area,
 Move content to `CONSTRAINS.md` if it is a hard project rule.
 
 Move content to `ARCHITECTURE.md` if it describes ownership, interfaces, data flow, or dependencies.
+
+Move content to `DECISIONS.md` if it explains why a meaningful decision was made or why alternatives were rejected.
 
 Move content to `PROGRESS.md` if it describes current status, completed work, blocked work, or next work.
