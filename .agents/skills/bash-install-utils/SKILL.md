@@ -22,19 +22,19 @@ Cross-platform script to install and configure popular CLI utilities for bash or
 ### Install All Utilities
 
 ```bash
-bash .Codex/skills/bash-install-utils/install.sh --all
+bash .agents/skills/bash-install-utils/install.sh --all
 ```
 
 ### Install Specific Utilities
 
 ```bash
-bash .Codex/skills/bash-install-utils/install.sh zoxide starship
+bash .agents/skills/bash-install-utils/install.sh zoxide starship
 ```
 
 ### Check Installation Status
 
 ```bash
-bash .Codex/skills/bash-install-utils/install.sh --list
+bash .agents/skills/bash-install-utils/install.sh --list
 ```
 
 ### Setup Shell Integration Only
@@ -42,7 +42,7 @@ bash .Codex/skills/bash-install-utils/install.sh --list
 If utilities are already installed, just configure the shell rc file:
 
 ```bash
-bash .Codex/skills/bash-install-utils/install.sh --setup
+bash .agents/skills/bash-install-utils/install.sh --setup
 ```
 
 ## What It Does

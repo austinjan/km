@@ -19,7 +19,7 @@ Synchronizes Nushell configuration files between this repository and the system.
 Copies config files FROM `os-config/nushell/` TO the system Nushell config directory.
 
 ```bash
-python .Codex/skills/nushell-config-sync/sync.py push
+python .agents/skills/nushell-config-sync/sync.py push
 ```
 
 ### Pull (system -> repo)
@@ -27,7 +27,7 @@ python .Codex/skills/nushell-config-sync/sync.py push
 Copies config files FROM the system Nushell config directory TO `os-config/nushell/`.
 
 ```bash
-python .Codex/skills/nushell-config-sync/sync.py pull
+python .agents/skills/nushell-config-sync/sync.py pull
 ```
 
 ### Diff (compare repo vs system)
@@ -35,8 +35,8 @@ python .Codex/skills/nushell-config-sync/sync.py pull
 Shows unified diff between repo and system config files.
 
 ```bash
-python .Codex/skills/nushell-config-sync/sync.py diff
-python .Codex/skills/nushell-config-sync/sync.py diff -f config.nu  # specific file
+python .agents/skills/nushell-config-sync/sync.py diff
+python .agents/skills/nushell-config-sync/sync.py diff -f config.nu  # specific file
 ```
 
 ## Files Synced

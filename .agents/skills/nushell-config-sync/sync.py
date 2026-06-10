@@ -52,7 +52,7 @@ def get_system_config_dir() -> Path:
 def get_repo_config_dir() -> Path:
     """Get the repository config directory."""
     script_dir = Path(__file__).parent
-    repo_root = script_dir.parent.parent.parent  # .claude/skills/nushell-config-sync -> repo root
+    repo_root = script_dir.parent.parent.parent  # .agents/skills/nushell-config-sync -> repo root
     return repo_root / "os-config" / "nushell"
 
 

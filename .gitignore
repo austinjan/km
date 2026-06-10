@@ -27,3 +27,8 @@ data/logs/
 
 # Local-only personal secrets
 personal-info/secrets/
+
+# Per-machine harness symlinks (recreated by docs/setup-repo-convention.js).
+# Real skills live in .agents/skills/; .claude/skills is only a symlink to it,
+# so it must NOT be committed — each machine creates its own.
+/.claude/skills

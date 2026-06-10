@@ -1,33 +1,55 @@
-# Repository Guidelines
+> When adding or updating project instructions, edit THIS file (AGENTS.md), 
+> never CLAUDE.md. CLAUDE.md is only an import shim.
 
-## Project Structure & Modules
-- `src/llm/` contains all provider logic: the core trait (`provider.rs`), helpers, and concrete backends (`openai.rs`, `gemini.rs`).  
-- `examples/` holds runnable demos such as `interactive_agent.rs` and `openai_basic.rs`; use these for manual smoke tests.  
-- `doc/` stores reference material (e.g., `GEMINI_API.md`, design notes).  
-- Tests live next to their modules (e.g., `src/llm/tests.rs`, provider-specific `#[cfg(test)]` blocks), so co-locate new cases with the code they exercise.
+# AGENTS.md
 
-## Build, Test, and Development Commands
-- `cargo fmt` – apply repository-wide Rust formatting before committing.  
-- `cargo check --all-features` – verify OpenAI/Gemini code compiles together.  
-- `cargo test --all-features` – run unit tests and doctests. Use `cargo test --doc src/llm/helpers.rs` after editing Markdown examples.  
-- `cargo run --example interactive_agent --features "openai gemini" -- --provider=gemini` – manual chat-loop check with both providers enabled.
+This file provides guidance to AI coding agents working in this repository.
 
-## Coding Style & Naming
-- Default Rust style: 4-space indentation, `snake_case` for items, `CamelCase` for types.  
-- Keep files ASCII; add brief comments only for logic that is not self-explanatory.  
-- Prefer `cargo fmt` + `clippy` hints to keep code consistent with the rest of the repo.
+## Project Overview
 
-## Testing Guidelines
-- Name tests `test_<area>_<scenario>` (e.g., `test_prune_tool_turns_exceeds_limit`).  
-- Add unit tests alongside the implementation file; use doctests for documentation samples.  
-- For features requiring API keys, document manual verification steps instead of adding secrets to CI.
+This is a file-based knowledge management repository that consolidates development resources, shell configuration, project documentation, and Claude Code skills. It uses structured directories with README.md files providing navigation and context.
 
-## Commit & Pull Request Guidelines
-- Commit messages should be imperative and scoped (e.g., `Implement Gemini chat loop pruning`).  
-- Describe PR scope, list validation commands (`cargo test`, `cargo run --example …`), and mention any new env vars (`GEMINI_API_KEY`, `OPENAI_MODEL`).  
-- Attach screenshots or terminal snippets when changing CLI output or examples so reviewers can see the new behavior.  
-- Keep PRs focused; large multi-provider changes should be split into logical commits for easier review.
+## Answering Questions in This Repo
 
-## Security & Configuration Tips
-- Never commit credentials. Load keys via env vars (`OPENAI_API_KEY`, `GEMINI_API_KEY`) and pass models through `OPENAI_MODEL`/`GEMINI_MODEL` when testing.  
-- Document new endpoints or headers in `doc/` so future contributors can reproduce requests without re-reading upstream docs.
+When asked a question in this project, **search this km repo first** before answering from general knowledge. Treat the repo as the primary source of truth.
+
+- Use the **`indexing-folder` skill** (aascribe) to locate relevant content — start with `aascribe map <folder>` for routing, then `aascribe search <query> <folder> --fixed-strings` for exact mentions. If the folder is unindexed or stale, run `aascribe index <folder> --depth 2` first.
+- Do not use `rg` / `fd` / `grep` for question-answering routing in this repo — go through aascribe so the index stays the canonical entry point.
+- Once aascribe points to likely files, **read the actual files** before answering, and cite the path (e.g., `os-config/nushell/README.md`).
+- Only fall back to general knowledge if nothing in the repo covers the topic — and say so explicitly.
+
+## Key Directories
+
+- `coding/` — Claude Code settings, editor configs, development tool preferences
+- `os-config/nushell/` — Nushell shell configuration and setup
+- `projects/` — Active project documentation (art-designed-ai-system, black-bear-ai-project, consulting-ai-develop)
+- `.claude/skills/` — Custom Claude Code skills for automation
+
+## Build & Setup
+
+```bash
+python build.py          # Build km-tools (requires external aaagent-rs repo)
+```
+
+## Skills
+
+Skills are invoked through the agent harness, not run directly. Key skills:
+- **bash-install-utils** — Install CLI utilities (zoxide, starship, carapace, bat, rg, fd, xh) for bash/zsh
+- **nushell-install-utils** — Install the same utilities with Nushell integration
+- **nushell-config-sync** — Sync Nushell config between repo and system
+- **managing-feature-plans** — Create/update feature plan documents in `doc/plan/`
+- **analyzing-feature-implementations** — Analyze code and generate reports
+
+## CLI Tool Preferences
+
+Always prefer these modern replacements in shell commands:
+- `rg` over `grep` — faster, respects .gitignore
+- `fd` over `find` — simpler syntax, faster
+- `bat` over `cat` — syntax highlighting
+- `xh` over `curl` — friendlier HTTP client
+
+## Commit & Documentation Conventions
+
+- Commit messages should be imperative and scoped (e.g., `Organize ATOP project notes`).
+- Keep documentation in Markdown; add or update a folder's `README.md` when adding new content so navigation stays accurate.
+- Never commit credentials or API keys — load them via env vars.

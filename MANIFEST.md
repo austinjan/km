@@ -39,11 +39,14 @@
     - `course-notes.md` — Per-lecture notes for all 12 lectures (problem→principle→artifacts→takeaways) + recurring artifact set
 - `personal-info/` — Personal notes
   - `personal-info/game/` — 遊戲資訊（卡厄斯夢境）
-- `docs/` — Internal design specs
+- `docs/` — Internal design specs and repo conventions
+  - `repo-structure-convention.md` — Single-source convention: AGENTS.md canonical (CLAUDE.md imports it), skills live once under `.agents/skills/` with per-harness symlinks
+  - `setup-repo-convention.js` — Node script to bootstrap another repo to the single-source convention (AGENTS.md, CLAUDE.md shim, `.agents/skills/` + `.claude/skills` symlink)
   - `docs/superpowers/specs/` — km-organizer skill design doc
 
 ## Recent Additions
 
+- 2026-06-10: `docs/repo-structure-convention.md` — Single-source convention for agent instructions (AGENTS.md canonical) and skills (`.agents/skills/` + symlinks)
 - 2026-06-10: `study/harness-engineering/` — Notes from walkinglabs Harness Engineering course (5 subsystems framework + 12 lecture notes)
 - 2026-06-09: `coding/agent-skills/compound-engineering-plugin.md` — Every Compound Engineering plugin 簡介與 Codex 安裝注意事項
 - 2026-06-09: `coding/agent-skills/matt-van-horn-claude-code-workflow.md` — Matt Van Horn Claude Code 工作流文章的長期價值提取
@@ -58,6 +61,7 @@
 
 ## Tags Index
 
+- convention, repo-structure, agents-md, claude-md, symlink: `docs/repo-structure-convention.md`
 - ai, llm, prompt: `study/AI/note.md`
 - harness-engineering, ai-agents, agents-md, verification, observability: `study/harness-engineering/five-subsystems-framework.md`, `study/harness-engineering/course-notes.md`
 - ai-tools: `coding/codex/README.md`

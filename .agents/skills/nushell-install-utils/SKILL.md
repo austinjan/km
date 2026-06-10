@@ -20,7 +20,7 @@ Cross-platform tool to install and configure Nushell integrations for popular ut
 Shows installation status of all supported utilities.
 
 ```bash
-python .Codex/skills/nushell-install-utils/install.py --list
+python .agents/skills/nushell-install-utils/install.py --list
 ```
 
 ### Install All Utilities
@@ -28,7 +28,7 @@ python .Codex/skills/nushell-install-utils/install.py --list
 Installs configuration files for all available utilities.
 
 ```bash
-python .Codex/skills/nushell-install-utils/install.py --all
+python .agents/skills/nushell-install-utils/install.py --all
 ```
 
 ### Install Specific Utilities
@@ -36,7 +36,7 @@ python .Codex/skills/nushell-install-utils/install.py --all
 Install only the utilities you need.
 
 ```bash
-python .Codex/skills/nushell-install-utils/install.py zoxide starship
+python .agents/skills/nushell-install-utils/install.py zoxide starship
 ```
 
 ### Force Overwrite
@@ -44,7 +44,7 @@ python .Codex/skills/nushell-install-utils/install.py zoxide starship
 Overwrite existing configuration files.
 
 ```bash
-python .Codex/skills/nushell-install-utils/install.py --all --force
+python .agents/skills/nushell-install-utils/install.py --all --force
 ```
 
 ## What It Does

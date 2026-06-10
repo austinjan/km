@@ -125,7 +125,7 @@ Structure:
 
 ## Content Map
 - coding/ — Development tools, editor configs, CLI preferences
-  - coding/Codex/ — Codex settings and preferences
+  - coding/claude-code/ — Claude Code settings and preferences
   - coding/tools/ — CLI tool documentation
 - os-config/ — Shell and OS configuration
   - os-config/nushell/ — Nushell config and setup
