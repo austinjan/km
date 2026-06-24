@@ -6,6 +6,8 @@ description: knowledge base that consolidates development, code, environment, an
 ## Contents
 Main entry of knowledge base. 
 
+- `gaming/` — Gaming-related information and notes.
+
 
 ## Quick Start
 Run `python build.py` to set up tools

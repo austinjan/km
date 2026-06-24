@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-06-24: Added `gaming/` as the top-level home for gaming-related information and updated repository navigation.
 - 2026-06-10: Added `coding/software-repo-governance/` with reusable standards, adoption checklist, and templates for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md`.
 - 2026-06-10: Added repo governance audit prompt and skill-style workflow draft under `coding/software-repo-governance/prompts/` and `coding/software-repo-governance/skills/`.
 - 2026-06-10: Added small-`AGENTS.md` guidance: keep root agent instructions to 50-200 lines and move detailed topic instructions into `instructions/`.
