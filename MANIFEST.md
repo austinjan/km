@@ -46,6 +46,7 @@
 - `programming-language/` — Language-specific notes
   - `programming-language/rust/syntax/` — Rust syntax snippets (enum variants, etc.)
 - `gaming/` — Gaming-related information, including game notes, strategies, platform references, and workflow records
+  - `gaming/pawapuro-2026-2027-guide.md` — 實況野球 2026-2027 的模式整理、起手攻略、日文原文名詞與中文翻譯對照
 - `study/` — Learning resources
   - `study/AI/` — AI/LLM 學習筆記，prompt 設計，context engineering，Claude Code skills
   - `study/fde-team/` — Forward Deployed Engineering / AI Agent 導入部門研究、playbook 與官網服務頁文案
@@ -63,6 +64,7 @@
 ## Recent Additions
 
 - 2026-06-24: `.codex/skills/research/` — Project-local research skill for internet-backed topic/resource review plus km cross-checking.
+- 2026-06-24: `gaming/pawapuro-2026-2027-guide.md` — 實況野球 2026-2027 資料整理與攻略，含日文原文名詞和中文翻譯。
 - 2026-06-24: `gaming/` — Dedicated top-level folder for gaming-related information.
 - 2026-06-10: `CONSTRAINS.md` — Hard constraints for km, including the rule that every meaningful operation must be committed as one atomic logical unit
 - 2026-06-10: `DECISIONS.md` — Decision log for preserving important km governance rationale and rejected alternatives across sessions
@@ -119,3 +121,4 @@
 - zed: `coding/editor/zed/`
 - bash, zsh: `os-config/darwin/zsh-clip-last.md`, `os-config/windows/wsl-setup.md`
 - gaming, games, game-notes: `gaming/`, `personal-info/game/`
+- pawapuro, パワプロ, 實況野球, パワフルプロ野球2026-2027, 攻略: `gaming/pawapuro-2026-2027-guide.md`
