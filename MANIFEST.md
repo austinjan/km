@@ -7,6 +7,8 @@
 - `CONSTRAINS.md` — Hard constraints for km maintenance, including atomic commit and rollback-safety rules
 - `DECISIONS.md` — Important km governance decisions, rationale, rejected alternatives, and consequences
 - `PROGRESS.md` — Current progress state for km repository work
+- `.codex/skills/` — Project-local Codex skills
+  - `.codex/skills/research/` — Research workflow that combines internet references with related km documents
 - `coding/` — Development tools, editor configs, CLI preferences
   - `coding/claude-code/` — Claude Code global settings and CLI tool preferences
   - `coding/codex/` — Codex Desktop and CLI workflow notes, hotkeys, skills, and practical usage patterns
@@ -60,6 +62,7 @@
 
 ## Recent Additions
 
+- 2026-06-24: `.codex/skills/research/` — Project-local research skill for internet-backed topic/resource review plus km cross-checking.
 - 2026-06-24: `gaming/` — Dedicated top-level folder for gaming-related information.
 - 2026-06-10: `CONSTRAINS.md` — Hard constraints for km, including the rule that every meaningful operation must be committed as one atomic logical unit
 - 2026-06-10: `DECISIONS.md` — Decision log for preserving important km governance rationale and rejected alternatives across sessions
@@ -97,6 +100,7 @@
 - atop, asset, asset-transfer: `projects/atop/asset-transfer-bob-to-austin.md`
 - claude-code, skills: `study/AI/note.md`, `coding/claude-code/`
 - codex, codex-desktop, codex-cli: `coding/codex/README.md`, `coding/codex/hotkeys.md`
+- research, internet-research, review, summarize: `.codex/skills/research/`
 - coding-agent: `coding/codex/README.md`
 - fde: `projects/atop/nimbl/product-vision-and-roadmap.md`, `study/fde-team/fde-website-page-sample.md`
 - ai-agent, website-copy, service-design: `study/fde-team/fde-website-page-sample.md`

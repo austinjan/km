@@ -6,6 +6,7 @@ description: knowledge base that consolidates development, code, environment, an
 ## Contents
 Main entry of knowledge base. 
 
+- `.codex/skills/` — Project-local Codex skills.
 - `gaming/` — Gaming-related information and notes.
 
 

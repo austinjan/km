@@ -15,6 +15,7 @@ This repository is a file-based knowledge base. It stores durable notes, project
 - Own durable knowledge that should survive beyond chat sessions.
 - Provide a navigable folder structure with `README.md` files for local context.
 - Maintain `MANIFEST.md` as the global retrieval map for agents and humans.
+- Store project-local Codex skills under `.codex/skills/`.
 - Store reusable software-repo governance guidance under `coding/software-repo-governance/`.
 - Store project-specific notes under `projects/` and learning material under `study/`.
 
@@ -29,10 +30,12 @@ This repository is a file-based knowledge base. It stores durable notes, project
 - Markdown files are the primary interface for reading and updating knowledge.
 - `AGENTS.md` is the canonical agent instruction entry point.
 - `MANIFEST.md` is the global index for retrieval.
+- `.codex/skills/*/SKILL.md` files are project-local Codex workflow entry points.
 
 ## Internal Structure
 
 - `coding/` - Development tools, agent guidance, editor notes, and reusable software-repo practices.
+- `.codex/skills/` - Project-local Codex skills.
 - `docs/` - Internal repository conventions and design specs.
 - `os-config/` - Shell and operating-system configuration notes.
 - `projects/` - Project and business context.
