@@ -20,4 +20,4 @@ Existing older game-specific notes may still live under `personal-info/game/` un
 
 ## Notes
 
-- [實況野球 2026-2027 資料整理與攻略](pawapuro-2026-2027-guide.md) — `パワフルプロ野球2026-2027` 模式整理、起手攻略、日文原文與中文翻譯名詞表。
+- [實況野球 2026-2027 資料整理與攻略](pawapuro/README.md) — `パワフルプロ野球2026-2027` 模式索引，連到 `サクセス`、`栄冠ナイン`、`パワフェス`、職棒 / 生涯模式、特殊能力與名詞對照。

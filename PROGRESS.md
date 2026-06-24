@@ -32,9 +32,10 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-06-24: Split the oversized Pawapuro 2026-2027 guide into `gaming/pawapuro/` topic files for overview, `サクセス`, `栄冠ナイン`, `パワフェス`, career modes, and abilities/glossary.
 - 2026-06-24: Added detailed `サクセス` recommended-mode strategy for `パラレルオールスターズ`, including route planning, time-space level goals, fielder/pitcher flows, `練習ビッグバン` usage, and common mistakes.
-- 2026-06-24: Expanded `gaming/pawapuro-2026-2027-guide.md` with detailed `栄冠ナイン` event dates, `金特本` sources, `サクセス` route priorities, `パワフェス` loop strategy, `ペナント` yearly checklist, and special ability recommendations.
-- 2026-06-24: Added `gaming/pawapuro-2026-2027-guide.md` with live-researched `パワフルプロ野球2026-2027` mode overview, starter strategy, Japanese original terms, and Chinese translations.
+- 2026-06-24: Expanded the Pawapuro 2026-2027 guide with detailed `栄冠ナイン` event dates, `金特本` sources, `サクセス` route priorities, `パワフェス` loop strategy, `ペナント` yearly checklist, and special ability recommendations.
+- 2026-06-24: Added the Pawapuro 2026-2027 guide with live-researched `パワフルプロ野球2026-2027` mode overview, starter strategy, Japanese original terms, and Chinese translations.
 - 2026-06-24: Added project-local Codex `research` skill under `.codex/skills/research/` with web research, km cross-checking, game-locale sourcing, and approval-before-cleanup rules.
 - 2026-06-24: Added `gaming/` as the top-level home for gaming-related information and updated repository navigation.
 - 2026-06-10: Added `coding/software-repo-governance/` with reusable standards, adoption checklist, and templates for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md`.

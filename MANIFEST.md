@@ -46,7 +46,13 @@
 - `programming-language/` — Language-specific notes
   - `programming-language/rust/syntax/` — Rust syntax snippets (enum variants, etc.)
 - `gaming/` — Gaming-related information, including game notes, strategies, platform references, and workflow records
-  - `gaming/pawapuro-2026-2027-guide.md` — 實況野球 2026-2027 的模式整理、起手攻略、日文原文名詞與中文翻譯對照
+  - `gaming/pawapuro/` — 實況野球 2026-2027 的資料整理與攻略，按主題拆分
+    - `gaming/pawapuro/README.md` — Pawapuro 2026-2027 資料索引、模式總覽、起手順序、來源與後續補充
+    - `gaming/pawapuro/success.md` — `サクセス` 成功模式攻略，含 `パラレルオールスターズ` 詳細路線與 WBC 育成
+    - `gaming/pawapuro/eikan-nine.md` — `栄冠ナイン` 榮冠九人攻略，含三年模式、停格日、金特本與育成優先
+    - `gaming/pawapuro/powerfes.md` — `パワフェス` PowerFes 攻略，含職業選擇、序盤流程與圖鑑周回
+    - `gaming/pawapuro/career-modes.md` — `ペナント`、`マイライフ`、`マイ選手リーグ` 攻略
+    - `gaming/pawapuro/abilities-glossary.md` — 特殊能力推薦、紅特消除優先與日文原文中文翻譯名詞表
 - `study/` — Learning resources
   - `study/AI/` — AI/LLM 學習筆記，prompt 設計，context engineering，Claude Code skills
   - `study/fde-team/` — Forward Deployed Engineering / AI Agent 導入部門研究、playbook 與官網服務頁文案
@@ -64,7 +70,8 @@
 ## Recent Additions
 
 - 2026-06-24: `.codex/skills/research/` — Project-local research skill for internet-backed topic/resource review plus km cross-checking.
-- 2026-06-24: `gaming/pawapuro-2026-2027-guide.md` — 實況野球 2026-2027 資料整理與攻略，含日文原文名詞和中文翻譯。
+- 2026-06-24: `gaming/pawapuro/` — Split the large Pawapuro 2026-2027 guide into topic files for better retrieval.
+- 2026-06-24: `gaming/pawapuro/` — 實況野球 2026-2027 資料整理與攻略，含日文原文名詞和中文翻譯。
 - 2026-06-24: `gaming/` — Dedicated top-level folder for gaming-related information.
 - 2026-06-10: `CONSTRAINS.md` — Hard constraints for km, including the rule that every meaningful operation must be committed as one atomic logical unit
 - 2026-06-10: `DECISIONS.md` — Decision log for preserving important km governance rationale and rejected alternatives across sessions
@@ -121,4 +128,9 @@
 - zed: `coding/editor/zed/`
 - bash, zsh: `os-config/darwin/zsh-clip-last.md`, `os-config/windows/wsl-setup.md`
 - gaming, games, game-notes: `gaming/`, `personal-info/game/`
-- pawapuro, パワプロ, 實況野球, パワフルプロ野球2026-2027, 攻略: `gaming/pawapuro-2026-2027-guide.md`
+- pawapuro, パワプロ, 實況野球, パワフルプロ野球2026-2027, 攻略: `gaming/pawapuro/README.md`, `gaming/pawapuro/success.md`, `gaming/pawapuro/eikan-nine.md`, `gaming/pawapuro/powerfes.md`, `gaming/pawapuro/career-modes.md`, `gaming/pawapuro/abilities-glossary.md`
+- サクセス, パラレルオールスターズ, WBC: `gaming/pawapuro/success.md`
+- 栄冠ナイン, 榮冠九人, 金特本: `gaming/pawapuro/eikan-nine.md`
+- パワフェス, PowerFes: `gaming/pawapuro/powerfes.md`
+- ペナント, マイライフ, マイ選手リーグ: `gaming/pawapuro/career-modes.md`
+- 特殊能力, 金特, 青特, 赤特: `gaming/pawapuro/abilities-glossary.md`
