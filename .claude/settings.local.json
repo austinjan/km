@@ -84,7 +84,22 @@
       "Bash(time rg *)",
       "Bash(mkdir -p /Users/macmini-au/code/km/.claude/skills)",
       "Bash(mv /Users/macmini-au/code/km/skills/indexing-folder /Users/macmini-au/code/km/.claude/skills/)",
-      "Bash(mv /Users/macmini-au/code/km/skills/.aascribe_index_meta.json /Users/macmini-au/code/km/.claude/skills/)"
+      "Bash(mv /Users/macmini-au/code/km/skills/.aascribe_index_meta.json /Users/macmini-au/code/km/.claude/skills/)",
+      "WebFetch(domain:walkinglabs.github.io)",
+      "Bash(git push *)",
+      "Bash(cp -R .claude/skills /tmp/km-claude-skills.bak)",
+      "Bash(cp -R .agents/skills /tmp/km-agents-skills.bak)",
+      "Bash(cp -R .claude/skills/. .agents/skills/)",
+      "Bash(rg -n '\\\\.claude/skills/' .agents/skills/__TRACKED_VAR__)",
+      "Bash(rm -rf .claude/skills)",
+      "Bash(ln -s ../.agents/skills .claude/skills)",
+      "Bash(git rm *)",
+      "Bash(git check-ignore *)",
+      "WebFetch(domain:disp.cc)",
+      "WebFetch(domain:www.pttweb.cc)",
+      "WebSearch",
+      "WebFetch(domain:ptt.dj-studio.com.tw)",
+      "WebFetch(domain:moptt.tw)"
     ]
   }
 }
