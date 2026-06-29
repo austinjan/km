@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-06-29: Added document about machine learning concepts applied to AI Agent Skill improvement (Train / Validation / Test data splitting) under `study/AI/`.
 - 2026-06-24: Split the oversized Pawapuro 2026-2027 guide into `gaming/pawapuro/` topic files for overview, `サクセス`, `栄冠ナイン`, `パワフェス`, career modes, and abilities/glossary.
 - 2026-06-24: Added detailed `サクセス` recommended-mode strategy for `パラレルオールスターズ`, including route planning, time-space level goals, fielder/pitcher flows, `練習ビッグバン` usage, and common mistakes.
 - 2026-06-24: Expanded the Pawapuro 2026-2027 guide with detailed `栄冠ナイン` event dates, `金特本` sources, `サクセス` route priorities, `パワフェス` loop strategy, `ペナント` yearly checklist, and special ability recommendations.

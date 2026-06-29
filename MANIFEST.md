@@ -54,7 +54,9 @@
     - `gaming/pawapuro/career-modes.md` — `ペナント`、`マイライフ`、`マイ選手リーグ` 攻略
     - `gaming/pawapuro/abilities-glossary.md` — 特殊能力推薦、紅特消除優先與日文原文中文翻譯名詞表
 - `study/` — Learning resources
-  - `study/AI/` — AI/LLM 學習筆記，prompt 設計，context engineering，Claude Code skills
+  - `study/AI/` — AI/LLM 學習筆記、Prompt 設計與 Agent Skill 評測概念
+    - `train-validation-test-split-in-skill-improvement.md` — ts-agent 專案自我改進工作流中機器學習經典切分概念在 Skill 改進上的套用
+    - `note.md` — AI/LLM 核心概念、prompt 設計、context engineering、Claude Code skills 使用原則
   - `study/fde-team/` — Forward Deployed Engineering / AI Agent 導入部門研究、playbook 與官網服務頁文案
     - `fde-website-page-sample.md` — 官網用 FDE 服務頁文案，說明服務內容、客戶價值與客戶投入條件
   - `study/harness-engineering/` — Harness Engineering course notes (walkinglabs): harness = everything outside model weights, 5 subsystems, 12-lecture per-lecture notes
@@ -69,6 +71,7 @@
 
 ## Recent Additions
 
+- 2026-06-29: `study/AI/train-validation-test-split-in-skill-improvement.md` — ts-agent 專案自我改進工作流：機器學習經典切分概念在 Skill 改進上的套用。
 - 2026-06-24: `.codex/skills/research/` — Project-local research skill for internet-backed topic/resource review plus km cross-checking.
 - 2026-06-24: `gaming/pawapuro/` — Split the large Pawapuro 2026-2027 guide into topic files for better retrieval.
 - 2026-06-24: `gaming/pawapuro/` — 實況野球 2026-2027 資料整理與攻略，含日文原文名詞和中文翻譯。
@@ -100,7 +103,8 @@
 - atomic-commit, rollback, constraints: `CONSTRAINS.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/templates/CONSTRAINS.md`
 - decisions, rationale, rejected-alternatives: `DECISIONS.md`, `coding/software-repo-governance/templates/DECISIONS.md`, `coding/software-repo-governance/repo-state-files-standard.md`
 - architecture, knowledge-base, dependencies: `ARCHITECTURE.md`, `coding/software-repo-governance/templates/ARCHITECTURE.md`
-- ai, llm, prompt: `study/AI/note.md`
+- ai, llm, prompt: `study/AI/note.md`, `study/AI/train-validation-test-split-in-skill-improvement.md`
+- ts-agent, machine-learning, train-validation-test, agent-skills, skill-evaluation: `study/AI/train-validation-test-split-in-skill-improvement.md`
 - harness-engineering, ai-agents, agents-md, verification, observability: `study/harness-engineering/five-subsystems-framework.md`, `study/harness-engineering/course-notes.md`
 - ai-tools: `coding/codex/README.md`
 - agent-skills, compound-engineering: `coding/agent-skills/compound-engineering-plugin.md`, `coding/agent-skills/skills-sh-and-mattpocock-skills.md`
