@@ -24,14 +24,7 @@ Keep in root `AGENTS.md`:
 
 Move task-specific detail into one topic per file under `instructions/`, for example testing, security, deployment, frontend, data, or domain guidance. Create only topics that the repository actually needs.
 
-Move durable facts to their authoritative source:
-
-- current coordination state → local progress source or named tracker;
-- true invariants → `CONSTRAINTS.md` or existing policy;
-- system ownership, interfaces, and dependencies → `ARCHITECTURE.md`;
-- durable rationale → `DECISIONS.md` or ADRs.
-
-Link instead of copying. A split fails if it creates two editable versions of the same rule.
+Move durable facts to the authoritative sources defined by the [governance standard](repo-state-files-standard.md). Link instead of copying; a split fails if it creates two editable versions of the same rule.
 
 ## Migration workflow
 

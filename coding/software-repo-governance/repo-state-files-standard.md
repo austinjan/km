@@ -4,7 +4,7 @@ tags: [software-repo, governance, agents, state-management, prompt-design]
 created: 2026-06-10
 updated: 2026-07-16
 summary: Canonical, outcome-oriented standard for agent instructions, repository state, authority, permissions, architecture, decisions, and validation.
-related: [coding/software-repo-governance/adoption-checklist.md, coding/software-repo-governance/skills/repo-governance-audit/SKILL.md]
+related: [coding/software-repo-governance/README.md, coding/software-repo-governance/skills/repo-governance-audit/SKILL.md]
 ---
 
 # Software Repository Governance Standard
