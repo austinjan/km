@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-07-16: Recorded the KM-specific direct-to-main publication workflow: pull requests are optional unless explicitly requested.
 - 2026-07-16: Rebuilt `coding/software-repo-governance/` around one canonical standard; added GPT-5.6-aligned authority, autonomy, collaboration, validation, and long-running state management; replaced duplicate audit prompts and draft with a real skill plus eval cases; updated conditional templates and navigation metadata.
 - 2026-07-16: Clarified `coding/software-repo-governance/` as the canonical entry point for Harness Engineering, harness/software project init, repo init, and repo check/audit information.
 - 2026-06-29: Added document about machine learning concepts applied to AI Agent Skill improvement (Train / Validation / Test data splitting) under `study/AI/`.
@@ -53,6 +54,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Validation Log
 
+- 2026-07-16: Confirmed the repository is on `main`, the only unrelated worktree item is the pre-existing untracked `test.txt`, and the direct-push instruction is consistent across `AGENTS.md`, `DECISIONS.md`, and `PROGRESS.md`.
 - 2026-07-16: Validated governance Markdown links, skill frontmatter and eval JSON, removed-path references, canonical-rule consistency, and the scoped Git diff.
 - 2026-07-16: Verified root, coding, governance, and manifest navigation explicitly route Harness Engineering, project/repo initialization, and repo checking to `coding/software-repo-governance/`.
 - 2026-06-10: Documentation-only change; no automated tests required.

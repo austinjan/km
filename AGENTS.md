@@ -63,5 +63,6 @@ Always prefer these modern replacements in shell commands:
 
 - Every meaningful operation MUST be committed as one atomic action. A meaningful operation is a completed logical unit, not every tiny edit, and MUST be coherent enough to understand, revert, or cherry-pick independently.
 - Commit messages should be imperative and scoped (e.g., `Organize ATOP project notes`).
+- This is a personal knowledge repository. Changes SHOULD be committed directly to `main` and pushed to `origin/main`; a pull request is not required unless the user explicitly requests one.
 - Keep documentation in Markdown; add or update a folder's `README.md` when adding new content so navigation stays accurate.
 - Never commit credentials or API keys — load them via env vars.

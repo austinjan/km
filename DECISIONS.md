@@ -32,3 +32,10 @@ This file records important decisions, the reason behind them, and rejected alte
 - Rejected alternative: Continue maintaining equivalent rules independently in the standard, checklist, prompts, skill draft, and templates.
 - Consequence: New repositories use `CONSTRAINTS.md`; this repository retains legacy `CONSTRAINS.md` compatibility. Audits evaluate authority and usefulness rather than failing solely because a conditional file is absent.
 - Follow-up: Validate future governance changes on representative repository tasks and keep MANIFEST navigation synchronized.
+
+## 2026-07-16: Use Direct Main Updates For KM
+
+- Decision: Commit KM repository changes directly to `main` and push to `origin/main`; do not require pull requests unless the user explicitly asks for one.
+- Reason: This is a personal knowledge repository, so a branch-and-PR workflow adds coordination overhead without a corresponding review requirement.
+- Rejected alternative: Require a feature branch and pull request for every knowledge update.
+- Consequence: Atomic commits and validation remain required, while publication uses the simpler direct-to-main workflow.
