@@ -1,0 +1,23 @@
+{
+  "skill_name": "repo-governance-audit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review this small CLI repository for coding-agent readiness. It uses GitHub Issues as the source of truth and has AGENTS.md but no PROGRESS.md. Do not modify files.",
+      "expected_output": "Does not treat the missing conditional PROGRESS.md as an automatic failure; verifies authority, state continuity, permissions, and current evidence.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Audit the repo instructions. AGENTS.md says every task must be committed, but the contribution guide says agents may never commit. Find conflicts and suggest the smallest fix.",
+      "expected_output": "Reports the authorization conflict with evidence and recommends one authoritative policy instead of silently choosing a rule.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Our agent resumes long tasks from summaries, but it keeps following old assumptions after scope changes. Review our state-management guidance and tell us what is missing.",
+      "expected_output": "Checks milestone compaction, preserved objective and phase, live-state revalidation, stale reasoning retirement, and stopping conditions.",
+      "files": []
+    }
+  ]
+}

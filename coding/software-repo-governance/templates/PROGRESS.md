@@ -1,39 +1,49 @@
 ---
 title: PROGRESS.md Template
-tags: [progress, software-repo, governance, template]
+tags: [progress, state-management, software-repo, template]
 created: 2026-06-10
-summary: Template for tracking canonical project progress in a software repository.
+updated: 2026-07-16
+summary: Optional local source for resumable objectives, status, blockers, decisions, completion criteria, and validation evidence.
 related: [coding/software-repo-governance/repo-state-files-standard.md]
 ---
 
-# Project Progress
+# Project State
 
-This file is the single source of truth for repository progress. Update it whenever task status changes.
+Use this file only when it is the named local progress source. Keep coordination state here, not a duplicate of every commit.
 
-## Current Focus
+## Authority
 
-- YYYY-MM-DD: Describe the active focus.
+- Owner:
+- Related tracker or plan:
+- Update trigger:
+- Retirement or archive condition:
 
-## Progressing
+## Current objective
 
-- [ ] Task currently being worked on.
+- Objective:
+- Accepted scope:
+- Completion criteria:
 
-## Pending
+## Active
 
-- [ ] Task accepted but not started.
-
-## Stock / Backlog
-
-- [ ] Future idea or non-urgent work.
+- [ ] Work item — owner, current state, and next evidence needed.
 
 ## Blocked
 
-- [ ] Blocked task - reason and needed unblocker.
+- [ ] Work item — blocker and required unblocker.
 
-## Done
+## Pending
 
-- YYYY-MM-DD: Completed task - summary and changed files.
+- [ ] Accepted work not started.
 
-## Validation Log
+## Recent durable decisions
 
-- YYYY-MM-DD: Command or manual check - result.
+- YYYY-MM-DD: Decision or link to the authoritative decision record.
+
+## Completed milestones
+
+- YYYY-MM-DD: Outcome and completion evidence.
+
+## Validation evidence
+
+- YYYY-MM-DD: Check — result — what it proves.

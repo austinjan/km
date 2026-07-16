@@ -9,14 +9,16 @@ This file provides guidance to AI coding agents working in this repository.
 
 This is a file-based knowledge management repository that consolidates development resources, shell configuration, project documentation, and Claude Code skills. It uses structured directories with README.md files providing navigation and context.
 
-## Required Project State Files
+## Repository Authority And State
 
-- `AGENTS.md` MUST stay small: target 50-200 lines, only essential repo overview, first-run commands, global hard constraints, project state files, and topic links. Detailed instructions belong in `instructions/`, one section per file.
-- `PROGRESS.md` is the single source of truth for project progress. It MUST list what is done, pending, in stock/backlog, and currently progressing. Agents MUST update `PROGRESS.md` whenever a task is completed or its status changes.
-- `CONSTRAINS.md` centralizes hard project constraints. It MUST use explicit `MUST` / `MUST NOT` language and SHOULD avoid soft preferences unless they are clearly labeled as non-binding guidance.
-- `ARCHITECTURE.md` describes the service responsibilities, public interfaces, internal dependencies, and important external dependencies. Agents MUST update it when responsibilities, interfaces, or dependency boundaries change.
-- `DECISIONS.md` records important decisions, why they were made, rejected alternatives, and consequences. Agents MUST update it when a meaningful decision would otherwise be lost across sessions.
-- All software repositories SHOULD keep these four state files at the repository root and apply the same meanings consistently across projects.
+- `AGENTS.md` is the entry router for this repository. Keep it easy to scan and link to detailed sources instead of copying them.
+- `PROGRESS.md` is this repository's local progress authority. Update it when the objective, scope, status, blocker, milestone, or completion evidence changes; do not duplicate every commit.
+- `CONSTRAINS.md` is this repository's legacy-named constraints authority. New repositories should use `CONSTRAINTS.md`.
+- `ARCHITECTURE.md` describes repository ownership, interfaces, structure, and important dependencies. Update it when those boundaries materially change.
+- `DECISIONS.md` preserves important decisions, reasons, alternatives, and consequences that future sessions might otherwise revisit.
+- `MANIFEST.md` is the global retrieval map. Update it when content paths, navigation, or tags change.
+- Preserve the current objective, accepted scope, decisions, blockers, completion criteria, and validation evidence when compacting long-running work. Re-check live repository evidence before relying on older summaries or reasoning.
+- Use `coding/software-repo-governance/repo-state-files-standard.md` when adopting or auditing governance in another software repository; its artifacts are conditional rather than universally required.
 
 ## Answering Questions in This Repo
 

@@ -24,3 +24,11 @@ This file records important decisions, the reason behind them, and rejected alte
 - Reason: The governance standard requires architecture state to be explicit, and the km repo should follow the same standard it teaches.
 - Rejected alternative: Leave architecture implicit in `README.md` and `MANIFEST.md`. That would make service responsibilities, boundaries, dependencies, and risks harder for agents to find consistently.
 - Consequence: Future structural changes to km should update `ARCHITECTURE.md` when responsibilities, interfaces, dependencies, or major risks change.
+
+## 2026-07-16: Make Repository Governance Conditional And Outcome-Oriented
+
+- Decision: Keep `repo-state-files-standard.md` as the single canonical policy, make state artifacts conditional on a demonstrated purpose, and replace duplicated audit prompts with one executable audit skill.
+- Reason: Universal file requirements, repeated rules, and arbitrary size limits can create stale duplicate authority without improving agent behavior. GPT-5.6 guidance favors outcomes, decision rules, explicit permissions, stopping conditions, representative validation, and deliberate state management.
+- Rejected alternative: Continue maintaining equivalent rules independently in the standard, checklist, prompts, skill draft, and templates.
+- Consequence: New repositories use `CONSTRAINTS.md`; this repository retains legacy `CONSTRAINS.md` compatibility. Audits evaluate authority and usefulness rather than failing solely because a conditional file is absent.
+- Follow-up: Validate future governance changes on representative repository tasks and keep MANIFEST navigation synchronized.

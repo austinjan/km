@@ -2,64 +2,55 @@
 title: Repository Governance Adoption Checklist
 tags: [software-repo, governance, checklist, onboarding, agents]
 created: 2026-06-10
-summary: Checklist for adding standardized repo state files to a software repository.
+updated: 2026-07-16
+summary: Minimal checklist for adopting only the repository governance artifacts that have a clear purpose and authority.
 related: [coding/software-repo-governance/repo-state-files-standard.md, coding/software-repo-governance/templates/AGENTS-section.md]
 ---
 
 # Repository Governance Adoption Checklist
 
-Use this checklist when adding the standard repo state files to a software project.
+Use the canonical [governance standard](repo-state-files-standard.md) to decide what the repository needs. Do not create empty files to satisfy this checklist.
 
-## Initial Setup
+## 1. Identify authority
 
-- [ ] Add or update root `AGENTS.md`.
-- [ ] Add root `PROGRESS.md`.
-- [ ] Add root `CONSTRAINS.md`.
-- [ ] Add root `ARCHITECTURE.md`.
-- [ ] Add root `DECISIONS.md`.
-- [ ] Add root `instructions/` folder.
-- [ ] Add `instructions/README.md`.
-- [ ] Copy the required project state files section from [templates/AGENTS-section.md](templates/AGENTS-section.md) into `AGENTS.md`.
-- [ ] Fill `PROGRESS.md` with current done, pending, stock/backlog, progressing, and blocked work.
-- [ ] Fill `CONSTRAINS.md` with only hard constraints using `MUST` / `MUST NOT`.
-- [ ] Fill `ARCHITECTURE.md` with the current service responsibilities, interfaces, and dependencies.
-- [ ] Fill `DECISIONS.md` with important decisions, rationale, and rejected alternatives that future agents should not re-litigate.
-- [ ] Move detailed setup, testing, deployment, style, domain, and workflow guidance into one-file-per-topic documents under `instructions/`.
+- [ ] Name the repository root and inspect the real project structure.
+- [ ] Name the authoritative progress source: local file or external tracker.
+- [ ] Identify existing organization, security, release, and contribution policies.
+- [ ] Record legacy filenames or instruction entry points that must remain compatible.
 
-## Agent Check
+## 2. Add the entry router
 
-- [ ] Confirm `AGENTS.md` is 50-200 lines.
-- [ ] Confirm `AGENTS.md` contains only project overview, first-run commands, global hard constraints, required state files, and topic links.
-- [ ] Confirm `AGENTS.md` has no more than 15 global hard constraints.
-- [ ] Confirm each topic link has a one-line description and applicability condition.
-- [ ] Confirm `AGENTS.md` tells agents to read `CONSTRAINS.md` before risky changes.
-- [ ] Confirm `AGENTS.md` tells agents to update `PROGRESS.md` when task status changes.
-- [ ] Confirm `AGENTS.md` tells agents to update `ARCHITECTURE.md` when service boundaries change.
-- [ ] Confirm `AGENTS.md` tells agents to update `DECISIONS.md` when important rationale would otherwise be lost.
-- [ ] Confirm `AGENTS.md` or `CONSTRAINS.md` says every meaningful operation MUST be committed as one atomic action.
-- [ ] Confirm validation commands are listed in `AGENTS.md`.
+- [ ] Create or refine root `AGENTS.md` for agent-operated repositories.
+- [ ] Include project purpose, first-run commands, instruction routing, authority paths, permission boundaries, and validation expectations.
+- [ ] Link to detailed sources instead of duplicating them.
+- [ ] Remove repeated process instructions, arbitrary length targets, and universal rules that require judgment.
 
-## Quality Check
+## 3. Add only applicable state artifacts
 
-- [ ] `PROGRESS.md` can answer "what is happening now?"
-- [ ] `PROGRESS.md` can answer "what was completed recently?"
-- [ ] `CONSTRAINS.md` contains no vague rules such as "try to" or "prefer" in the hard constraints section.
-- [ ] `CONSTRAINS.md` defines meaningful operation as one completed logical unit, not every tiny edit.
-- [ ] Commit rules make rollback safety explicit.
-- [ ] `ARCHITECTURE.md` identifies what the service owns and does not own.
-- [ ] `ARCHITECTURE.md` lists dependencies that can break the service.
-- [ ] `DECISIONS.md` can answer "why did we choose this?"
-- [ ] `DECISIONS.md` records rejected alternatives for important choices.
-- [ ] `instructions/` has one section per file.
-- [ ] Detailed instructions are linked from `AGENTS.md`, not copied into it.
+- [ ] Add `PROGRESS.md` only when local progress state has a distinct purpose.
+- [ ] Add `CONSTRAINTS.md` only for durable invariants not authoritative elsewhere.
+- [ ] Add `ARCHITECTURE.md` only when boundaries and dependencies are not obvious from the repository.
+- [ ] Add `DECISIONS.md` or ADRs only when important rationale must survive sessions.
+- [ ] Add `instructions/` only when topic guidance would obscure the root router.
+- [ ] Give every artifact an owner or authority, purpose, update trigger, and retirement condition.
 
-## Maintenance Rule
+## 4. Check state management
 
-Every completed task SHOULD leave the repo with:
+- [ ] Separate durable state from regenerable intermediate output.
+- [ ] Preserve objective, scope, decisions, blockers, completion criteria, and evidence across compaction.
+- [ ] Preserve research, design, implementation, review, and validation phase boundaries when authority differs.
+- [ ] Re-check live evidence before trusting persisted reasoning or older summaries.
+- [ ] Avoid turning progress state into a duplicate commit log.
 
-- Updated code/docs.
-- Updated `PROGRESS.md`.
-- Updated `CONSTRAINS.md` if hard constraints changed.
-- Updated `ARCHITECTURE.md` if responsibilities, interfaces, or dependencies changed.
-- Updated `DECISIONS.md` if an important decision, rejected alternative, or tradeoff should persist.
-- Validation command results recorded where useful.
+## 5. Validate behavior
+
+- [ ] A fresh agent can find setup and validation commands.
+- [ ] A review-only request does not cause implementation.
+- [ ] The agent can identify which state source is authoritative.
+- [ ] Conflicting instructions are surfaced rather than silently combined.
+- [ ] Conditional documents are judged by applicability and usefulness, not presence alone.
+- [ ] Validation results support the completion claim.
+
+## Completion
+
+Adoption is complete when the repository is easier to enter, resume, change, and validate, with no new duplicate authority or purposeless document.

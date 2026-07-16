@@ -2,19 +2,21 @@
 title: DECISIONS.md Template
 tags: [decisions, software-repo, governance, template]
 created: 2026-06-10
-summary: Template for preserving important decision rationale and rejected alternatives across sessions.
+updated: 2026-07-16
+summary: Optional concise log for decisions whose rationale and consequences must survive future sessions.
 related: [coding/software-repo-governance/repo-state-files-standard.md]
 ---
 
 # Decisions
 
-This file records important decisions, the reason behind them, and rejected alternatives. Use it to preserve the "why" across sessions.
+Use this file for a small decision history. Use individual ADRs when decisions need independent status, ownership, or lifecycle.
 
-## YYYY-MM-DD: Decision Title
+## YYYY-MM-DD: Decision title
 
+- Status: Proposed / Accepted / Superseded
 - Decision:
 - Reason:
-- Rejected alternatives:
-- Constraints:
+- Considered alternatives:
 - Consequences:
 - Follow-up:
+- Supersedes or superseded by:

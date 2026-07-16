@@ -17,14 +17,12 @@
     - `compound-engineering-plugin.md` — Every Compound Engineering plugin overview: skills, agents, Codex install caveats, and knowledge-compounding workflow
     - `matt-van-horn-claude-code-workflow.md` — Extracted workflow patterns from Matt Van Horn's Claude Code / Compound Engineering usage: plan-first, voice, parallel sessions, context compounding
   - `coding/editor/zed/` — Zed editor setup, WSL installation
-  - `coding/software-repo-governance/` — Canonical entry point for Harness Engineering, harness/software project init, repo init, repo check/audit, and reusable repo state-file governance
-    - `repo-state-files-standard.md` — Standard meaning and update rules for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`
-    - `adoption-checklist.md` — Checklist for adopting the standard in a new or existing software repo
-    - `agents-splitting-strategies.md` — Practical strategy for splitting a giant `AGENTS.md` into a compact index plus topic files
-    - `prompts/repo-governance-audit-prompt.md` — Pasteable prompt for auditing whether a repo follows the governance standard
-    - `prompts/split-agents-md-prompt.md` — Pasteable prompt for splitting a giant `AGENTS.md` into a compact index plus `instructions/` topic files
-    - `skills/repo-governance-audit-skill.md` — Skill-style workflow draft for repeatable governance audits
-    - `templates/` — Copyable templates for required repo state files and the `instructions/` folder
+  - `coding/software-repo-governance/` — Canonical English guidance for repository authority, agent instructions, cross-session state, adoption, and governance audits
+    - `repo-state-files-standard.md` — Canonical outcome-oriented policy for authority, conditional artifacts, GPT-5.6 state management, permissions, collaboration, and validation
+    - `adoption-checklist.md` — Minimal checklist for adopting only useful, authoritative governance artifacts
+    - `agents-splitting-strategies.md` — Decision rules for splitting overgrown agent instructions without duplicating authority
+    - `skills/repo-governance-audit/SKILL.md` — Executable audit workflow aligned with the canonical standard and GPT-5.6 prompting guidance
+    - `templates/` — Conditional starting points for agent routing, local state, constraints, architecture, decisions, and topic instructions
   - `coding/tools/` — CLI and dev tool documentation
     - `tmux-cheatsheet.md` — tmux key bindings and session management
     - `zellij-layouts.md` — Zellij KDL layout creation, Windows 11 config paths
@@ -71,6 +69,7 @@
 
 ## Recent Additions
 
+- 2026-07-16: `coding/software-repo-governance/` — Rebuilt around one canonical standard with GPT-5.6-aligned state management, authority, autonomy, collaboration, validation, conditional templates, and an executable audit skill.
 - 2026-07-16: `coding/software-repo-governance/` — Clarified as the canonical home for Harness Engineering, harness/software project init, repo init, and repo check/audit guidance.
 - 2026-06-29: `study/AI/train-validation-test-split-in-skill-improvement.md` — ts-agent 專案自我改進工作流：機器學習經典切分概念在 Skill 改進上的套用。
 - 2026-06-24: `.codex/skills/research/` — Project-local research skill for internet-backed topic/resource review plus km cross-checking.
@@ -82,11 +81,9 @@
 - 2026-06-10: `ARCHITECTURE.md` — Architecture map for km responsibilities, interfaces, dependencies, and risks
 - 2026-06-10: `docs/repo-structure-convention.md` — Single-source convention for agent instructions (AGENTS.md canonical) and skills (`.agents/skills/` + symlinks)
 - 2026-06-10: `study/harness-engineering/` — Notes from walkinglabs Harness Engineering course (5 subsystems framework + 12 lecture notes)
-- 2026-06-10: `coding/software-repo-governance/prompts/repo-governance-audit-prompt.md` and `skills/repo-governance-audit-skill.md` — Prompt and skill-style workflow for checking whether repos follow the governance standard
-- 2026-06-10: `coding/software-repo-governance/prompts/split-agents-md-prompt.md` — Prompt for splitting giant `AGENTS.md` files into compact root guidance plus `instructions/` topic files
+- 2026-06-10: `coding/software-repo-governance/` — Initial governance guidance, superseded by the 2026-07-16 canonical standard and executable audit skill.
 - 2026-06-10: `coding/software-repo-governance/agents-splitting-strategies.md` — Strategy and example for splitting a giant `AGENTS.md` into compact root guidance plus `instructions/` topic files
 - 2026-06-10: `coding/software-repo-governance/templates/instructions-README.md` — Template for keeping `AGENTS.md` small by splitting detailed instructions into one topic per file
-- 2026-06-10: `coding/software-repo-governance/` — Reusable software repository governance standard, checklist, and templates for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`
 - 2026-06-09: `coding/agent-skills/compound-engineering-plugin.md` — Every Compound Engineering plugin 簡介與 Codex 安裝注意事項
 - 2026-06-09: `coding/agent-skills/matt-van-horn-claude-code-workflow.md` — Matt Van Horn Claude Code 工作流文章的長期價值提取
 - 2026-06-05: `projects/atop/asset-transfer-bob-to-austin.md` — ATOP ASUS PC asset transfer record from Bob's US development use to Austin in Zhonghe
@@ -101,15 +98,15 @@
 ## Tags Index
 
 - convention, repo-structure, agents-md, claude-md, symlink: `docs/repo-structure-convention.md`
-- atomic-commit, rollback, constraints: `CONSTRAINS.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/templates/CONSTRAINS.md`
+- atomic-commit, rollback, constraints: `CONSTRAINS.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/templates/CONSTRAINTS.md`
 - decisions, rationale, rejected-alternatives: `DECISIONS.md`, `coding/software-repo-governance/templates/DECISIONS.md`, `coding/software-repo-governance/repo-state-files-standard.md`
 - architecture, knowledge-base, dependencies: `ARCHITECTURE.md`, `coding/software-repo-governance/templates/ARCHITECTURE.md`
 - ai, llm, prompt: `study/AI/note.md`, `study/AI/train-validation-test-split-in-skill-improvement.md`
 - ts-agent, machine-learning, train-validation-test, agent-skills, skill-evaluation: `study/AI/train-validation-test-split-in-skill-improvement.md`
-- harness-engineering, harness-engineer, harness-init, software-project-init, repo-init, repo-check, repo-audit: `coding/software-repo-governance/README.md`, `coding/software-repo-governance/adoption-checklist.md`, `coding/software-repo-governance/prompts/repo-governance-audit-prompt.md`, `study/harness-engineering/five-subsystems-framework.md`, `study/harness-engineering/course-notes.md`
+- harness-engineering, harness-init, software-project-init, repo-init, repo-check, repo-audit, state-management: `coding/software-repo-governance/README.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/adoption-checklist.md`, `coding/software-repo-governance/skills/repo-governance-audit/SKILL.md`, `study/harness-engineering/five-subsystems-framework.md`, `study/harness-engineering/course-notes.md`
 - ai-tools: `coding/codex/README.md`
 - agent-skills, compound-engineering: `coding/agent-skills/compound-engineering-plugin.md`, `coding/agent-skills/skills-sh-and-mattpocock-skills.md`
-- software-repo, governance, agents, progress, constraints, architecture: `coding/software-repo-governance/README.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/adoption-checklist.md`, `coding/software-repo-governance/agents-splitting-strategies.md`, `coding/software-repo-governance/prompts/repo-governance-audit-prompt.md`, `coding/software-repo-governance/prompts/split-agents-md-prompt.md`, `coding/software-repo-governance/skills/repo-governance-audit-skill.md`
+- software-repo, governance, agents, progress, constraints, architecture, autonomy, collaboration: `coding/software-repo-governance/README.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/adoption-checklist.md`, `coding/software-repo-governance/agents-splitting-strategies.md`, `coding/software-repo-governance/skills/repo-governance-audit/SKILL.md`
 - claude-code-workflow, plan-first, voice-input: `coding/agent-skills/matt-van-horn-claude-code-workflow.md`
 - atop, asset, asset-transfer: `projects/atop/asset-transfer-bob-to-austin.md`
 - claude-code, skills: `study/AI/note.md`, `coding/claude-code/`

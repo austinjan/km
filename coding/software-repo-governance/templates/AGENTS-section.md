@@ -1,43 +1,48 @@
 ---
-title: AGENTS.md Project State Files Section
+title: AGENTS.md Entry Router Template
 tags: [agents, software-repo, governance, template]
 created: 2026-06-10
-summary: Copyable AGENTS.md section defining PROGRESS.md, CONSTRAINS.md, ARCHITECTURE.md, and DECISIONS.md rules.
+updated: 2026-07-16
+summary: Adaptable root AGENTS.md sections for project purpose, authority, permissions, state, instruction routing, and validation.
 related: [coding/software-repo-governance/repo-state-files-standard.md]
 ---
 
-# AGENTS.md Essential Sections
+# AGENTS.md Entry Router Template
 
-Use these sections in the root `AGENTS.md` of software repositories.
+Adapt this template to the repository. Remove sections that have no real source or purpose; do not leave placeholders in adopted files.
 
 ```markdown
-## Project Overview
+# Repository Guidance
 
-One or two sentences that make it clear what this repository is and what it owns.
+## Project purpose
 
-## First-Run Commands
+[One or two sentences describing what this repository owns and does not own.]
 
-- `make setup` - Install dependencies and prepare local development.
-- `make test` - Run the default validation suite.
+## First-run commands
 
-## Global Hard Constraints
+- `[setup command]` — [expected result]
+- `[targeted validation command]` — [what it proves]
 
-- Keep this list to no more than 15 non-negotiable rules.
-- Use `MUST` / `MUST NOT` language for hard constraints.
-- Move detailed instructions into topic files under `instructions/`.
-- `AGENTS.md` MUST stay between 50 and 200 lines.
-- Every meaningful operation MUST be committed as one atomic action. A meaningful operation is a completed logical unit, not every tiny edit, and MUST be coherent enough to understand, revert, or cherry-pick independently.
+## Authority and state
 
-## Required Project State Files
+- Progress: `[local path or tracker]` — [when it is authoritative and when to update it]
+- Constraints: `[path or policy]` — [when it applies]
+- Architecture: `[path]` — [when to update it]
+- Decisions: `[path or ADR directory]` — [what deserves a record]
 
-- `PROGRESS.md` is the single source of truth for project progress. It MUST list what is done, pending, in stock/backlog, and currently progressing. Agents MUST update `PROGRESS.md` whenever a task is completed or its status changes.
-- `CONSTRAINS.md` centralizes hard project constraints. It MUST use explicit `MUST` / `MUST NOT` language and SHOULD avoid soft preferences unless they are clearly labeled as non-binding guidance.
-- `ARCHITECTURE.md` describes the service responsibilities, public interfaces, internal dependencies, and important external dependencies. Agents MUST update it when responsibilities, interfaces, or dependency boundaries change.
-- `DECISIONS.md` records important decisions, why they were made, rejected alternatives, and consequences. Agents MUST update it when a meaningful decision would otherwise be lost across sessions.
-- All software repositories SHOULD keep these four files at the repository root and apply the same meanings consistently across projects.
+Check current repository and tracker evidence before relying on older summaries. Preserve the objective, scope, decisions, blockers, completion criteria, and validation evidence when compacting long-running work.
 
-## Topic Instructions
+## Autonomy and approval
 
-- `instructions/testing.md` - Test strategy and commands. Applies when adding, changing, or validating behavior.
-- `instructions/deployment.md` - Deployment and release rules. Applies when changing runtime, infrastructure, or release flow.
+- Review, explain, diagnose, and plan requests authorize inspection and reporting, not implementation.
+- Change, build, and fix requests authorize scoped local edits and relevant non-destructive validation.
+- External writes, destructive actions, releases, commits, pushes, and material scope expansion require [state the repository's actual authorization rule].
+
+## Topic instructions
+
+- `[path]` — Applies when [specific condition].
+
+## Completion
+
+Before reporting completion, [state the required tests, checks, evidence, and behavior when validation cannot run].
 ```

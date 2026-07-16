@@ -12,7 +12,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Current Focus
 
-- 2026-06-10: Capture reusable software repository governance guidance for all software repos.
+- 2026-07-16: Keep the GPT-5.6-aligned software repository governance package clear, evidence-based, and free of duplicate authority.
 
 ## Progressing
 
@@ -24,7 +24,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Stock / Backlog
 
-- Consider adding a script command that automatically audits a repo for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md`.
+- Run the repository-governance audit skill eval cases in an agent environment that supports isolated skill and baseline runs.
 
 ## Blocked
 
@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-07-16: Rebuilt `coding/software-repo-governance/` around one canonical standard; added GPT-5.6-aligned authority, autonomy, collaboration, validation, and long-running state management; replaced duplicate audit prompts and draft with a real skill plus eval cases; updated conditional templates and navigation metadata.
 - 2026-07-16: Clarified `coding/software-repo-governance/` as the canonical entry point for Harness Engineering, harness/software project init, repo init, and repo check/audit information.
 - 2026-06-29: Added document about machine learning concepts applied to AI Agent Skill improvement (Train / Validation / Test data splitting) under `study/AI/`.
 - 2026-06-24: Split the oversized Pawapuro 2026-2027 guide into `gaming/pawapuro/` topic files for overview, `サクセス`, `栄冠ナイン`, `パワフェス`, career modes, and abilities/glossary.
@@ -41,7 +42,7 @@ This file tracks repository-level progress for the km knowledge base.
 - 2026-06-24: Added project-local Codex `research` skill under `.codex/skills/research/` with web research, km cross-checking, game-locale sourcing, and approval-before-cleanup rules.
 - 2026-06-24: Added `gaming/` as the top-level home for gaming-related information and updated repository navigation.
 - 2026-06-10: Added `coding/software-repo-governance/` with reusable standards, adoption checklist, and templates for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, and `ARCHITECTURE.md`.
-- 2026-06-10: Added repo governance audit prompt and skill-style workflow draft under `coding/software-repo-governance/prompts/` and `coding/software-repo-governance/skills/`.
+- 2026-06-10: Added the initial repo governance audit guidance, later superseded by the executable `repo-governance-audit` skill on 2026-07-16.
 - 2026-06-10: Added small-`AGENTS.md` guidance: keep root agent instructions to 50-200 lines and move detailed topic instructions into `instructions/`.
 - 2026-06-10: Added `agents-splitting-strategies.md` with an Index + Topic Files strategy for splitting giant `AGENTS.md` files.
 - 2026-06-10: Added `prompts/split-agents-md-prompt.md` for asking an agent to split giant `AGENTS.md` files into compact root guidance plus `instructions/` topic files.
@@ -52,6 +53,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Validation Log
 
+- 2026-07-16: Validated governance Markdown links, skill frontmatter and eval JSON, removed-path references, canonical-rule consistency, and the scoped Git diff.
 - 2026-07-16: Verified root, coding, governance, and manifest navigation explicitly route Harness Engineering, project/repo initialization, and repo checking to `coding/software-repo-governance/`.
 - 2026-06-10: Documentation-only change; no automated tests required.
 - 2026-06-10: Verified root state files exist: `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`.

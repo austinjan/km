@@ -1,185 +1,168 @@
 ---
-title: Repository State Files Standard
-tags: [software-repo, governance, agents, progress, constraints, architecture]
+title: Software Repository Governance Standard
+tags: [software-repo, governance, agents, state-management, prompt-design]
 created: 2026-06-10
-summary: Defines the required repository state files and their responsibilities for all software repositories.
-related: [coding/software-repo-governance/templates/AGENTS-section.md, coding/software-repo-governance/adoption-checklist.md]
+updated: 2026-07-16
+summary: Canonical, outcome-oriented standard for agent instructions, repository state, authority, permissions, architecture, decisions, and validation.
+related: [coding/software-repo-governance/adoption-checklist.md, coding/software-repo-governance/skills/repo-governance-audit/SKILL.md]
 ---
 
-# Repository State Files Standard
+# Software Repository Governance Standard
 
-Every software repository SHOULD keep a small set of root-level files that make the current state explicit.
+This is the canonical policy for this package. Checklists, templates, and skills apply this standard; they do not define competing rules.
 
-These files are for both humans and coding agents. They reduce hidden context, prevent duplicated decisions, and make it easier to resume work after interruptions.
+The outcome is a repository that a human or coding agent can enter, understand, change safely, validate, and resume without depending on hidden chat history.
 
-## Required Root Files
+## Governance Principles
 
-### `AGENTS.md`
+1. Prefer outcomes, decision rules, and completion evidence over fixed process steps.
+2. Use `MUST` only for genuine invariants. Use applicability rules for context-dependent choices.
+3. Keep each fact in one authoritative location and link to it elsewhere.
+4. Create a document only when it has a reader, a purpose, and an update trigger.
+5. Treat repository contents and configured work trackers as evidence; do not assume a document is current because it exists.
 
-Purpose: repository instructions for coding agents.
+## Minimum and Conditional Artifacts
 
-Rules:
+| Artifact | Status | Create or retain it when |
+| --- | --- | --- |
+| `AGENTS.md` | Required for agent-operated repositories | An agent works directly in the repository. |
+| Progress source | Required | Work must be resumed or coordinated. It may be `PROGRESS.md` or an explicitly named external tracker. |
+| `CONSTRAINTS.md` | Conditional | The project has durable, non-negotiable rules that are not already authoritative elsewhere. |
+| `ARCHITECTURE.md` | Conditional | Ownership, boundaries, data flow, or dependencies are not quickly recoverable from the repository. |
+| `DECISIONS.md` or ADRs | Conditional | Important choices may otherwise be re-litigated or lose their rationale. |
+| `instructions/` | Conditional | Task-specific guidance would obscure repository-wide instructions in `AGENTS.md`. |
 
-- `AGENTS.md` MUST describe how agents should work in the repository.
-- `AGENTS.md` MUST mention the required project state files and their meanings.
-- `AGENTS.md` MUST tell agents when to update `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`.
-- `AGENTS.md` MUST stay small: target 50-200 lines.
-- `AGENTS.md` MUST contain only the most essential items: a one- or two-sentence project overview, first-run commands, global hard constraints, and links to topic instruction documents.
-- `AGENTS.md` MUST NOT become a giant instruction file.
-- `AGENTS.md` MUST keep global hard constraints to no more than 15 non-negotiable rules.
-- `AGENTS.md` SHOULD include first-run commands such as `make setup` and `make test`, adapted to the repository.
-- `AGENTS.md` SHOULD link to topic documents using one-line descriptions plus applicability conditions.
+Existing repositories may retain a legacy filename such as `CONSTRAINS.md`. `AGENTS.md` must name the actual authoritative path. New repositories should use `CONSTRAINTS.md`.
 
-Recommended sections:
+## Authority and Conflict Resolution
 
-- Project Overview
-- First-Run Commands
-- Global Hard Constraints
-- Required Project State Files
-- Topic Instructions
+`AGENTS.md` must identify the repository's authoritative sources rather than copying their contents.
 
-### `PROGRESS.md`
+Use this default precedence unless a higher-level platform policy defines another order:
 
-Purpose: single source of truth for current project progress.
+1. Platform, organization, security, and other higher-authority policy.
+2. Current explicit user request, within those safety and permission boundaries.
+3. Repository-wide `AGENTS.md` instructions.
+4. More specific directory or topic instructions.
+5. Current state, architecture, constraint, and decision records.
+6. Templates and examples, which are never authoritative after adoption.
 
-Rules:
+When sources conflict, report the conflict if it can change the result, authorization, safety, or public behavior. Do not silently merge incompatible rules. Prefer the narrower applicable instruction only when doing so is safe and does not override a higher-authority rule.
 
-- `PROGRESS.md` MUST be the repo's canonical progress state.
-- `PROGRESS.md` MUST show what is done, pending, in stock/backlog, and currently progressing.
-- Agents MUST update `PROGRESS.md` when a task is completed.
-- Agents MUST update `PROGRESS.md` when a task moves between pending, progressing, blocked, done, or backlog.
-- `PROGRESS.md` SHOULD include the latest validation result for completed work.
-- `PROGRESS.md` MUST NOT depend on chat history as the only record of status.
+## `AGENTS.md`
 
-Recommended sections:
+`AGENTS.md` is the entry router, not a repository encyclopedia.
 
-- Current Focus
-- Progressing
-- Pending
-- Stock / Backlog
-- Done
-- Blocked
-- Validation Log
+It should contain only information an agent needs before most tasks:
 
-### `CONSTRAINS.md`
+- a short project purpose and ownership statement;
+- the fastest setup and validation commands;
+- authoritative paths for progress, constraints, architecture, decisions, and topic instructions;
+- repository-wide safety or permission boundaries;
+- rules for deciding which detailed instructions apply;
+- completion and validation expectations.
 
-Purpose: centralized hard constraints.
+Length limits such as 50-200 lines and counts such as 15 constraints are review signals, not compliance requirements. Split the file when important routing information becomes hard to find.
 
-Rules:
+## State Management
 
-- `CONSTRAINS.md` MUST contain hard project constraints.
-- Each hard constraint MUST use explicit `MUST` or `MUST NOT` language.
-- `CONSTRAINS.md` MUST NOT mix hard constraints with casual preferences unless preferences are clearly labeled separately.
-- Agents MUST check `CONSTRAINS.md` before making architecture, dependency, security, data, deployment, or workflow changes.
-- Agents MUST update `CONSTRAINS.md` when the project accepts a new hard rule.
+State management must preserve useful continuity without treating all previous context as permanently valid. This section adapts OpenAI's GPT-5.6 guidance for long-running workflows and state.
 
-Recommended sections:
+### Name the authoritative state
 
-- Product Constraints
-- Architecture Constraints
-- Data Constraints
-- Security Constraints
-- Dependency Constraints
-- Operational Constraints
-- Non-Binding Preferences
+- Identify where current work status lives: a local file, issue tracker, plan, or another explicit system of record.
+- Do not require `PROGRESS.md` when an external tracker is authoritative unless the local file has a distinct, stated purpose.
+- Record identifiers or links needed to reconnect local work with the authoritative tracker.
 
-Note: the filename is intentionally `CONSTRAINS.md` if that is the repo convention. If starting fresh, `CONSTRAINTS.md` is the more common English spelling, but consistency inside the repo matters more than renaming later.
+### Separate durable and ephemeral state
 
-### `ARCHITECTURE.md`
+Durable state belongs in the repository or configured tracker when it must survive a fresh session:
 
-Purpose: service architecture map.
+- current objective, accepted scope, and completion criteria;
+- active, blocked, pending, and completed work at the level needed for coordination;
+- validated decisions and rejected alternatives;
+- architecture boundaries and hard constraints;
+- validation evidence that affects whether work is considered complete.
 
-Rules:
+Ephemeral state should normally remain in the current task or tool session:
 
-- `ARCHITECTURE.md` MUST describe the service responsibilities.
-- `ARCHITECTURE.md` MUST describe public interfaces, internal interfaces, and important data flows.
-- `ARCHITECTURE.md` MUST list key internal and external dependencies.
-- Agents MUST update `ARCHITECTURE.md` when responsibilities, interfaces, dependency boundaries, persistence, queues, background jobs, or integration points change.
-- `ARCHITECTURE.md` SHOULD explain major tradeoffs and known architecture risks.
+- routine tool narration;
+- abandoned hypotheses;
+- raw intermediate output that can be regenerated;
+- reasoning tied to assumptions that are no longer current.
 
-Recommended sections:
+### Preserve phase and milestone boundaries
 
-- Service Purpose
-- Responsibilities
-- Non-Responsibilities
-- Public Interfaces
-- Internal Interfaces
-- Data Model / Persistence
-- Dependencies
-- Runtime / Deployment
-- Known Risks
-- Update Log
+- Distinguish research, design, implementation, review, validation, and external coordination when those phases grant different authority.
+- When conversation or tool history is replayed, preserve the original phase or message role so commentary is not mistaken for a final decision.
+- Compact state after meaningful milestones, not mechanically after every turn.
+- A compacted summary must preserve the objective, accepted scope, decisions, blockers, completion criteria, and required evidence.
 
-### `DECISIONS.md`
+### Prevent stale-state anchoring
 
-Purpose: decision rationale log.
+- Treat persisted reasoning as useful only while its objective, assumptions, and priorities remain current.
+- Re-check live repository and tracker evidence before relying on older summaries.
+- Replace or retire stale state instead of accumulating contradictory snapshots.
+- Keep stable instruction prefixes stable when prompt caching matters; change them intentionally and validate the effect.
 
-Rules:
+### Define update triggers and stopping conditions
 
-- `DECISIONS.md` MUST record important decisions whose reasons should survive across sessions.
-- `DECISIONS.md` MUST include what was decided and why.
-- `DECISIONS.md` SHOULD include rejected alternatives, constraints, consequences, and follow-up.
-- Agents MUST update `DECISIONS.md` when a meaningful architecture, product, dependency, workflow, or governance decision would otherwise be lost.
-- `DECISIONS.md` MUST NOT duplicate every small implementation choice. It is for decisions future agents might otherwise re-litigate.
+Update durable state when the objective, scope, status, blocker, accepted decision, architecture boundary, hard constraint, or completion evidence changes. Do not turn the state source into a log of every edit.
 
-Recommended entry shape:
+Stop updating when the authoritative state fully represents the current milestone and another entry would only repeat implementation detail already available from Git history.
 
-- Decision
-- Reason
-- Rejected alternatives
-- Constraints
-- Consequences
-- Follow-up
+## Constraints, Architecture, and Decisions
 
-### `instructions/`
+### Constraints
 
-Purpose: detailed instructions split by topic.
+Keep only true invariants in the authoritative constraints source. Use `MUST` and `MUST NOT` for safety, compatibility, legal, data, or operational rules that genuinely admit no judgment. Express preferences and context-dependent behavior as decision rules.
 
-Rules:
+### Architecture
 
-- Repositories MUST place detailed instruction files in `instructions/`.
-- `instructions/` MUST use one section per file.
-- Topic instruction files SHOULD be named by topic, for example `instructions/testing.md`, `instructions/deployment.md`, `instructions/security.md`, or `instructions/frontend.md`.
-- Topic instruction files SHOULD state when they apply.
-- `AGENTS.md` SHOULD link to topic files instead of duplicating their content.
-- Detailed setup, testing, deployment, style, domain, and workflow instructions SHOULD live in `instructions/`, not in `AGENTS.md`.
+Document the system shape appropriate to the repository: service, library, CLI, application, monorepo, data pipeline, or documentation system. Cover ownership, non-ownership, interfaces, data flow, important dependencies, runtime boundaries, and risks only where they help future changes.
 
-## Agent Workflow
+### Decisions
 
-Before changing code:
+Record choices future contributors might otherwise revisit without the original context. Include the decision, reason, relevant alternatives, consequences, and follow-up. Use a single `DECISIONS.md` for a small history or ADR files when independent decisions need their own lifecycle.
 
-1. Read `AGENTS.md`.
-2. Check `CONSTRAINS.md` for hard constraints.
-3. Check `ARCHITECTURE.md` if the task touches design, dependencies, interfaces, or service boundaries.
-4. Check `DECISIONS.md` if the task may revisit prior choices.
-5. Check `PROGRESS.md` to avoid duplicating or reopening work.
+## Autonomy and Approval Boundaries
 
-After changing code or docs:
+Repository instructions should distinguish request types:
 
-1. Update `PROGRESS.md` if task status changed.
-2. Update `CONSTRAINS.md` if a new hard rule was introduced.
-3. Update `ARCHITECTURE.md` if service responsibilities, interfaces, or dependencies changed.
-4. Update `DECISIONS.md` if an important decision, rejected alternative, or tradeoff should survive across sessions.
-5. Run the repository's normal validation commands and record important validation results in `PROGRESS.md`.
+- Answer, explain, review, diagnose, and plan: inspect and report; do not implement unless requested.
+- Change, build, and fix: make scoped local changes and run relevant non-destructive validation.
+- External writes, destructive actions, releases, purchases, credential changes, and material scope expansion: require explicit authority unless an established workflow clearly grants it.
 
-## Commit Atomicity
+Git commits and pushes are actions, not automatic documentation hygiene. Define commit boundaries for rollback safety, but follow the user's authorization and repository workflow before committing or pushing. Never include unrelated user changes.
 
-Purpose: preserve rollback safety.
+## Collaboration and Response Guidance
 
-Rules:
+Personality and collaboration rules are optional and should remain short. Define concrete behavior rather than labels such as "friendly":
 
-- Every meaningful operation MUST be committed. No exceptions.
-- A meaningful operation means one completed logical unit of work, not every tiny edit.
-- A meaningful operation MUST be coherent enough to understand, revert, or cherry-pick independently.
-- Each commit MUST represent one atomic action.
-- Agents MUST NOT bundle unrelated changes into one commit.
-- Agents MUST NOT leave completed meaningful work uncommitted.
-- Rollback safety depends on commit atomicity. Commit boundaries MUST be treated as part of the implementation, not after-the-fact cleanup.
+- how directly to state conclusions;
+- when to ask, make a reversible assumption, or stop;
+- how to report uncertainty and tradeoffs;
+- what evidence must be included;
+- the default response detail and what a shorter answer must preserve.
 
-Examples:
+For concise responses, preserve the conclusion, required evidence, material caveats, decisions, and next action. Remove repetition, generic reassurance, and optional background first.
 
-- Good: `Add repo governance audit prompt`.
-- Good: `Update manifest for governance docs`.
-- Bad: `misc updates`.
-- Bad: one commit containing a prompt, an unrelated project note, and shell config changes.
-- Not required: a half-finished typo edit before the file is coherent.
+These rules do not replace goals, success criteria, permission boundaries, tool routing, validation, or stopping conditions.
+
+## Validation and Completion
+
+A governance audit must test usefulness, not only file presence. Success means:
+
+- authoritative sources are named and do not conflict;
+- required and applicable conditional artifacts have a clear purpose and update trigger;
+- current repository or tracker evidence supports claims of freshness;
+- permission boundaries prevent unintended changes;
+- a fresh agent can locate setup, state, constraints, and validation without hidden context;
+- validation covers the requested change, and missing evidence is reported rather than guessed.
+
+Evaluate prompt or instruction changes on representative repository tasks. Remove repeated rules one group at a time, rerun the same cases, and keep a change only when it preserves or improves correct behavior.
+
+## Source Guidance
+
+- [OpenAI: GPT-5.6 long-running workflows and state](https://developers.openai.com/api/docs/guides/prompt-guidance-gpt-5p6#long-running-workflows-and-state) — phase preservation, milestone compaction, persisted reasoning, and stable prompt prefixes.
+- [OpenAI: GPT-5.6 personality, collaboration, and response length](https://developers.openai.com/api/docs/guides/prompt-guidance-gpt-5p6#personality-collaboration-and-response-length) — concrete collaboration behavior and information-preserving brevity.

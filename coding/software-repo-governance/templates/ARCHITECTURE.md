@@ -2,76 +2,51 @@
 title: ARCHITECTURE.md Template
 tags: [architecture, software-repo, governance, template]
 created: 2026-06-10
-summary: Template for documenting service responsibilities, interfaces, dependencies, and boundaries.
+updated: 2026-07-16
+summary: Optional architecture template adaptable to services, libraries, CLIs, applications, monorepos, pipelines, and documentation systems.
 related: [coding/software-repo-governance/repo-state-files-standard.md]
 ---
 
 # Architecture
 
-This file describes service responsibilities, interfaces, dependencies, and boundaries.
+## System purpose
 
-## Service Purpose
+- Repository type: [service, library, CLI, application, monorepo, pipeline, documentation system]
+- Purpose:
+- Owns:
+- Does not own:
 
-Describe why this service exists.
+## Boundaries and interfaces
 
-## Responsibilities
-
-- Owns ...
-
-## Non-Responsibilities
-
-- Does not own ...
-
-## Public Interfaces
-
-- API / CLI / UI / event interface:
+- Interface or boundary:
   - Purpose:
-  - Inputs:
-  - Outputs:
+  - Inputs and outputs:
+  - Consumers:
   - Compatibility expectations:
 
-## Internal Interfaces
+## Data and state
 
-- Module or boundary:
-  - Purpose:
-  - Callers:
-  - Dependencies:
-
-## Data Model / Persistence
-
-- Primary data entities:
-- Storage:
-- Retention:
-- Migration rules:
+- Durable data:
+- Ephemeral state:
+- Data flow:
+- Persistence, migration, and retention rules:
 
 ## Dependencies
 
-### Internal Dependencies
-
-- Service/module:
-  - Used for:
+- Dependency:
+  - Purpose:
+  - Boundary:
   - Failure impact:
 
-### External Dependencies
+## Runtime and operations
 
-- Vendor/API/service:
-  - Used for:
-  - Auth/config:
-  - Failure impact:
-
-## Runtime / Deployment
-
-- Runtime:
+- Runtime and environments:
 - Configuration:
-- Environments:
-- Startup/shutdown:
+- Background work:
+- Failure and recovery behavior:
 
-## Known Risks
+## Risks
 
-- Risk:
-  - Impact:
-  - Mitigation:
+- Risk — impact — mitigation.
 
-## Update Log
-
-- YYYY-MM-DD: Initial architecture document.
+Update this document when ownership, boundaries, interfaces, data flow, or dependency relationships materially change. Git history records editorial changes; do not maintain a duplicate update log here.

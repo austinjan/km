@@ -16,7 +16,7 @@ This repository is a file-based knowledge base. It stores durable notes, project
 - Provide a navigable folder structure with `README.md` files for local context.
 - Maintain `MANIFEST.md` as the global retrieval map for agents and humans.
 - Store project-local Codex skills under `.codex/skills/`.
-- Store reusable software-repo governance guidance under `coding/software-repo-governance/`.
+- Store canonical software-repository governance, cross-session state guidance, conditional templates, and the audit skill under `coding/software-repo-governance/`.
 - Store project-specific notes under `projects/` and learning material under `study/`.
 
 ## Non-Responsibilities
@@ -53,6 +53,7 @@ This repository is a file-based knowledge base. It stores durable notes, project
 - Navigation drift: files can be added without updating `README.md` or `MANIFEST.md`.
 - Context drift: progress, constraints, decisions, or architecture can become stale if not updated with completed work.
 - Duplication: similar concepts can appear in multiple folders unless related links and manifest entries stay current.
+- Authority drift: copied governance rules can conflict unless the standard remains canonical and derivative artifacts link back to it.
 
 ## Update Log
 
