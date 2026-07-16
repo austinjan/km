@@ -17,7 +17,7 @@
     - `compound-engineering-plugin.md` — Every Compound Engineering plugin overview: skills, agents, Codex install caveats, and knowledge-compounding workflow
     - `matt-van-horn-claude-code-workflow.md` — Extracted workflow patterns from Matt Van Horn's Claude Code / Compound Engineering usage: plan-first, voice, parallel sessions, context compounding
   - `coding/editor/zed/` — Zed editor setup, WSL installation
-  - `coding/software-repo-governance/` — Reusable repo state file standards and templates for software repositories
+  - `coding/software-repo-governance/` — Canonical entry point for Harness Engineering, harness/software project init, repo init, repo check/audit, and reusable repo state-file governance
     - `repo-state-files-standard.md` — Standard meaning and update rules for `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`
     - `adoption-checklist.md` — Checklist for adopting the standard in a new or existing software repo
     - `agents-splitting-strategies.md` — Practical strategy for splitting a giant `AGENTS.md` into a compact index plus topic files
@@ -71,6 +71,7 @@
 
 ## Recent Additions
 
+- 2026-07-16: `coding/software-repo-governance/` — Clarified as the canonical home for Harness Engineering, harness/software project init, repo init, and repo check/audit guidance.
 - 2026-06-29: `study/AI/train-validation-test-split-in-skill-improvement.md` — ts-agent 專案自我改進工作流：機器學習經典切分概念在 Skill 改進上的套用。
 - 2026-06-24: `.codex/skills/research/` — Project-local research skill for internet-backed topic/resource review plus km cross-checking.
 - 2026-06-24: `gaming/pawapuro/` — Split the large Pawapuro 2026-2027 guide into topic files for better retrieval.
@@ -105,7 +106,7 @@
 - architecture, knowledge-base, dependencies: `ARCHITECTURE.md`, `coding/software-repo-governance/templates/ARCHITECTURE.md`
 - ai, llm, prompt: `study/AI/note.md`, `study/AI/train-validation-test-split-in-skill-improvement.md`
 - ts-agent, machine-learning, train-validation-test, agent-skills, skill-evaluation: `study/AI/train-validation-test-split-in-skill-improvement.md`
-- harness-engineering, ai-agents, agents-md, verification, observability: `study/harness-engineering/five-subsystems-framework.md`, `study/harness-engineering/course-notes.md`
+- harness-engineering, harness-engineer, harness-init, software-project-init, repo-init, repo-check, repo-audit: `coding/software-repo-governance/README.md`, `coding/software-repo-governance/adoption-checklist.md`, `coding/software-repo-governance/prompts/repo-governance-audit-prompt.md`, `study/harness-engineering/five-subsystems-framework.md`, `study/harness-engineering/course-notes.md`
 - ai-tools: `coding/codex/README.md`
 - agent-skills, compound-engineering: `coding/agent-skills/compound-engineering-plugin.md`, `coding/agent-skills/skills-sh-and-mattpocock-skills.md`
 - software-repo, governance, agents, progress, constraints, architecture: `coding/software-repo-governance/README.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/adoption-checklist.md`, `coding/software-repo-governance/agents-splitting-strategies.md`, `coding/software-repo-governance/prompts/repo-governance-audit-prompt.md`, `coding/software-repo-governance/prompts/split-agents-md-prompt.md`, `coding/software-repo-governance/skills/repo-governance-audit-skill.md`

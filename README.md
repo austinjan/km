@@ -7,6 +7,7 @@ description: knowledge base that consolidates development, code, environment, an
 Main entry of knowledge base. 
 
 - `.codex/skills/` — Project-local Codex skills.
+- `coding/software-repo-governance/` — Harness Engineering、harness/software project init、repo init 與 repo check/audit 的統一入口。
 - `gaming/` — Gaming-related information and notes.
 
 

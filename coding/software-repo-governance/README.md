@@ -1,16 +1,27 @@
 ---
-title: Software Repository Governance
-tags: [software-repo, governance, agents, documentation, progress-tracking]
+title: Software Repository Governance and Harness Engineering
+tags: [software-repo, governance, harness-engineering, harness-init, project-init, repo-init, repo-check, agents, documentation, progress-tracking]
 created: 2026-06-10
-summary: Reusable repository-level guidance for AGENTS.md, PROGRESS.md, CONSTRAINS.md, ARCHITECTURE.md, and DECISIONS.md across software projects.
+summary: Unified home for Harness Engineering, harness or software project initialization, repository initialization, repository checks, and reusable repo state-file governance.
 related: [coding/software-repo-governance/repo-state-files-standard.md, coding/software-repo-governance/adoption-checklist.md]
 ---
 
-# Software Repository Governance
+# Software Repository Governance and Harness Engineering
 
 This folder stores reusable guidance for software repositories that should be followed consistently across projects.
 
 The goal is to make every repo easy for humans and coding agents to resume, audit, and change safely.
+
+## Scope and Search Terms
+
+Treat this folder as the canonical entry point for:
+
+- **Harness Engineering / harness engineer** — designing the instructions, tools, environment, state, feedback, and governance around coding agents.
+- **Harness init / software project init** — establishing a dependable agent harness when starting a software project.
+- **Repo init** — adding the standard repository state files, instructions structure, constraints, and templates to a new or existing repository.
+- **Repo check / repo audit** — checking whether a repository follows the governance standard and identifying missing, stale, or inconsistent state files.
+
+Course-specific Harness Engineering study notes remain in [`study/harness-engineering/`](../../study/harness-engineering/). This folder owns the reusable, project-facing initialization and checking practices.
 
 ## Files
 
@@ -29,4 +40,4 @@ The goal is to make every repo easy for humans and coding agents to resume, audi
 
 ## When To Use
 
-Use this package when starting a new software repository, onboarding an agent to an existing repo, or cleaning up a repo where project state is spread across chat history, issues, and undocumented assumptions.
+Use this package when starting a new software repository, initializing or improving its agent harness, onboarding an agent to an existing repo, checking repo governance, or cleaning up a repo where project state is spread across chat history, issues, and undocumented assumptions.

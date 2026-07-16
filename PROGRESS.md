@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-07-16: Clarified `coding/software-repo-governance/` as the canonical entry point for Harness Engineering, harness/software project init, repo init, and repo check/audit information.
 - 2026-06-29: Added document about machine learning concepts applied to AI Agent Skill improvement (Train / Validation / Test data splitting) under `study/AI/`.
 - 2026-06-24: Split the oversized Pawapuro 2026-2027 guide into `gaming/pawapuro/` topic files for overview, `サクセス`, `栄冠ナイン`, `パワフェス`, career modes, and abilities/glossary.
 - 2026-06-24: Added detailed `サクセス` recommended-mode strategy for `パラレルオールスターズ`, including route planning, time-space level goals, fielder/pitcher flows, `練習ビッグバン` usage, and common mistakes.
@@ -51,5 +52,6 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Validation Log
 
+- 2026-07-16: Verified root, coding, governance, and manifest navigation explicitly route Harness Engineering, project/repo initialization, and repo checking to `coding/software-repo-governance/`.
 - 2026-06-10: Documentation-only change; no automated tests required.
 - 2026-06-10: Verified root state files exist: `AGENTS.md`, `PROGRESS.md`, `CONSTRAINS.md`, `ARCHITECTURE.md`, and `DECISIONS.md`.
