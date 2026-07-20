@@ -10,6 +10,13 @@ related: [PROGRESS.md, CONSTRAINS.md, ARCHITECTURE.md, coding/software-repo-gove
 
 This file records important decisions, the reason behind them, and rejected alternatives. Use it to preserve the "why" across sessions.
 
+## 2026-07-20: Keep Agent Skills In One Canonical Directory
+
+- Decision: Keep project-local skill implementations under `.agents/skills/`; treat harness-specific skill paths as per-machine relative symlinks when a harness does not discover `.agents/skills/` directly.
+- Reason: A single real copy avoids version drift and conflicting edits between Claude Code, Codex, opencode, and other harness-specific directories.
+- Rejected alternative: Maintain independent real skill folders for each harness. That duplicates content and makes the active version ambiguous.
+- Consequence: Inventory and archive duplicates before replacing any harness directory, refuse to hide leftover files, and keep symlinks out of Git so each machine can recreate them safely.
+
 ## 2026-06-10: Add `DECISIONS.md` To Repo Governance Standard
 
 - Decision: Add `DECISIONS.md` as a standard root state file for software repositories.

@@ -1,0 +1,5 @@
+# Skill Management
+
+- `manage-skills-support-all-agents.md` describes the canonical `.agents/skills/` layout for project and user scopes.
+- `verify-skills-structure.ts` verifies or migrates a project or user skill layout. Its default mode is a non-mutating dry run.
+- `skill-template.md` documents the expected structure of a `SKILL.md` file.

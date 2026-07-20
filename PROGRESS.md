@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-07-20: Consolidated project-local agent skills under `.agents/skills/`, archived superseded skill copies, moved the research skill from `.codex/skills/`, and added cross-agent layout documentation, a skill template, and a dry-run-by-default structure verifier.
 - 2026-07-16: Refactored `coding/software-repo-governance/`: merged the duplicate adoption checklist into its README, removed the obsolete empty prompts directory, shortened repeated splitting guidance, and refreshed navigation.
 - 2026-07-16: Recorded the KM-specific direct-to-main publication workflow: pull requests are optional unless explicitly requested.
 - 2026-07-16: Rebuilt `coding/software-repo-governance/` around one canonical standard; added GPT-5.6-aligned authority, autonomy, collaboration, validation, and long-running state management; replaced duplicate audit prompts and draft with a real skill plus eval cases; updated conditional templates and navigation metadata.
@@ -53,6 +54,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Validation Log
 
+- 2026-07-20: Verified the skill-structure script on an isolated project fixture and checked the repository layout, symlink target, Markdown whitespace, and staged diff before publishing.
 - 2026-07-16: Verified the streamlined governance package has no references to the removed adoption checklist or prompts directory; Markdown links, skill frontmatter, eval JSON, and scoped Git diff remain valid.
 - 2026-07-16: Confirmed the repository is on `main`, the only unrelated worktree item is the pre-existing untracked `test.txt`, and the direct-push instruction is consistent across `AGENTS.md`, `DECISIONS.md`, and `PROGRESS.md`.
 - 2026-07-16: Validated governance Markdown links, skill frontmatter and eval JSON, removed-path references, canonical-rule consistency, and the scoped Git diff.

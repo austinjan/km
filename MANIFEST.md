@@ -7,8 +7,12 @@
 - `CONSTRAINS.md` — Hard constraints for km maintenance, including atomic commit and rollback-safety rules
 - `DECISIONS.md` — Important km governance decisions, rationale, rejected alternatives, and consequences
 - `PROGRESS.md` — Current progress state for km repository work
-- `.codex/skills/` — Project-local Codex skills
-  - `.codex/skills/research/` — Research workflow that combines internet references with related km documents
+- `.agents/skills/` — Canonical project-local skills shared by supported agents
+  - `.agents/skills/research/` — Research workflow that combines internet references with related km documents
+- `skills/` — Skill-management documentation, templates, and verification tools
+  - `skills/manage-skills-support-all-agents.md` — Project and user-scope canonical skill layout
+  - `skills/verify-skills-structure.ts` — Dry-run-by-default skill migration and symlink verifier
+  - `skills/skill-template.md` — Guidance and template for authoring `SKILL.md`
 - `coding/` — Development tools, editor configs, CLI preferences
   - `coding/claude-code/` — Claude Code global settings and CLI tool preferences
   - `coding/codex/` — Codex Desktop and CLI workflow notes, hotkeys, skills, and practical usage patterns
@@ -70,7 +74,8 @@
 
 - 2026-07-16: `coding/software-repo-governance/` — Canonical home for repository governance, Harness Engineering, project/repo initialization, state management, conditional templates, and executable audits; streamlined to remove duplicate adoption guidance.
 - 2026-06-29: `study/AI/train-validation-test-split-in-skill-improvement.md` — ts-agent 專案自我改進工作流：機器學習經典切分概念在 Skill 改進上的套用。
-- 2026-06-24: `.codex/skills/research/` — Project-local research skill for internet-backed topic/resource review plus km cross-checking.
+- 2026-07-20: `skills/` — Added cross-agent skill layout guidance, a skill template, and a dry-run-by-default structure verifier; moved the research skill to `.agents/skills/research/`.
+- 2026-06-24: `.agents/skills/research/` — Project-local research skill for internet-backed topic/resource review plus km cross-checking (originally added under `.codex/skills/research/`).
 - 2026-06-24: `gaming/pawapuro/` — Split the large Pawapuro 2026-2027 guide into topic files for better retrieval.
 - 2026-06-24: `gaming/pawapuro/` — 實況野球 2026-2027 資料整理與攻略，含日文原文名詞和中文翻譯。
 - 2026-06-24: `gaming/` — Dedicated top-level folder for gaming-related information.
@@ -106,7 +111,7 @@
 - atop, asset, asset-transfer: `projects/atop/asset-transfer-bob-to-austin.md`
 - claude-code, skills: `study/AI/note.md`, `coding/claude-code/`
 - codex, codex-desktop, codex-cli: `coding/codex/README.md`, `coding/codex/hotkeys.md`
-- research, internet-research, review, summarize: `.codex/skills/research/`
+- research, internet-research, review, summarize: `.agents/skills/research/`
 - coding-agent: `coding/codex/README.md`
 - fde: `projects/atop/nimbl/product-vision-and-roadmap.md`, `study/fde-team/fde-website-page-sample.md`
 - ai-agent, website-copy, service-design: `study/fde-team/fde-website-page-sample.md`

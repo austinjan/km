@@ -6,7 +6,8 @@ description: knowledge base that consolidates development, code, environment, an
 ## Contents
 Main entry of knowledge base. 
 
-- `.codex/skills/` — Project-local Codex skills.
+- `.agents/skills/` — Canonical project-local skills shared by supported agents.
+- `skills/` — Skill-management documentation, templates, and verification tools.
 - `coding/software-repo-governance/` — Canonical English guidance for repository authority, agent instructions, cross-session state, adoption, and governance audits.
 - `gaming/` — Gaming-related information and notes.
 

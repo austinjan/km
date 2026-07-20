@@ -15,7 +15,8 @@ This repository is a file-based knowledge base. It stores durable notes, project
 - Own durable knowledge that should survive beyond chat sessions.
 - Provide a navigable folder structure with `README.md` files for local context.
 - Maintain `MANIFEST.md` as the global retrieval map for agents and humans.
-- Store project-local Codex skills under `.codex/skills/`.
+- Store project-local skills once under `.agents/skills/` for supported agents.
+- Keep skill-management documentation, templates, and verification tools under `skills/`.
 - Store canonical software-repository governance, cross-session state guidance, conditional templates, and the audit skill under `coding/software-repo-governance/`.
 - Store project-specific notes under `projects/` and learning material under `study/`.
 
@@ -30,17 +31,18 @@ This repository is a file-based knowledge base. It stores durable notes, project
 - Markdown files are the primary interface for reading and updating knowledge.
 - `AGENTS.md` is the canonical agent instruction entry point.
 - `MANIFEST.md` is the global index for retrieval.
-- `.codex/skills/*/SKILL.md` files are project-local Codex workflow entry points.
+- `.agents/skills/*/SKILL.md` files are project-local workflow entry points for supported agents.
+- `skills/verify-skills-structure.ts` verifies or migrates project and user-scope skill layouts.
 
 ## Internal Structure
 
 - `coding/` - Development tools, agent guidance, editor notes, and reusable software-repo practices.
-- `.codex/skills/` - Project-local Codex skills.
+- `.agents/skills/` - Canonical project-local agent skills.
 - `docs/` - Internal repository conventions and design specs.
 - `os-config/` - Shell and operating-system configuration notes.
 - `projects/` - Project and business context.
 - `study/` - Learning material and research notes.
-- `skills/` and `.agents/skills/` - Reusable agent skills and local skill definitions.
+- `skills/` - Skill-management documentation, templates, and verification tools.
 
 ## Dependencies
 
@@ -57,4 +59,5 @@ This repository is a file-based knowledge base. It stores durable notes, project
 
 ## Update Log
 
+- 2026-07-20: Made `.agents/skills/` the canonical project-local skill interface and documented `skills/` as its management-tooling surface.
 - 2026-06-10: Initial architecture map for the km repository.

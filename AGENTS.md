@@ -34,7 +34,8 @@ When asked a question in this project, **search this km repo first** before answ
 - `coding/` — Claude Code settings, editor configs, development tool preferences
 - `os-config/nushell/` — Nushell shell configuration and setup
 - `projects/` — Active project documentation (art-designed-ai-system, black-bear-ai-project, consulting-ai-develop)
-- `.claude/skills/` — Custom Claude Code skills for automation
+- `.agents/skills/` — Canonical project-local agent skills
+- `skills/` — Skill-management documentation, templates, and verification tools
 
 ## Build & Setup
 
