@@ -21,6 +21,8 @@
     - `compound-engineering-plugin.md` — Every Compound Engineering plugin overview: skills, agents, Codex install caveats, and knowledge-compounding workflow
     - `matt-van-horn-claude-code-workflow.md` — Extracted workflow patterns from Matt Van Horn's Claude Code / Compound Engineering usage: plan-first, voice, parallel sessions, context compounding
   - `coding/editor/zed/` — Zed editor setup, WSL installation
+  - `coding/pi-coding-agent/` — Pi Coding Agent configuration, customization, workflow, and usage notes
+    - `coding/pi-coding-agent/README.md` — Index and scope for future Pi Coding Agent notes
   - `coding/software-repo-governance/` — Canonical English guidance for repository authority, agent instructions, cross-session state, adoption, and governance audits
     - `repo-state-files-standard.md` — Canonical outcome-oriented policy for authority, conditional artifacts, GPT-5.6 state management, permissions, collaboration, and validation
     - `agents-splitting-strategies.md` — Decision rules for splitting overgrown agent instructions without duplicating authority
@@ -72,6 +74,7 @@
 
 ## Recent Additions
 
+- 2026-07-21: `coding/pi-coding-agent/` — Added a dedicated home for Pi Coding Agent configuration, customization, workflow, and usage notes.
 - 2026-07-16: `coding/software-repo-governance/` — Canonical home for repository governance, Harness Engineering, project/repo initialization, state management, conditional templates, and executable audits; streamlined to remove duplicate adoption guidance.
 - 2026-06-29: `study/AI/train-validation-test-split-in-skill-improvement.md` — ts-agent 專案自我改進工作流：機器學習經典切分概念在 Skill 改進上的套用。
 - 2026-07-20: `skills/` — Added cross-agent skill layout guidance, a skill template, and a dry-run-by-default structure verifier; moved the research skill to `.agents/skills/research/`.
@@ -111,6 +114,7 @@
 - atop, asset, asset-transfer: `projects/atop/asset-transfer-bob-to-austin.md`
 - claude-code, skills: `study/AI/note.md`, `coding/claude-code/`
 - codex, codex-desktop, codex-cli: `coding/codex/README.md`, `coding/codex/hotkeys.md`
+- pi, pi-coding-agent, coding-agent, ai-tools: `coding/pi-coding-agent/README.md`
 - research, internet-research, review, summarize: `.agents/skills/research/`
 - coding-agent: `coding/codex/README.md`
 - fde: `projects/atop/nimbl/product-vision-and-roadmap.md`, `study/fde-team/fde-website-page-sample.md`

@@ -9,6 +9,7 @@ Main entry of knowledge base.
 - `.agents/skills/` — Canonical project-local skills shared by supported agents.
 - `skills/` — Skill-management documentation, templates, and verification tools.
 - `coding/software-repo-governance/` — Canonical English guidance for repository authority, agent instructions, cross-session state, adoption, and governance audits.
+- `coding/pi-coding-agent/` — Pi Coding Agent configuration, customization, workflow, and usage notes.
 - `gaming/` — Gaming-related information and notes.
 
 
