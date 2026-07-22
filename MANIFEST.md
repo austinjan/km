@@ -29,6 +29,8 @@
     - `skills/repo-governance-audit/SKILL.md` — Executable audit workflow aligned with the canonical standard and GPT-5.6 prompting guidance
     - `templates/` — Conditional starting points for agent routing, local state, constraints, architecture, decisions, and topic instructions
   - `coding/tools/` — CLI and dev tool documentation
+    - `coding/tools/network-tools/` — HTTP/HTTPS monitoring, interception, and network debugging guides
+      - `mitmproxy-pi-agent-http-monitoring.md` — Install mitmproxy and inspect Pi Agent request URLs, headers, and bodies
     - `tmux-cheatsheet.md` — tmux key bindings and session management
     - `zellij-layouts.md` — Zellij KDL layout creation, Windows 11 config paths
     - `zellij-win11-setup.md` — Full reproducible zellij setup for Win11 (exact config.kdl + dev.kdl content for LLM-assisted re-setup)
@@ -74,6 +76,7 @@
 
 ## Recent Additions
 
+- 2026-07-22: `coding/tools/network-tools/mitmproxy-pi-agent-http-monitoring.md` — Added a concise mitmproxy install and Pi Agent HTTP/HTTPS request monitoring guide with CA and secret-handling precautions.
 - 2026-07-21: `coding/pi-coding-agent/` — Added a dedicated home for Pi Coding Agent configuration, customization, workflow, and usage notes.
 - 2026-07-16: `coding/software-repo-governance/` — Canonical home for repository governance, Harness Engineering, project/repo initialization, state management, conditional templates, and executable audits; streamlined to remove duplicate adoption guidance.
 - 2026-06-29: `study/AI/train-validation-test-split-in-skill-improvement.md` — ts-agent 專案自我改進工作流：機器學習經典切分概念在 Skill 改進上的套用。
@@ -115,6 +118,7 @@
 - claude-code, skills: `study/AI/note.md`, `coding/claude-code/`
 - codex, codex-desktop, codex-cli: `coding/codex/README.md`, `coding/codex/hotkeys.md`
 - pi, pi-coding-agent, coding-agent, ai-tools: `coding/pi-coding-agent/README.md`
+- mitmproxy, network-tools, http, https, proxy, pi-agent, debugging: `coding/tools/network-tools/README.md`, `coding/tools/network-tools/mitmproxy-pi-agent-http-monitoring.md`
 - research, internet-research, review, summarize: `.agents/skills/research/`
 - coding-agent: `coding/codex/README.md`
 - fde: `projects/atop/nimbl/product-vision-and-roadmap.md`, `study/fde-team/fde-website-page-sample.md`

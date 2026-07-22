@@ -12,7 +12,8 @@ description: Development utilities and tools documentation
 ### Networking & Analysis
 - **Wireshark** - Network protocol analyzer
 - **tcpdump** - Command-line packet analyzer
-- **mitmproxy** - Interactive HTTPS proxy
+- [network-tools/](network-tools/) - Network monitoring and debugging guides
+  - [mitmproxy](network-tools/mitmproxy-pi-agent-http-monitoring.md) - Intercept and inspect Pi Agent HTTP/HTTPS requests
 
 ### CLI Utilities
 See also: [claude-code/CLAUDE.md](../claude-code/CLAUDE.md) for globally configured CLI tools

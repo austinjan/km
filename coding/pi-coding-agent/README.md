@@ -10,6 +10,10 @@ related: [coding/claude-code/README.md, coding/codex/README.md]
 
 Notes and references for using and customizing Pi Coding Agent.
 
+## Related Guides
+
+- [使用 mitmproxy 監看 Pi HTTP/HTTPS request](../tools/network-tools/mitmproxy-pi-agent-http-monitoring.md)
+
 ## Scope
 
 Add future notes here about:
