@@ -1,0 +1,23 @@
+{
+  "skill_name": "useful-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review docs/plans/user-api-rbac.md before we implement it. Fix wording issues, but show me any changes that alter the authorization model before editing those parts.",
+      "expected_output": "Reads the full named plan, provides the structured assessment and scorecard, applies only minor edits, identifies at most one must-address issue, and asks approval before any authorization-model change.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Can you review the latest plan in this repo and make sure it is ready to implement? Keep it simple and don't add future features.",
+      "expected_output": "Finds the newest document under docs/plans or docs/brainstorms, reports the selected path, evaluates clarity/completeness/specificity/YAGNI, avoids scope expansion, and updates the original file only as allowed.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "We just finished agreeing on the role-management workflow. Review the plan against our discussion, remove harmless ambiguity, and flag anything that would change the decisions we made.",
+      "expected_output": "Includes user-intent fidelity, distinguishes minor ambiguity fixes from substantive decision changes, does not rewrite the plan, and ends by offering Refine again or Review complete after changes are resolved.",
+      "files": []
+    }
+  ]
+}
