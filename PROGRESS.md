@@ -32,7 +32,6 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
-- 2026-08-03: Installed the reviewed `aaserver-client` SKILL asset in project scope under `.agents/skills/`, including its credential-safe `aaclient` launcher and manifest routing.
 - 2026-07-22: Copied the review-doc workflow and eval cases into `.agents/skills/useful-skill/`, retaining the original behavior under a project-local skill identifier.
 - 2026-07-22: Added a network-tools knowledge area and a concise mitmproxy guide for inspecting Pi Agent HTTP/HTTPS requests, including installation, trusted-CA setup, filtering, and secret-handling precautions.
 - 2026-07-20: Consolidated project-local agent skills under `.agents/skills/`, archived superseded skill copies, moved the research skill from `.codex/skills/`, and added cross-agent layout documentation, a skill template, and a dry-run-by-default structure verifier.
@@ -57,7 +56,6 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Validation Log
 
-- 2026-08-03: Confirmed the installed `aaserver-client` files match the reviewed ZIP byte-for-byte; checked archive paths and file types, shell syntax, delegated launcher execution, project skill structure, frontmatter fields, and the scoped Git diff.
 - 2026-07-22: Confirmed useful-skill matches review-doc apart from the intended identifier and trigger alias changes; parsed its eval JSON; verified the canonical project skill layout and scoped whitespace checks.
 - 2026-07-22: Cross-checked mitmproxy installation, regular proxy, and CA guidance against official documentation; confirmed the current Pi source supports HTTP proxy settings; verified navigation links, frontmatter, document length, and the scoped Git diff.
 - 2026-07-20: Verified the skill-structure script on an isolated project fixture and checked the repository layout, symlink target, Markdown whitespace, and staged diff before publishing.

@@ -8,7 +8,6 @@
 - `DECISIONS.md` — Important km governance decisions, rationale, rejected alternatives, and consequences
 - `PROGRESS.md` — Current progress state for km repository work
 - `.agents/skills/` — Canonical project-local skills shared by supported agents
-  - `.agents/skills/aaserver-client/` — Safe aaserver access through the supported `aaclient` CLI, including authentication, live capability discovery, and asset/file workflows
   - `.agents/skills/research/` — Research workflow that combines internet references with related km documents
   - `.agents/skills/useful-skill/` — Structured brainstorm and implementation-plan review workflow
 - `skills/` — Skill-management documentation, templates, and verification tools
@@ -78,7 +77,6 @@
 
 ## Recent Additions
 
-- 2026-08-03: `.agents/skills/aaserver-client/` — Installed the reviewed project-scoped SKILL asset and its credential-safe `aaclient` launcher.
 - 2026-07-22: `.agents/skills/useful-skill/` — Copied the review-doc workflow and eval cases into the canonical project-local skill collection under the useful-skill identifier.
 - 2026-07-22: `coding/tools/network-tools/mitmproxy-pi-agent-http-monitoring.md` — Added a concise mitmproxy install and Pi Agent HTTP/HTTPS request monitoring guide with CA and secret-handling precautions.
 - 2026-07-21: `coding/pi-coding-agent/` — Added a dedicated home for Pi Coding Agent configuration, customization, workflow, and usage notes.
@@ -107,7 +105,6 @@
 
 ## Tags Index
 
-- aaserver, aaclient, assets, files, authentication: `.agents/skills/aaserver-client/`
 - convention, repo-structure, agents-md, claude-md, symlink: `docs/repo-structure-convention.md`
 - atomic-commit, rollback, constraints: `CONSTRAINS.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/templates/CONSTRAINTS.md`
 - decisions, rationale, rejected-alternatives: `DECISIONS.md`, `coding/software-repo-governance/templates/DECISIONS.md`, `coding/software-repo-governance/repo-state-files-standard.md`
