@@ -52,3 +52,10 @@ See example:
 
 
 ## assets, references, instructions and scripts sub-folders
+`SKILL.md` body 是一張地圖(router),不是一個容器。 它的工作不是把所有東西塞進來,而是「在對的時機,把 agent 指向對的檔案」,讓那些檔案的 token 只在真正需要時才被付出去。這就是 progressive disclosure 落到 execution 層的樣子 —— frontmatter 是第一層路由(要不要載入這個 skill),body 裡的 navigation 就是第二層路由(這次任務要不要伸手去拿某個 bundled 檔)。
+
+三種官方實踐的分類邏輯
+
+`assets/` : Keep assets that the skill will use as 原料, for example 文件模板、圖、lookup table、schema、設定範本。不是拿來讀懂,是拿來套用 / 填充 / 對照。
+`references/` :  agent 讀它來「獲得知識」再行動:詳細技術參考、格式規格、領域知識。切成聚焦的小檔(REFERENCE.md、table-formats.md、finance.md…),因為是按需單獨載入,檔越小、那次載入付的 context 越少。
+`scripts/` : agent 執行它來「做確定性的事」—— 解析、轉換、計算、有副作用的操作。agent 不需要讀它的內容,只需要呼叫、拿回結果。
