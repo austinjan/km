@@ -1,0 +1,21 @@
+#!/bin/sh
+set -eu
+
+if [ -n "${AASERVER_AACLIENT_BIN:-}" ]; then
+  exec "$AASERVER_AACLIENT_BIN" "$@"
+fi
+
+resolved="$(command -v aaclient 2>/dev/null || true)"
+if [ -n "$resolved" ] && [ "$resolved" != "$0" ]; then
+  exec "$resolved" "$@"
+fi
+
+script_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+repository_client="$script_dir/../../../apps/aaclient/dist/index.js"
+if [ -f "$repository_client" ]; then
+  exec node "$repository_client" "$@"
+fi
+
+printf '%s\n' 'aaclient is not installed or is not available on PATH.' >&2
+printf '%s\n' 'Install the supported aaclient package, then retry this skill command.' >&2
+exit 127
