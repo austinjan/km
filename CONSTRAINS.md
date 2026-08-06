@@ -3,7 +3,7 @@ title: KM Constraints
 tags: [km, constraints, governance, git]
 created: 2026-06-10
 summary: Hard constraints for maintaining the km knowledge base repository.
-related: [AGENTS.md, PROGRESS.md, DECISIONS.md, coding/software-repo-governance/repo-state-files-standard.md]
+related: [AGENTS.md, PROGRESS.md, DECISIONS.md, coding/software-repo-governance/skills/repo-governance-audit/SKILL.md]
 ---
 
 # KM Constraints

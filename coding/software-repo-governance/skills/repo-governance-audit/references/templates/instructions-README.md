@@ -4,7 +4,7 @@ tags: [instructions, software-repo, governance, template]
 created: 2026-06-10
 updated: 2026-07-16
 summary: Optional index for one-topic-per-file instructions with explicit applicability and authority.
-related: [coding/software-repo-governance/repo-state-files-standard.md, coding/software-repo-governance/agents-splitting-strategies.md]
+related: [coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md, coding/software-repo-governance/skills/repo-governance-audit/references/agents-splitting-strategies.md]
 ---
 
 # Topic Instructions

@@ -4,7 +4,7 @@ tags: [architecture, software-repo, governance, template]
 created: 2026-06-10
 updated: 2026-07-16
 summary: Optional architecture template adaptable to services, libraries, CLIs, applications, monorepos, pipelines, and documentation systems.
-related: [coding/software-repo-governance/repo-state-files-standard.md]
+related: [coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md]
 ---
 
 # Architecture

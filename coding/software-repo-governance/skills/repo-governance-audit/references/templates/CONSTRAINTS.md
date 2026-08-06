@@ -4,7 +4,7 @@ tags: [constraints, software-repo, governance, template]
 created: 2026-06-10
 updated: 2026-07-16
 summary: Optional template for genuine repository invariants, their rationale, scope, and verification.
-related: [coding/software-repo-governance/repo-state-files-standard.md]
+related: [coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md]
 ---
 
 # Project Constraints

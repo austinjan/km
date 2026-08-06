@@ -26,10 +26,10 @@
   - `coding/pi-coding-agent/` — Pi Coding Agent configuration, customization, workflow, and usage notes
     - `coding/pi-coding-agent/README.md` — Index and scope for future Pi Coding Agent notes
   - `coding/software-repo-governance/` — Canonical English guidance for repository authority, agent instructions, cross-session state, adoption, and governance audits
-    - `repo-state-files-standard.md` — Canonical outcome-oriented policy for authority, conditional artifacts, GPT-5.6 state management, permissions, collaboration, and validation
-    - `agents-splitting-strategies.md` — Decision rules for splitting overgrown agent instructions without duplicating authority
-    - `skills/repo-governance-audit/SKILL.md` — Executable audit workflow aligned with the canonical standard and GPT-5.6 prompting guidance
-    - `templates/` — Conditional starting points for agent routing, local state, constraints, architecture, decisions, and topic instructions
+    - `skills/repo-governance-audit/SKILL.md` — Single audit and improvement workflow with progressive-disclosure routing
+    - `skills/repo-governance-audit/references/repo-state-files-standard.md` — Canonical outcome-oriented policy for authority, conditional artifacts, GPT-5.6 state management, permissions, collaboration, and validation
+    - `skills/repo-governance-audit/references/agents-splitting-strategies.md` — Decision rules for splitting overgrown agent instructions without duplicating authority
+    - `skills/repo-governance-audit/references/templates/` — Conditional starting points selected by the audit skill only when applicable
   - `coding/tools/` — CLI and dev tool documentation
     - `coding/tools/network-tools/` — HTTP/HTTPS monitoring, interception, and network debugging guides
       - `mitmproxy-pi-agent-http-monitoring.md` — Install mitmproxy and inspect Pi Agent request URLs, headers, and bodies
@@ -78,6 +78,7 @@
 
 ## Recent Additions
 
+- 2026-08-06: `coding/software-repo-governance/skills/repo-governance-audit/` — Consolidated governance policy, agent-instruction splitting guidance, and conditional templates into the audit skill's reference tree with explicit applicability routing.
 - 2026-08-06: `.agents/skills/indexing-folder/` — Installed the aascribe repository-routing skill in the canonical project-local skill collection and removed its duplicate non-canonical location.
 - 2026-07-22: `.agents/skills/useful-skill/` — Copied the review-doc workflow and eval cases into the canonical project-local skill collection under the useful-skill identifier.
 - 2026-07-22: `coding/tools/network-tools/mitmproxy-pi-agent-http-monitoring.md` — Added a concise mitmproxy install and Pi Agent HTTP/HTTPS request monitoring guide with CA and secret-handling precautions.
@@ -108,15 +109,15 @@
 ## Tags Index
 
 - convention, repo-structure, agents-md, claude-md, symlink: `docs/repo-structure-convention.md`
-- atomic-commit, rollback, constraints: `CONSTRAINS.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/templates/CONSTRAINTS.md`
-- decisions, rationale, rejected-alternatives: `DECISIONS.md`, `coding/software-repo-governance/templates/DECISIONS.md`, `coding/software-repo-governance/repo-state-files-standard.md`
-- architecture, knowledge-base, dependencies: `ARCHITECTURE.md`, `coding/software-repo-governance/templates/ARCHITECTURE.md`
+- atomic-commit, rollback, constraints: `CONSTRAINS.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/templates/CONSTRAINTS.md`
+- decisions, rationale, rejected-alternatives: `DECISIONS.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/templates/DECISIONS.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md`
+- architecture, knowledge-base, dependencies: `ARCHITECTURE.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/templates/ARCHITECTURE.md`
 - ai, llm, prompt: `study/AI/note.md`, `study/AI/train-validation-test-split-in-skill-improvement.md`
 - ts-agent, machine-learning, train-validation-test, agent-skills, skill-evaluation: `study/AI/train-validation-test-split-in-skill-improvement.md`
-- harness-engineering, harness-init, software-project-init, repo-init, repo-check, repo-audit, state-management: `coding/software-repo-governance/README.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/skills/repo-governance-audit/SKILL.md`, `study/harness-engineering/five-subsystems-framework.md`, `study/harness-engineering/course-notes.md`
+- harness-engineering, harness-init, software-project-init, repo-init, repo-check, repo-audit, state-management: `coding/software-repo-governance/README.md`, `coding/software-repo-governance/skills/repo-governance-audit/SKILL.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md`, `study/harness-engineering/five-subsystems-framework.md`, `study/harness-engineering/course-notes.md`
 - ai-tools: `coding/codex/README.md`
 - agent-skills, compound-engineering: `coding/agent-skills/compound-engineering-plugin.md`, `coding/agent-skills/skills-sh-and-mattpocock-skills.md`
-- software-repo, governance, agents, progress, constraints, architecture, autonomy, collaboration: `coding/software-repo-governance/README.md`, `coding/software-repo-governance/repo-state-files-standard.md`, `coding/software-repo-governance/agents-splitting-strategies.md`, `coding/software-repo-governance/skills/repo-governance-audit/SKILL.md`
+- software-repo, governance, agents, progress, constraints, architecture, autonomy, collaboration: `coding/software-repo-governance/README.md`, `coding/software-repo-governance/skills/repo-governance-audit/SKILL.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/agents-splitting-strategies.md`
 - claude-code-workflow, plan-first, voice-input: `coding/agent-skills/matt-van-horn-claude-code-workflow.md`
 - atop, asset, asset-transfer: `projects/atop/asset-transfer-bob-to-austin.md`
 - claude-code, skills: `study/AI/note.md`, `coding/claude-code/`

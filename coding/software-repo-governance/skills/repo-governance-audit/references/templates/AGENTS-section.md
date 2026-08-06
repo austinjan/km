@@ -4,7 +4,7 @@ tags: [agents, software-repo, governance, template]
 created: 2026-06-10
 updated: 2026-07-16
 summary: Adaptable root AGENTS.md sections for project purpose, authority, permissions, state, instruction routing, and validation.
-related: [coding/software-repo-governance/repo-state-files-standard.md]
+related: [coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md]
 ---
 
 # AGENTS.md Entry Router Template

@@ -3,12 +3,19 @@ title: KM Decisions
 tags: [km, decisions, governance, harness-engineering]
 created: 2026-06-10
 summary: Decision log for important km repository governance and structure choices.
-related: [PROGRESS.md, CONSTRAINS.md, ARCHITECTURE.md, coding/software-repo-governance/repo-state-files-standard.md]
+related: [PROGRESS.md, CONSTRAINS.md, ARCHITECTURE.md, coding/software-repo-governance/skills/repo-governance-audit/SKILL.md]
 ---
 
 # KM Decisions
 
 This file records important decisions, the reason behind them, and rejected alternatives. Use it to preserve the "why" across sessions.
+
+## 2026-08-06: Bundle Repository Governance Knowledge With Its Audit Skill
+
+- Decision: Keep the repository-governance standard, agent-instruction splitting guidance, and conditional templates under `coding/software-repo-governance/skills/repo-governance-audit/references/`; make `SKILL.md` the single workflow and progressive-disclosure router.
+- Reason: The guidance exists to support the audit and improvement workflow. Bundling it with the skill makes the package portable, removes competing entry points, and lets agents load only the references justified by current repository evidence.
+- Rejected alternative: Keep policy, guidance, and templates as sibling package documents linked independently from the package README. That scatters one workflow across several navigation surfaces and encourages agents to load or apply every template.
+- Consequence: Repository navigation points to the skill, the canonical standard remains mandatory for every audit, and optional guidance or templates are read only when their applicability condition is met.
 
 ## 2026-07-20: Keep Agent Skills In One Canonical Directory
 

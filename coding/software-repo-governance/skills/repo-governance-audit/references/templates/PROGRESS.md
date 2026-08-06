@@ -4,7 +4,7 @@ tags: [progress, state-management, software-repo, template]
 created: 2026-06-10
 updated: 2026-07-16
 summary: Optional local source for resumable objectives, status, blockers, decisions, completion criteria, and validation evidence.
-related: [coding/software-repo-governance/repo-state-files-standard.md]
+related: [coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md]
 ---
 
 # Project State

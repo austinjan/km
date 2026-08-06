@@ -18,7 +18,7 @@ This is a file-based knowledge management repository that consolidates developme
 - `DECISIONS.md` preserves important decisions, reasons, alternatives, and consequences that future sessions might otherwise revisit.
 - `MANIFEST.md` is the global retrieval map. Update it when content paths, navigation, or tags change.
 - Preserve the current objective, accepted scope, decisions, blockers, completion criteria, and validation evidence when compacting long-running work. Re-check live repository evidence before relying on older summaries or reasoning.
-- Use `coding/software-repo-governance/repo-state-files-standard.md` when adopting or auditing governance in another software repository; its artifacts are conditional rather than universally required.
+- Use `coding/software-repo-governance/skills/repo-governance-audit/SKILL.md` when adopting or auditing governance in another software repository; it routes to the canonical standard and only the conditional references needed for the task.
 
 ## Answering Questions in This Repo
 

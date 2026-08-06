@@ -17,7 +17,7 @@ This repository is a file-based knowledge base. It stores durable notes, project
 - Maintain `MANIFEST.md` as the global retrieval map for agents and humans.
 - Store project-local skills once under `.agents/skills/` for supported agents.
 - Keep skill-management documentation, templates, and verification tools under `skills/`.
-- Store canonical software-repository governance, cross-session state guidance, conditional templates, and the audit skill under `coding/software-repo-governance/`.
+- Store software-repository governance as a self-contained audit skill under `coding/software-repo-governance/skills/repo-governance-audit/`, with policy, guidance, and conditional templates bundled in its `references/` directory.
 - Store project-specific notes under `projects/` and learning material under `study/`.
 
 ## Non-Responsibilities
@@ -43,6 +43,7 @@ This repository is a file-based knowledge base. It stores durable notes, project
 - `projects/` - Project and business context.
 - `study/` - Learning material and research notes.
 - `skills/` - Skill-management documentation, templates, and verification tools.
+- `coding/software-repo-governance/skills/repo-governance-audit/` - Repository-governance workflow plus selectively loaded policy, guidance, and templates.
 
 ## Dependencies
 
@@ -55,9 +56,10 @@ This repository is a file-based knowledge base. It stores durable notes, project
 - Navigation drift: files can be added without updating `README.md` or `MANIFEST.md`.
 - Context drift: progress, constraints, decisions, or architecture can become stale if not updated with completed work.
 - Duplication: similar concepts can appear in multiple folders unless related links and manifest entries stay current.
-- Authority drift: copied governance rules can conflict unless the standard remains canonical and derivative artifacts link back to it.
+- Authority drift: copied governance rules can conflict unless the skill routes every audit through its canonical bundled standard and treats templates as conditional starting points.
 
 ## Update Log
 
+- 2026-08-06: Consolidated repository-governance policy, guidance, and templates into the audit skill's progressive-disclosure reference tree.
 - 2026-07-20: Made `.agents/skills/` the canonical project-local skill interface and documented `skills/` as its management-tooling surface.
 - 2026-06-10: Initial architecture map for the km repository.

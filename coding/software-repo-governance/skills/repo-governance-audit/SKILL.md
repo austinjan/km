@@ -9,7 +9,24 @@ Produce an evidence-backed assessment of whether a fresh human or coding agent c
 
 ## Canonical reference
 
-Read `../../repo-state-files-standard.md` completely before applying this workflow. Treat it as policy. Templates and examples are not compliance rules.
+Read `references/repo-state-files-standard.md` completely before applying this workflow. Treat it as policy. Templates and examples are not compliance rules.
+
+## Reference routing
+
+Load bundled references only when the repository evidence makes them relevant. Read every selected reference completely before using it.
+
+| Situation | Read |
+| --- | --- |
+| Every audit or governance change | `references/repo-state-files-standard.md` |
+| Root agent instructions are difficult to navigate, duplicate rules, or mix repository-wide and task-specific guidance | `references/agents-splitting-strategies.md` |
+| Creating or refining the root instruction router | `references/templates/AGENTS-section.md` |
+| A local progress file has a demonstrated coordination or resumption purpose | `references/templates/PROGRESS.md` |
+| Durable invariants need an authority not already present | `references/templates/CONSTRAINTS.md` |
+| Ownership, boundaries, data flow, or dependencies need durable documentation | `references/templates/ARCHITECTURE.md` |
+| Important rationale would otherwise be lost or repeatedly revisited | `references/templates/DECISIONS.md` |
+| Task-specific instructions need their own indexed directory | `references/templates/instructions-README.md` |
+
+Do not load or apply every template by default. Select the smallest set justified by the audit, adapt it to current repository evidence, and remove unused placeholders.
 
 ## Outcome and success criteria
 

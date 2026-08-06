@@ -4,7 +4,7 @@ tags: [agents, software-repo, governance, instructions]
 created: 2026-06-10
 updated: 2026-07-16
 summary: Decision rules for turning an overgrown AGENTS.md into a compact repository router without creating duplicate authority.
-related: [coding/software-repo-governance/repo-state-files-standard.md, coding/software-repo-governance/templates/AGENTS-section.md]
+related: [coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md, coding/software-repo-governance/skills/repo-governance-audit/references/templates/AGENTS-section.md]
 ---
 
 # Splitting Overgrown Agent Instructions
