@@ -8,6 +8,7 @@
 - `DECISIONS.md` — Important km governance decisions, rationale, rejected alternatives, and consequences
 - `PROGRESS.md` — Current progress state for km repository work
 - `.agents/skills/` — Canonical project-local skills shared by supported agents
+  - `.agents/skills/indexing-folder/` — Aascribe-powered map-first repository routing, scoped exact search, indexing, and source inspection workflow
   - `.agents/skills/research/` — Research workflow that combines internet references with related km documents
   - `.agents/skills/useful-skill/` — Structured brainstorm and implementation-plan review workflow
 - `skills/` — Skill-management documentation, templates, and verification tools
@@ -77,6 +78,7 @@
 
 ## Recent Additions
 
+- 2026-08-06: `.agents/skills/indexing-folder/` — Installed the aascribe repository-routing skill in the canonical project-local skill collection and removed its duplicate non-canonical location.
 - 2026-07-22: `.agents/skills/useful-skill/` — Copied the review-doc workflow and eval cases into the canonical project-local skill collection under the useful-skill identifier.
 - 2026-07-22: `coding/tools/network-tools/mitmproxy-pi-agent-http-monitoring.md` — Added a concise mitmproxy install and Pi Agent HTTP/HTTPS request monitoring guide with CA and secret-handling precautions.
 - 2026-07-21: `coding/pi-coding-agent/` — Added a dedicated home for Pi Coding Agent configuration, customization, workflow, and usage notes.
@@ -122,6 +124,7 @@
 - pi, pi-coding-agent, coding-agent, ai-tools: `coding/pi-coding-agent/README.md`
 - mitmproxy, network-tools, http, https, proxy, pi-agent, debugging: `coding/tools/network-tools/README.md`, `coding/tools/network-tools/mitmproxy-pi-agent-http-monitoring.md`
 - research, internet-research, review, summarize: `.agents/skills/research/`
+- aascribe, indexing, repository-routing, exact-search: `.agents/skills/indexing-folder/`
 - useful-skill, review-doc, document-review, plan-review, brainstorm-review: `.agents/skills/useful-skill/`
 - coding-agent: `coding/codex/README.md`
 - fde: `projects/atop/nimbl/product-vision-and-roadmap.md`, `study/fde-team/fde-website-page-sample.md`

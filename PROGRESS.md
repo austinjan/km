@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-08-06: Installed the indexing-folder skill under canonical `.agents/skills/`, moved its bundled aascribe binary with it, and removed the former duplicate source under `skills/`.
 - 2026-08-06: Refined aascribe retrieval guidance so agents use index maps to narrow the scope, inspect mapped source files directly when sufficient, and reserve exact or repository-wide search for tasks that require it.
 - 2026-07-22: Copied the review-doc workflow and eval cases into `.agents/skills/useful-skill/`, retaining the original behavior under a project-local skill identifier.
 - 2026-07-22: Added a network-tools knowledge area and a concise mitmproxy guide for inspecting Pi Agent HTTP/HTTPS requests, including installation, trusted-CA setup, filtering, and secret-handling precautions.
@@ -57,7 +58,8 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Validation Log
 
-- 2026-08-06: Verified `AGENTS.md` and `skills/indexing-folder/SKILL.md` consistently require map-first scope narrowing, conditional exact search, and explicit justification for repository-wide search; checked Markdown whitespace and the scoped Git diff.
+- 2026-08-06: Verified the indexing-folder skill has one tracked source under `.agents/skills/`, its bundled binary executes from the new path, the Claude skills symlink resolves to the canonical directory, and navigation and Markdown whitespace are valid.
+- 2026-08-06: Verified `AGENTS.md` and `.agents/skills/indexing-folder/SKILL.md` consistently require map-first scope narrowing, conditional exact search, and explicit justification for repository-wide search; checked Markdown whitespace and the scoped Git diff.
 - 2026-07-22: Confirmed useful-skill matches review-doc apart from the intended identifier and trigger alias changes; parsed its eval JSON; verified the canonical project skill layout and scoped whitespace checks.
 - 2026-07-22: Cross-checked mitmproxy installation, regular proxy, and CA guidance against official documentation; confirmed the current Pi source supports HTTP proxy settings; verified navigation links, frontmatter, document length, and the scoped Git diff.
 - 2026-07-20: Verified the skill-structure script on an isolated project fixture and checked the repository layout, symlink target, Markdown whitespace, and staged diff before publishing.

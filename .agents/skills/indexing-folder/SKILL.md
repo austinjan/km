@@ -32,19 +32,19 @@ The default store is `./data/memory` in the current working directory, unless `A
 This skill assumes the `aascribe` binary is bundled with the skill at:
 
 ```text
-skills/indexing-folder/bin/aascribe
+.agents/skills/indexing-folder/bin/aascribe
 ```
 
 On Windows, the binary may be:
 
 ```text
-skills/indexing-folder/bin/aascribe.exe
+.agents/skills/indexing-folder/bin/aascribe.exe
 ```
 
 When running commands from a repository root, prefer that bundled binary instead of assuming `aascribe` is on `PATH`.
 
 ```bash
-AASCRIBE=./skills/indexing-folder/bin/aascribe
+AASCRIBE=./.agents/skills/indexing-folder/bin/aascribe
 "$AASCRIBE" --version
 ```
 
