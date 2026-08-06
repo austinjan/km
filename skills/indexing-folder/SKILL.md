@@ -21,7 +21,7 @@ Typical trigger examples:
 
 `aascribe map` reads those metadata files and returns a routing overview. Use the map to decide which folders or files to inspect next. The map is not a substitute for reading the target source file when precision matters.
 
-`aascribe search` performs exact text search with line-level matches. Use it after `map` to confirm exact mentions, line numbers, and snippets. It prefers system search tools in this order: `rg`, `git grep`, `grep`, then built-in search.
+`aascribe search` performs exact text search with line-level matches. Use it only when the task needs exact mentions, line numbers, snippets, or exhaustive confirmation. First use `map` to narrow the scope, then search the smallest plausible subtree. It prefers system search tools in this order: `rg`, `git grep`, `grep`, then built-in search.
 
 Default to running with summaries. Use `--no-summary` only when you need a structural overview and will inspect files manually anyway. Content questions, such as "what does X cover?" or "where is Y discussed?", require summaries.
 
@@ -101,7 +101,7 @@ Use JSON when another tool or agent needs to parse the map.
 "$AASCRIBE" --format json map <folder>
 ```
 
-4. Use the map to pick likely related files.
+4. Use the map to pick the smallest plausible scope.
 
 Look for folder summaries, file summaries, and node state:
 
@@ -109,13 +109,19 @@ Look for folder summaries, file summaries, and node state:
 - `dirty`: metadata exists but was marked stale; re-run `"$AASCRIBE" index`.
 - `unindexed`: metadata is missing; inspect directly or run `"$AASCRIBE" index` on that folder.
 
-After choosing likely files, read the actual files with normal filesystem tools before making code changes or final claims.
+Use folder and file summaries to narrow from the initial folder to a relevant subtree or a small set of likely files. If the map already answers the routing question, inspect those files directly; `search` is not a mandatory next step. Read the actual files with normal filesystem tools before making code changes or final claims.
 
-5. Confirm exact mentions when the user asks for line-level facts.
+5. Confirm exact mentions only when the task requires them.
 
 ```bash
 "$AASCRIBE" search <query> <folder> --fixed-strings
 ```
+
+Set `<folder>` to the narrowed subtree from the map whenever possible. Search the repository root only when:
+
+- the map cannot narrow the topic reliably;
+- the user asks whether a term appears anywhere in the repository; or
+- complete repository-wide coverage is part of the requested result.
 
 Use `--ignore-case` for case-insensitive lookup, and repeat `--glob <pattern>` to narrow file types.
 
@@ -174,27 +180,34 @@ Do not cancel completed, failed, or already useful operations unless the user as
 
 ## Finding Related Files
 
-Use this pattern when asked to find relevant implementation files:
+Use this decision sequence when asked to find relevant implementation files:
+
+1. If the concept's location is unknown, run `map` on the current scope.
+2. If the map identifies likely folders or files, narrow to them and inspect their source.
+3. If exact wording, configuration, symbols, or line numbers matter, run `search` inside the narrowed subtree.
+4. If the user requests exhaustive coverage, or the map cannot narrow the scope, widen the search deliberately.
+
+Start with:
 
 ```bash
 "$AASCRIBE" index . --depth 2
 "$AASCRIBE" map .
 ```
 
-Then inspect the folders that look relevant. If a folder is `unindexed` or too broad, index it more directly:
+Then inspect the folders that look relevant. If a folder is `unindexed` or too broad, index and map it more directly:
 
 ```bash
 "$AASCRIBE" index ./internal/index --depth 2
 "$AASCRIBE" map ./internal/index
 ```
 
-For content-specific searches, combine the map with exact search:
+If the narrowed map points to `./internal/index`, search there instead of searching the whole repository:
 
 ```bash
-"$AASCRIBE" search "operation_id|PathIndexTree|\\.aascribe_index_meta" .
+"$AASCRIBE" search "operation_id|PathIndexTree|\\.aascribe_index_meta" ./internal/index
 ```
 
-The map helps choose where to look; `search` and file reads confirm the exact code.
+The map helps choose where to look; source reads establish meaning; `search` provides exact textual confirmation when needed.
 
 ## Samples
 

@@ -24,7 +24,7 @@ This is a file-based knowledge management repository that consolidates developme
 
 When asked a question in this project, **search this km repo first** before answering from general knowledge. Treat the repo as the primary source of truth.
 
-- Use the **`indexing-folder` skill** (aascribe) to locate relevant content — start with `aascribe map <folder>` for routing, then `aascribe search <query> <folder> --fixed-strings` for exact mentions. If the folder is unindexed or stale, run `aascribe index <folder> --depth 2` first.
+- Use the **`indexing-folder` skill** (aascribe) to locate relevant content. Start with `aascribe map <folder>` and use its summaries to narrow the question to the smallest plausible subtree or set of files. If the map already identifies where the topic is covered, inspect those source files directly; do not run `search` automatically. Use `aascribe search <query> <narrowed-folder> --fixed-strings` only when exact mentions, line numbers, or exhaustive confirmation are needed. Search the whole repository only when the map cannot narrow the scope or the user explicitly requests repository-wide results. If the relevant folder is unindexed or stale, run `aascribe index <folder> --depth 2` first.
 - Do not use `rg` / `fd` / `grep` for question-answering routing in this repo — go through aascribe so the index stays the canonical entry point.
 - Once aascribe points to likely files, **read the actual files** before answering, and cite the path (e.g., `os-config/nushell/README.md`).
 - Only fall back to general knowledge if nothing in the repo covers the topic — and say so explicitly.
