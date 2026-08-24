@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Diagram of the SOP-to-agent transformation in English."
+tags:
+  - "fde"
+  - "ai-agent"
+  - "diagram"
+  - "svg"
+  - "english"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/concept-assets/sop-to-agent-en.svg"
+  sha256: "f945f26702ed45a863c3d4ee2c48900f7d9c8c0c104983b504197c5db3d1bce8"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/concept-assets/sop-to-agent-en.svg"
+  primary_category: "study/fde-team/fde-os-docs/concept-assets"
+operation: "copy"

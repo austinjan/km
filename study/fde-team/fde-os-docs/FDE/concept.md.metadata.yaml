@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:51+08:00"
+summary: "Editable source notes for the FDE and AI Agent concepts, outcome model, alignment gates, and capability loop."
+tags:
+  - "fde"
+  - "fde-os"
+  - "markdown"
+  - "concept"
+  - "ai-agent"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/FDE/concept.md"
+  sha256: "ab0b2bb4f21539dd2bd198d41375d5362e8a38f29b011db1697d6677c95c04f6"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/FDE/concept.md"
+  primary_category: "study/fde-team/fde-os-docs/FDE"
+operation: "copy"

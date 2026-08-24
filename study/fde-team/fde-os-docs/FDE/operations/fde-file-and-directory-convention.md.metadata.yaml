@@ -1,0 +1,17 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "FDE file, directory, and metadata conventions designed for deterministic human and agent retrieval."
+tags:
+  - "fde"
+  - "fde-os"
+  - "markdown"
+  - "operations"
+  - "file-structure"
+  - "metadata"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/FDE/operations/fde-file-and-directory-convention.md"
+  sha256: "d46bcfebdf78fe2469736bb3e81c7b0eb06fce333cd380df44926f1927aa8905"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/FDE/operations/fde-file-and-directory-convention.md"
+  primary_category: "study/fde-team/fde-os-docs/FDE/operations"
+operation: "copy"

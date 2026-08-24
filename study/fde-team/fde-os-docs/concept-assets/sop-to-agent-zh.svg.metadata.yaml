@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Diagram of the SOP-to-agent transformation in Traditional Chinese."
+tags:
+  - "fde"
+  - "ai-agent"
+  - "diagram"
+  - "svg"
+  - "traditional-chinese"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/concept-assets/sop-to-agent-zh.svg"
+  sha256: "1bfaa6e27fc001c4165f9dfa823940868354d0ba436d3754d5e2b7aadd5a741d"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/concept-assets/sop-to-agent-zh.svg"
+  primary_category: "study/fde-team/fde-os-docs/concept-assets"
+operation: "copy"

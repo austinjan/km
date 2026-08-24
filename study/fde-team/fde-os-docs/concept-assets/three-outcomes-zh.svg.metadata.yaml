@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Diagram of the three FDE engagement outcomes in Traditional Chinese."
+tags:
+  - "fde"
+  - "ai-agent"
+  - "diagram"
+  - "svg"
+  - "traditional-chinese"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/concept-assets/three-outcomes-zh.svg"
+  sha256: "5deb4162688707a3914078132086e5dcd512a7357b01c1a4f4cbba387987f51f"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/concept-assets/three-outcomes-zh.svg"
+  primary_category: "study/fde-team/fde-os-docs/concept-assets"
+operation: "copy"

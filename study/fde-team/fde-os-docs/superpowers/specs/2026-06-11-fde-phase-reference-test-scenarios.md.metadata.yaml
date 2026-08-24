@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Manual scenarios for validating FDE engagement skill phase routing, evidence checks, deliverables, and gate decisions."
+tags:
+  - "fde"
+  - "fde-os"
+  - "markdown"
+  - "design-spec"
+  - "test-scenarios"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/superpowers/specs/2026-06-11-fde-phase-reference-test-scenarios.md"
+  sha256: "4c04b06dc265bdbce6d6318c6754220953e794ab32a85266e40d4cb33f9fe456"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/superpowers/specs/2026-06-11-fde-phase-reference-test-scenarios.md"
+  primary_category: "study/fde-team/fde-os-docs/superpowers/specs"
+operation: "copy"

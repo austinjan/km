@@ -1,0 +1,15 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:51+08:00"
+summary: "Index for FDE strategy, engagement execution, operating conventions, and reusable references."
+tags:
+  - "fde"
+  - "fde-os"
+  - "navigation"
+  - "markdown"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/FDE/README.md"
+  sha256: "b1bdbb67665f2c1f042a25b3101c00ad10abfabb79ca60eb740d050aba453c93"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/FDE/README.md"
+  primary_category: "study/fde-team/fde-os-docs/FDE"
+operation: "copy"

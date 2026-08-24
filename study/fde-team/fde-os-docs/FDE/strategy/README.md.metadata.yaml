@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Index for FDE strategy, business model, leadership framing, and long-term positioning."
+tags:
+  - "fde"
+  - "fde-os"
+  - "navigation"
+  - "markdown"
+  - "strategy"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/FDE/strategy/README.md"
+  sha256: "22a331c8758998442e9a35767e4c0c68cf2a44c7bad4a43e22897fefa447ad58"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/FDE/strategy/README.md"
+  primary_category: "study/fde-team/fde-os-docs/FDE/strategy"
+operation: "copy"

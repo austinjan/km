@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Diagram of the agent capability stack in Traditional Chinese."
+tags:
+  - "fde"
+  - "ai-agent"
+  - "diagram"
+  - "svg"
+  - "traditional-chinese"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/concept-assets/agent-capability-stack-zh.svg"
+  sha256: "ef7fd593e77bb1534b247f3f73f1b4331504605ebf64a3705289c9101dc60a04"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/concept-assets/agent-capability-stack-zh.svg"
+  primary_category: "study/fde-team/fde-os-docs/concept-assets"
+operation: "copy"

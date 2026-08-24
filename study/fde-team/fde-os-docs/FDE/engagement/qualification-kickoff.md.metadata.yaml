@@ -1,0 +1,15 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "FDE engagement kickoff checklist for aligning owners, material, access, targets, and reusable learning before implementation."
+tags:
+  - "fde"
+  - "fde-os"
+  - "markdown"
+  - "engagement"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/FDE/engagement/qualification-kickoff.md"
+  sha256: "7e9eff0d22a5cf4c0685f3b60598f1ddc2dcac32265f4026a729439f20d4200e"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/FDE/engagement/qualification-kickoff.md"
+  primary_category: "study/fde-team/fde-os-docs/FDE/engagement"
+operation: "copy"

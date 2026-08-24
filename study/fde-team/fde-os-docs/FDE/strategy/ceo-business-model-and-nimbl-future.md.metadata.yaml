@@ -1,0 +1,15 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "CEO brief on institutionalizing FDE, its commercial model, and the future role of NIMBL in the AI product ecosystem."
+tags:
+  - "fde"
+  - "fde-os"
+  - "markdown"
+  - "strategy"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/FDE/strategy/ceo-business-model-and-nimbl-future.md"
+  sha256: "6a6aa85d9538f6f3eb12471a148cc6886d38420ac8e3191466719980051b3a04"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/FDE/strategy/ceo-business-model-and-nimbl-future.md"
+  primary_category: "study/fde-team/fde-os-docs/FDE/strategy"
+operation: "copy"

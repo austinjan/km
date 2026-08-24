@@ -1,0 +1,18 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Index for FDE repository operations, naming, structure, metadata, and maintenance conventions."
+tags:
+  - "fde"
+  - "fde-os"
+  - "navigation"
+  - "markdown"
+  - "operations"
+  - "file-structure"
+  - "metadata"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/FDE/operations/README.md"
+  sha256: "f34c2ec923caecd7facc62f071e4595045948a9a935cc1f4da6c17b14b682ab8"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/FDE/operations/README.md"
+  primary_category: "study/fde-team/fde-os-docs/FDE/operations"
+operation: "copy"

@@ -1,0 +1,15 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Approved design specification for a dual-mode Sales Assistant POC knowledge-base harness and feedback loop."
+tags:
+  - "fde"
+  - "fde-os"
+  - "markdown"
+  - "design-spec"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/superpowers/specs/2026-07-07-sales-assistant-poc-design.md"
+  sha256: "6340b95dbdf8dfeb97fe2324f1568e3efca46b4e5c3dec4e3f3faa63e234d2ca"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/superpowers/specs/2026-07-07-sales-assistant-poc-design.md"
+  primary_category: "study/fde-team/fde-os-docs/superpowers/specs"
+operation: "copy"

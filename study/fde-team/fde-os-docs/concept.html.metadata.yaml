@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Diagram-led HTML presentation explaining FDE and AI Agent core concepts in English and Traditional Chinese."
+tags:
+  - "fde"
+  - "fde-os"
+  - "concept"
+  - "html"
+  - "presentation"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/concept.html"
+  sha256: "ddb0b49e0d14fc13ac60d0e03f1f6d8c9e8507e86776a94aeaba0bd217f54c35"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/concept.html"
+  primary_category: "study/fde-team/fde-os-docs"
+operation: "copy"

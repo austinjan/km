@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="360" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
+  <title id="title">Three FDE outcomes</title>
+  <desc id="desc">Workflow outcome, AI asset outcome, and product learning outcome meet as FDE value.</desc>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+    <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#17211c" flood-opacity=".12"/>
+  </filter>
+  <rect width="520" height="360" rx="18" fill="#f8faf8"/>
+  <circle cx="206" cy="164" r="98" fill="#2867a2" fill-opacity=".74"/>
+  <circle cx="314" cy="164" r="98" fill="#1f7a57" fill-opacity=".74"/>
+  <circle cx="260" cy="248" r="98" fill="#a26724" fill-opacity=".74"/>
+  <path d="M74 52h372v252H74z" fill="none" stroke="#d8e2dc" stroke-width="2" stroke-dasharray="7 7"/>
+  <g filter="url(#shadow)" font-family="system-ui, sans-serif" text-anchor="middle">
+    <rect x="96" y="66" width="150" height="56" rx="14" fill="#ffffff" stroke="#d8e2dc"/>
+    <text x="171" y="90" font-size="18" font-weight="900" fill="#2867a2">Workflow</text>
+    <text x="171" y="112" font-size="13" fill="#5f6f65">faster stable baseline</text>
+    <rect x="274" y="66" width="150" height="56" rx="14" fill="#ffffff" stroke="#d8e2dc"/>
+    <text x="349" y="90" font-size="18" font-weight="900" fill="#1f7a57">AI Asset</text>
+    <text x="349" y="112" font-size="13" fill="#5f6f65">skill eval runbook</text>
+    <rect x="160" y="278" width="200" height="56" rx="14" fill="#ffffff" stroke="#d8e2dc"/>
+    <text x="260" y="302" font-size="18" font-weight="900" fill="#a26724">Product Learning</text>
+    <text x="260" y="324" font-size="13" fill="#5f6f65">gap evidence owner</text>
+  </g>
+  <circle cx="260" cy="195" r="55" fill="#20342b"/>
+  <text x="260" y="189" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#bfe6cd">FDE</text>
+  <text x="260" y="217" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#fff">Value</text>
+</svg>

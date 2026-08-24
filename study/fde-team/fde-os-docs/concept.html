@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FDE + AI Agent Concept</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17211c;
+      --muted: #5f6f65;
+      --paper: #f5f8f6;
+      --surface: #ffffff;
+      --surface-2: #eef4ef;
+      --line: #d8e2dc;
+      --green: #1f7a57;
+      --blue: #2867a2;
+      --amber: #a26724;
+      --red: #a33f3f;
+      --violet: #6b5aa6;
+      --shadow: 0 18px 50px rgba(22, 35, 29, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 4%, rgba(31, 122, 87, 0.12), transparent 320px),
+        linear-gradient(180deg, rgba(40, 103, 162, 0.08), transparent 420px),
+        var(--paper);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 42px 0 58px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 870px;
+      margin: 0;
+      font-size: clamp(2.45rem, 5vw, 4rem);
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+
+    h1.en {
+      max-width: 960px;
+      font-size: clamp(2.1rem, 4.2vw, 3.35rem);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .language-toggle {
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      padding: 4px;
+      background: #e8eee9;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .language-toggle label {
+      min-width: 92px;
+      padding: 9px 14px;
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    #lang-zh:checked ~ main label[for="lang-zh"],
+    #lang-en:checked ~ main label[for="lang-en"] {
+      color: #fff;
+      background: var(--green);
+      box-shadow: 0 8px 18px rgba(31, 122, 87, 0.22);
+    }
+
+    .lang {
+      display: none !important;
+    }
+
+    #lang-zh:checked ~ main .lang.zh,
+    #lang-en:checked ~ main .lang.en {
+      display: block !important;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 22px;
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+
+    .visual-card,
+    .brief-card,
+    .concept-card,
+    .formula {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .visual-card {
+      padding: 20px;
+    }
+
+    .visual-card.hero-visual {
+      min-height: 640px;
+    }
+
+    .visual-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 16px;
+    }
+
+    .visual-head .caption {
+      max-width: 360px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: right;
+    }
+
+    .brief-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .brief-card {
+      min-height: 198px;
+      padding: 20px;
+    }
+
+    .brief-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 0.9rem;
+    }
+
+    .brief-card p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+
+    .concept-card {
+      min-height: 506px;
+      padding: 20px;
+    }
+
+    .concept-card img,
+    .hero-visual img {
+      overflow: visible;
+    }
+
+    .concept-card .visual-head {
+      min-height: 62px;
+      align-items: start;
+    }
+
+    .concept-card .caption {
+      text-align: left;
+      max-width: 230px;
+    }
+
+    .formula {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+      padding: 22px 24px;
+      color: #fff;
+      background: linear-gradient(135deg, #20342b, #234e4d);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .formula h2 {
+      font-size: 1.6rem;
+    }
+
+    .formula p {
+      color: #d8e8df;
+    }
+
+    .formula .chip-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .formula .chip {
+      padding: 8px 11px;
+      color: #20342b;
+      background: #bfe6cd;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 900;
+    }
+
+    #lang-zh:checked ~ main .zh-localized {
+      display: inline;
+    }
+
+    #lang-en:checked ~ main .zh-localized {
+      display: none;
+    }
+
+    #lang-zh:checked ~ main .en-localized {
+      display: none;
+    }
+
+    #lang-en:checked ~ main .en-localized {
+      display: inline;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        width: min(100% - 28px, 680px);
+        padding: 26px 0 40px;
+      }
+
+      header,
+      .hero,
+      .concept-grid,
+      .formula {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        gap: 18px;
+      }
+
+      .language-toggle {
+        width: max-content;
+      }
+
+      .visual-head {
+        display: grid;
+        gap: 10px;
+        align-items: start;
+      }
+
+      .visual-head .caption,
+      .concept-card .caption {
+        max-width: none;
+        text-align: left;
+      }
+
+      .visual-card.hero-visual,
+      .concept-card,
+      .brief-card {
+        min-height: 0;
+      }
+
+      .formula .chip-row {
+        flex-wrap: wrap;
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+  <input id="lang-zh" name="language" type="radio" checked>
+  <input id="lang-en" name="language" type="radio">
+
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">FDE + AI Agent Operating System</p>
+        <h1 class="lang zh">把客戶現場問題變成可累積的 AI 能力</h1>
+        <h1 class="lang en">Turn Field Problems Into Compounding AI Capability</h1>
+      </div>
+      <div class="language-toggle" aria-label="Language">
+        <label for="lang-zh">中文</label>
+        <label for="lang-en">English</label>
+      </div>
+    </header>
+
+    <div class="hero">
+      <section class="visual-card hero-visual" aria-labelledby="loop-title">
+        <div class="visual-head">
+          <div>
+            <p class="eyebrow lang zh">複利循環</p>
+            <p class="eyebrow lang en">Compounding Loop</p>
+            <h2 id="loop-title" class="lang zh">FDE 的基本價值循環</h2>
+            <h2 class="lang en">The Core FDE Value Loop</h2>
+          </div>
+          <p class="caption lang zh">建置、驗證、通用化，讓下一次導入更快、更準。</p>
+          <p class="caption lang en">Build, prove, generalize, then make the next deployment faster and sharper.</p>
+        </div>
+        <img class="lang zh" src="concept-assets/fde-compounding-loop-zh.svg" alt="FDE 複利循環圖">
+        <img class="lang en" src="concept-assets/fde-compounding-loop-en.svg" alt="FDE compounding loop diagram">
+      </section>
+
+      <aside class="brief-stack">
+        <section class="brief-card">
+          <strong class="lang zh">核心基本價值</strong>
+          <strong class="lang en">Core Value</strong>
+          <p class="lang zh">FDE 不是一次性客製，而是把真實工作流、可驗收成果、可複用 know-how 串成產品能力。</p>
+          <p class="lang en">FDE is not one-off customization. It turns workflow proof into reusable assets and product capability.</p>
+        </section>
+        <section class="brief-card">
+          <strong class="lang zh">設計原則</strong>
+          <strong class="lang en">Design Principle</strong>
+          <p class="lang zh">能用圖表、關卡、評分表和資產清單說清楚的，就不要留在口頭默契裡。</p>
+          <p class="lang en">If a gate, scorecard, diagram, or registry can make it explicit, do not leave it as tribal knowledge.</p>
+        </section>
+        <section class="brief-card">
+          <strong class="lang zh">FDE 交付物</strong>
+          <strong class="lang en">FDE Deliverable</strong>
+          <p class="lang zh">不是「demo 能跑」，而是工作流能被驗收、agent 能被控制、經驗能被下一案重用。</p>
+          <p class="lang en">Not a runnable demo, but an accepted workflow, controlled agent, and reusable field learning.</p>
+        </section>
+      </aside>
+    </div>
+
+    <section class="concept-grid" aria-label="FDE core concepts">
+      <article class="concept-card">
+        <div class="visual-head">
+          <div>
+            <p class="eyebrow lang zh">三種成果</p>
+            <p class="eyebrow lang en">The Three Outcomes</p>
+            <h2 class="lang zh">每個 engagement 都要留下三種證據</h2>
+            <h2 class="lang en">Every engagement leaves three kinds of evidence</h2>
+          </div>
+          <p class="caption lang zh">價值、複用、產品學習缺一不可。</p>
+          <p class="caption lang en">Value, reuse, and product learning must travel together.</p>
+        </div>
+        <img class="lang zh" src="concept-assets/three-outcomes-zh.svg" alt="三種 FDE 成果圖">
+        <img class="lang en" src="concept-assets/three-outcomes-en.svg" alt="Three FDE outcomes diagram">
+      </article>
+
+      <article class="concept-card">
+        <div class="visual-head">
+          <div>
+            <p class="eyebrow lang zh">進場對齊 Gate</p>
+            <p class="eyebrow lang en">Alignment Gates</p>
+            <h2 class="lang zh">進場前先對齊「人、料、權、靶」</h2>
+            <h2 class="lang en">Align people, material, access, and target before build</h2>
+          </div>
+          <p class="caption lang zh">先擋掉沒有負責人、資料與指標的 AI 願望。</p>
+          <p class="caption lang en">Filter ownerless, data-less, metric-less AI wishes early.</p>
+        </div>
+        <img class="lang zh" src="concept-assets/alignment-gates-zh.svg" alt="FDE 進場對齊 gate 圖">
+        <img class="lang en" src="concept-assets/alignment-gates-en.svg" alt="FDE alignment gates diagram">
+      </article>
+
+      <article class="concept-card">
+        <div class="visual-head">
+          <div>
+            <p class="eyebrow lang zh">SOP 到 Agent</p>
+            <p class="eyebrow lang en">SOP to Agent</p>
+            <h2 class="lang zh">把人的 SOP 變成可運行的 Agent 工作流</h2>
+            <h2 class="lang en">Turn human SOP into runnable agentic workflow</h2>
+          </div>
+          <p class="caption lang zh">先抽出判斷，再接工具與控制。</p>
+          <p class="caption lang en">Extract judgment first, then connect tools and controls.</p>
+        </div>
+        <img class="lang zh" src="concept-assets/sop-to-agent-zh.svg" alt="SOP 到 agentic workflow 成熟路徑圖">
+        <img class="lang en" src="concept-assets/sop-to-agent-en.svg" alt="SOP to agentic workflow maturity path">
+      </article>
+
+      <article class="concept-card">
+        <div class="visual-head">
+          <div>
+            <p class="eyebrow lang zh">Agent 能力堆疊</p>
+            <p class="eyebrow lang en">Agent Capability Stack</p>
+            <h2 class="lang zh">Agent 能力不是模型單點能力</h2>
+            <h2 class="lang en">Agent capability is more than the model</h2>
+          </div>
+          <p class="caption lang zh">上下文、工具、驗證、人工審批一起決定可靠度。</p>
+          <p class="caption lang en">Context, tools, evals, and human approval create reliability together.</p>
+        </div>
+        <img class="lang zh" src="concept-assets/agent-capability-stack-zh.svg" alt="Agent 能力堆疊圖">
+        <img class="lang en" src="concept-assets/agent-capability-stack-en.svg" alt="Agent capability stack diagram">
+      </article>
+    </section>
+
+    <section class="formula" aria-label="FDE operating formula">
+      <div>
+        <h2 class="lang zh">FDE OS 的一句話公式</h2>
+        <h2 class="lang en">The FDE OS Formula</h2>
+        <p class="lang zh">每一次現場導入，都要同時改善客戶成果、累積 AI 資產、推動產品補洞。</p>
+        <p class="lang en">Each field deployment should improve customer outcomes, grow AI assets, and close product gaps.</p>
+      </div>
+      <div class="chip-row" aria-hidden="true">
+        <span class="chip"><span class="zh-localized">工作流</span><span class="en-localized">Workflow</span></span>
+        <span>+</span>
+        <span class="chip"><span class="zh-localized">資產</span><span class="en-localized">Asset</span></span>
+        <span>+</span>
+        <span class="chip"><span class="zh-localized">產品</span><span class="en-localized">Product</span></span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

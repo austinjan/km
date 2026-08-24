@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Diagram of the FDE alignment gates in English."
+tags:
+  - "fde"
+  - "ai-agent"
+  - "diagram"
+  - "svg"
+  - "english"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/concept-assets/alignment-gates-en.svg"
+  sha256: "2da76cff0360706147010fb96ce831fe2c3c7dc8c0aa9adeadc325f6154b01ad"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/concept-assets/alignment-gates-en.svg"
+  primary_category: "study/fde-team/fde-os-docs/concept-assets"
+operation: "copy"

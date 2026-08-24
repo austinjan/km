@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Diagram of the three FDE engagement outcomes in English."
+tags:
+  - "fde"
+  - "ai-agent"
+  - "diagram"
+  - "svg"
+  - "english"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/concept-assets/three-outcomes-en.svg"
+  sha256: "bffa053a3930891c2598680bba202d7734e4bfeea62a17a2583f10142e3b70e4"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/concept-assets/three-outcomes-en.svg"
+  primary_category: "study/fde-team/fde-os-docs/concept-assets"
+operation: "copy"

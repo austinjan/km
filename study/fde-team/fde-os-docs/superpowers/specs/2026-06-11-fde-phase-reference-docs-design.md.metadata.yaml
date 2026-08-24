@@ -1,0 +1,15 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Design for completing six FDE engagement phase references with intake, validation, advice, and gate criteria."
+tags:
+  - "fde"
+  - "fde-os"
+  - "markdown"
+  - "design-spec"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/superpowers/specs/2026-06-11-fde-phase-reference-docs-design.md"
+  sha256: "ce5567a977d655e8f854b8dfa2ff6c480e688312be765942d742f1d9e37bf631"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/superpowers/specs/2026-06-11-fde-phase-reference-docs-design.md"
+  primary_category: "study/fde-team/fde-os-docs/superpowers/specs"
+operation: "copy"

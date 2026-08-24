@@ -67,6 +67,7 @@
     - `train-validation-test-split-in-skill-improvement.md` — ts-agent 專案自我改進工作流中機器學習經典切分概念在 Skill 改進上的套用
     - `note.md` — AI/LLM 核心概念、prompt 設計、context engineering、Claude Code skills 使用原則
   - `study/fde-team/` — Forward Deployed Engineering / AI Agent 導入部門研究、playbook 與官網服務頁文案
+    - `study/fde-team/fde-os-docs/` — Complete structure-preserving archive of `~/code/fde-os/docs`, including FDE practice documents, concept diagrams, and implementation specs with per-file metadata sidecars
     - `fde-website-page-sample.md` — 官網用 FDE 服務頁文案，說明服務內容、客戶價值與客戶投入條件
   - `study/harness-engineering/` — Harness Engineering course notes (walkinglabs): harness = everything outside model weights, 5 subsystems, 12-lecture per-lecture notes
     - `five-subsystems-framework.md` — Harness definition, 5 subsystems (Instructions/Tools/Environment/State/Feedback), canonical artifacts, critical assessment
@@ -80,6 +81,7 @@
 
 ## Recent Additions
 
+- 2026-08-24: `study/fde-team/fde-os-docs/` — Archived all 27 tracked files from `~/code/fde-os/docs` with their source hierarchy preserved and one timestamped summary/tag metadata sidecar per file.
 - 2026-08-24: `.agents/skills/structure-aware-archiver/` — Added filesystem-first classification, safe copy/move execution, dry-run review, and mandatory metadata sidecars.
 - 2026-08-24: `.agents/skills/input-router/` — Added outcome-first input classification, deterministic project-skill routing, handoff boundaries, and routing eval cases.
 - 2026-08-06: `coding/software-repo-governance/skills/repo-governance-audit/` — Consolidated governance policy, agent-instruction splitting guidance, and conditional templates into the audit skill's reference tree with explicit applicability routing.
@@ -134,7 +136,7 @@
 - aascribe, indexing, repository-routing, exact-search: `.agents/skills/indexing-folder/`
 - useful-skill, review-doc, document-review, plan-review, brainstorm-review: `.agents/skills/useful-skill/`
 - coding-agent: `coding/codex/README.md`
-- fde: `projects/atop/nimbl/product-vision-and-roadmap.md`, `study/fde-team/fde-website-page-sample.md`
+- fde: `projects/atop/nimbl/product-vision-and-roadmap.md`, `study/fde-team/fde-website-page-sample.md`, `study/fde-team/fde-os-docs/`
 - ai-agent, website-copy, service-design: `study/fde-team/fde-website-page-sample.md`
 - hotkeys, keyboard-shortcuts: `coding/codex/hotkeys.md`
 - nimbl: `projects/atop/nimbl/product-vision-and-roadmap.md`

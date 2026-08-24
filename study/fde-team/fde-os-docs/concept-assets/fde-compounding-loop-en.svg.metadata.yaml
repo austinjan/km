@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Diagram of the FDE compounding loop in English."
+tags:
+  - "fde"
+  - "ai-agent"
+  - "diagram"
+  - "svg"
+  - "english"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/concept-assets/fde-compounding-loop-en.svg"
+  sha256: "a9ba08288de317dbab9d37e2f0cb6644773829a7a91162f8ec919156c88adc43"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/concept-assets/fde-compounding-loop-en.svg"
+  primary_category: "study/fde-team/fde-os-docs/concept-assets"
+operation: "copy"

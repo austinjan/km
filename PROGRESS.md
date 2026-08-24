@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-08-24: Archived all 27 tracked files from `~/code/fde-os/docs` under `study/fde-team/fde-os-docs/`, preserving the complete source-relative tree and adding archive time, summary, tags, provenance, category, operation, and SHA-256 metadata sidecars.
 - 2026-08-24: Added `structure-aware-archiver` to classify input primarily by the local computer's existing folder structure, archive without silent overwrite, and attach timestamp, summary, tags, provenance, and digest metadata to every file through a sidecar.
 - 2026-08-24: Added the project-local `input-router` skill to classify incoming information by requested outcome, select available destination skills, preserve explicit choices, and keep destination approval and validation contracts authoritative.
 - 2026-08-06: Made `repo-governance-audit` the single repository-governance workflow entry point and consolidated its canonical standard, agent-instruction splitting guidance, and conditional templates under selectively loaded `references/`.
@@ -61,6 +62,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Validation Log
 
+- 2026-08-24: Confirmed the FDE docs archive contains 27 files and 27 metadata sidecars, every archived SHA-256 matches its source and recorded digest, every sidecar parses as YAML with required fields, all relative paths match the source tree, and the source files remain unchanged. Refreshed structural aascribe metadata through depth 4 with `--no-summary`; this avoided the unavailable configured Gemini model and completed with zero failures or warnings.
 - 2026-08-24: Validated `structure-aware-archiver` metadata and folder naming, exercised dry-run and copy operations against files sampled from existing project directories, verified SHA-256 and YAML-compatible sidecars, and confirmed collision and archive-root escape attempts fail closed.
 - 2026-08-24: Validated `input-router` frontmatter and folder naming, parsed its eight routing eval cases, checked routed reference links, verified canonical project skill structure, and reviewed the scoped diff without staging unrelated local settings.
 - 2026-08-06: Verified the self-contained governance skill has valid frontmatter and eval JSON, every bundled reference is routed from `SKILL.md`, all scoped local Markdown links resolve, removed top-level governance paths have no remaining references, and the scoped diff passes whitespace checks.

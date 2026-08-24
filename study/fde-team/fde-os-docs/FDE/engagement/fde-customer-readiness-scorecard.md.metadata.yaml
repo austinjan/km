@@ -1,0 +1,15 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:51+08:00"
+summary: "FDE Phase 0 readiness scorecard with hard blockers, scored dimensions, and Go or No-go criteria."
+tags:
+  - "fde"
+  - "fde-os"
+  - "markdown"
+  - "engagement"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/FDE/engagement/fde-customer-readiness-scorecard.md"
+  sha256: "88936917aa098f0538279bec487acd447c4cd96ebf6504e03e4909fb63318ca9"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/FDE/engagement/fde-customer-readiness-scorecard.md"
+  primary_category: "study/fde-team/fde-os-docs/FDE/engagement"
+operation: "copy"

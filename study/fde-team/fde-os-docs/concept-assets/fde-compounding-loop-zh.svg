@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc">
+  <title id="title">FDE 複利循環</title>
+  <desc id="desc">客戶工作流、FDE 導入、可衡量成果、知識資產與產品能力形成循環。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#6f8277"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#17211c" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <rect width="760" height="520" rx="18" fill="#f7faf8"/>
+  <circle cx="380" cy="260" r="150" fill="#eef4ef" stroke="#d8e2dc" stroke-width="2"/>
+  <path d="M242 208C270 120 352 82 432 104" fill="none" stroke="#6f8277" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M493 131C575 166 609 251 582 330" fill="none" stroke="#6f8277" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M533 386C461 450 356 456 283 394" fill="none" stroke="#6f8277" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M219 342C169 273 179 199 226 147" fill="none" stroke="#6f8277" stroke-width="4" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)">
+    <rect x="46" y="194" width="198" height="128" rx="16" fill="#ffffff" stroke="#cbd9d1"/>
+    <circle cx="145" cy="230" r="21" fill="#2867a2"/>
+    <path d="M134 230h22M137 239h16M139 221h14" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <text x="145" y="276" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" font-weight="800" fill="#17211c">客戶工作流</text>
+    <text x="145" y="302" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#5f6f65">流程 資料 例外 判斷</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="281" y="42" width="198" height="128" rx="16" fill="#ffffff" stroke="#cbd9d1"/>
+    <circle cx="380" cy="78" r="21" fill="#1f7a57"/>
+    <path d="M373 70h14v15h-14zM377 63v7M369 85h22" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="380" y="124" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" font-weight="800" fill="#17211c">FDE 導入</text>
+    <text x="380" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#5f6f65">Agent 工具 控制</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="516" y="194" width="198" height="128" rx="16" fill="#ffffff" stroke="#cbd9d1"/>
+    <circle cx="615" cy="230" r="21" fill="#a26724"/>
+    <path d="M605 239l8-13 8 7 12-20" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="615" y="276" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" font-weight="800" fill="#17211c">可衡量成果</text>
+    <text x="615" y="302" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#5f6f65">效率 風險 週期時間</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="281" y="350" width="198" height="128" rx="16" fill="#ffffff" stroke="#cbd9d1"/>
+    <circle cx="380" cy="386" r="21" fill="#a33f3f"/>
+    <path d="M371 374h15l6 6v18h-21zM386 374v8h8" stroke="#fff" stroke-width="4" fill="none" stroke-linejoin="round"/>
+    <text x="380" y="432" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" font-weight="800" fill="#17211c">知識資產</text>
+    <text x="380" y="458" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#5f6f65">技能 評測 手冊</text>
+  </g>
+  <g>
+    <circle cx="380" cy="260" r="68" fill="#20342b"/>
+    <text x="380" y="244" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#bfe6cd">複利</text>
+    <text x="380" y="273" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#fff">下一次更快</text>
+    <text x="380" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#fff">下一案更準</text>
+  </g>
+</svg>

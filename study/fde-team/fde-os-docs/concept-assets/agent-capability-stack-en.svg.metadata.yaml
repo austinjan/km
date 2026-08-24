@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Diagram of the agent capability stack in English."
+tags:
+  - "fde"
+  - "ai-agent"
+  - "diagram"
+  - "svg"
+  - "english"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/concept-assets/agent-capability-stack-en.svg"
+  sha256: "96d57bac5ea310c7ff44c27ed0c9147b66d78a5fa1f900b929faf4ae440ab8a6"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/concept-assets/agent-capability-stack-en.svg"
+  primary_category: "study/fde-team/fde-os-docs/concept-assets"
+operation: "copy"

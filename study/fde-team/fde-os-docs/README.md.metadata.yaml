@@ -1,0 +1,15 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Entry point for the fde-os documentation collection and its FDE practice materials."
+tags:
+  - "fde"
+  - "fde-os"
+  - "navigation"
+  - "markdown"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/README.md"
+  sha256: "e2b5c1b593af4d341e2a5a0f5866e2ae7abc2e66d3187a4d1e0d533ae9001e7e"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/README.md"
+  primary_category: "study/fde-team/fde-os-docs"
+operation: "copy"

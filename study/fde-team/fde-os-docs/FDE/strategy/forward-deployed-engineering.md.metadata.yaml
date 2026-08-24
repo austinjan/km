@@ -1,0 +1,15 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Research and operating-model proposal for an FDE team responsible for workflow discovery, AI Agent deployment, and product learning."
+tags:
+  - "fde"
+  - "fde-os"
+  - "markdown"
+  - "strategy"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/FDE/strategy/forward-deployed-engineering.md"
+  sha256: "9e62b41aec27770332fac434d958edfe29cd09613dc441a3bbb02c7cae5a542a"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/FDE/strategy/forward-deployed-engineering.md"
+  primary_category: "study/fde-team/fde-os-docs/FDE/strategy"
+operation: "copy"

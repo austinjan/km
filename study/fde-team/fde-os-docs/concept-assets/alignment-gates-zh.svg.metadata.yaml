@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-24T15:23:52+08:00"
+summary: "Diagram of the FDE alignment gates in Traditional Chinese."
+tags:
+  - "fde"
+  - "ai-agent"
+  - "diagram"
+  - "svg"
+  - "traditional-chinese"
+source:
+  original_path: "/Users/macmini-au/code/fde-os/docs/concept-assets/alignment-gates-zh.svg"
+  sha256: "6e4e726509c4b4ad17f1d779f28f958060027f924900e52e1a2cfaf89ca01cab"
+destination:
+  relative_path: "study/fde-team/fde-os-docs/concept-assets/alignment-gates-zh.svg"
+  primary_category: "study/fde-team/fde-os-docs/concept-assets"
+operation: "copy"
