@@ -1,0 +1,4 @@
+interface:
+  display_name: "Structure-aware Archiver"
+  short_description: "Archive files using the existing folder tree"
+  default_prompt: "Use $structure-aware-archiver to classify and archive these files using my existing directory structure."

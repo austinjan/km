@@ -11,6 +11,7 @@
   - `.agents/skills/input-router/` — Classifies incoming requests and hands them to the best available destination skill without bypassing destination guardrails
   - `.agents/skills/indexing-folder/` — Aascribe-powered map-first repository routing, scoped exact search, indexing, and source inspection workflow
   - `.agents/skills/research/` — Research workflow that combines internet references with related km documents
+  - `.agents/skills/structure-aware-archiver/` — Uses the computer's existing folder tree as the primary classification and archives files with timestamp, summary, and tag metadata
   - `.agents/skills/useful-skill/` — Structured brainstorm and implementation-plan review workflow
 - `skills/` — Skill-management documentation, templates, and verification tools
   - `skills/manage-skills-support-all-agents.md` — Project and user-scope canonical skill layout
@@ -79,6 +80,7 @@
 
 ## Recent Additions
 
+- 2026-08-24: `.agents/skills/structure-aware-archiver/` — Added filesystem-first classification, safe copy/move execution, dry-run review, and mandatory metadata sidecars.
 - 2026-08-24: `.agents/skills/input-router/` — Added outcome-first input classification, deterministic project-skill routing, handoff boundaries, and routing eval cases.
 - 2026-08-06: `coding/software-repo-governance/skills/repo-governance-audit/` — Consolidated governance policy, agent-instruction splitting guidance, and conditional templates into the audit skill's reference tree with explicit applicability routing.
 - 2026-08-06: `.agents/skills/indexing-folder/` — Installed the aascribe repository-routing skill in the canonical project-local skill collection and removed its duplicate non-canonical location.
@@ -128,6 +130,7 @@
 - mitmproxy, network-tools, http, https, proxy, pi-agent, debugging: `coding/tools/network-tools/README.md`, `coding/tools/network-tools/mitmproxy-pi-agent-http-monitoring.md`
 - research, internet-research, review, summarize: `.agents/skills/research/`
 - input-router, input-routing, skill-routing, handoff: `.agents/skills/input-router/`
+- archive, classification, filesystem, metadata, sidecar: `.agents/skills/structure-aware-archiver/`
 - aascribe, indexing, repository-routing, exact-search: `.agents/skills/indexing-folder/`
 - useful-skill, review-doc, document-review, plan-review, brainstorm-review: `.agents/skills/useful-skill/`
 - coding-agent: `coding/codex/README.md`

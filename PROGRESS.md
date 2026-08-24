@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-08-24: Added `structure-aware-archiver` to classify input primarily by the local computer's existing folder structure, archive without silent overwrite, and attach timestamp, summary, tags, provenance, and digest metadata to every file through a sidecar.
 - 2026-08-24: Added the project-local `input-router` skill to classify incoming information by requested outcome, select available destination skills, preserve explicit choices, and keep destination approval and validation contracts authoritative.
 - 2026-08-06: Made `repo-governance-audit` the single repository-governance workflow entry point and consolidated its canonical standard, agent-instruction splitting guidance, and conditional templates under selectively loaded `references/`.
 - 2026-08-06: Installed the indexing-folder skill under canonical `.agents/skills/`, moved its bundled aascribe binary with it, and removed the former duplicate source under `skills/`.
@@ -60,6 +61,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Validation Log
 
+- 2026-08-24: Validated `structure-aware-archiver` metadata and folder naming, exercised dry-run and copy operations against files sampled from existing project directories, verified SHA-256 and YAML-compatible sidecars, and confirmed collision and archive-root escape attempts fail closed.
 - 2026-08-24: Validated `input-router` frontmatter and folder naming, parsed its eight routing eval cases, checked routed reference links, verified canonical project skill structure, and reviewed the scoped diff without staging unrelated local settings.
 - 2026-08-06: Verified the self-contained governance skill has valid frontmatter and eval JSON, every bundled reference is routed from `SKILL.md`, all scoped local Markdown links resolve, removed top-level governance paths have no remaining references, and the scoped diff passes whitespace checks.
 - 2026-08-06: Verified the indexing-folder skill has one tracked source under `.agents/skills/`, its bundled binary executes from the new path, the Claude skills symlink resolves to the canonical directory, and navigation and Markdown whitespace are valid.
