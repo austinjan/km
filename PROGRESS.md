@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-08-24: Added the project-local `input-router` skill to classify incoming information by requested outcome, select available destination skills, preserve explicit choices, and keep destination approval and validation contracts authoritative.
 - 2026-08-06: Made `repo-governance-audit` the single repository-governance workflow entry point and consolidated its canonical standard, agent-instruction splitting guidance, and conditional templates under selectively loaded `references/`.
 - 2026-08-06: Installed the indexing-folder skill under canonical `.agents/skills/`, moved its bundled aascribe binary with it, and removed the former duplicate source under `skills/`.
 - 2026-08-06: Refined aascribe retrieval guidance so agents use index maps to narrow the scope, inspect mapped source files directly when sufficient, and reserve exact or repository-wide search for tasks that require it.
@@ -59,6 +60,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Validation Log
 
+- 2026-08-24: Validated `input-router` frontmatter and folder naming, parsed its eight routing eval cases, checked routed reference links, verified canonical project skill structure, and reviewed the scoped diff without staging unrelated local settings.
 - 2026-08-06: Verified the self-contained governance skill has valid frontmatter and eval JSON, every bundled reference is routed from `SKILL.md`, all scoped local Markdown links resolve, removed top-level governance paths have no remaining references, and the scoped diff passes whitespace checks.
 - 2026-08-06: Verified the indexing-folder skill has one tracked source under `.agents/skills/`, its bundled binary executes from the new path, the Claude skills symlink resolves to the canonical directory, and navigation and Markdown whitespace are valid.
 - 2026-08-06: Verified `AGENTS.md` and `.agents/skills/indexing-folder/SKILL.md` consistently require map-first scope narrowing, conditional exact search, and explicit justification for repository-wide search; checked Markdown whitespace and the scoped Git diff.

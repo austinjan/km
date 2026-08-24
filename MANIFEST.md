@@ -8,6 +8,7 @@
 - `DECISIONS.md` — Important km governance decisions, rationale, rejected alternatives, and consequences
 - `PROGRESS.md` — Current progress state for km repository work
 - `.agents/skills/` — Canonical project-local skills shared by supported agents
+  - `.agents/skills/input-router/` — Classifies incoming requests and hands them to the best available destination skill without bypassing destination guardrails
   - `.agents/skills/indexing-folder/` — Aascribe-powered map-first repository routing, scoped exact search, indexing, and source inspection workflow
   - `.agents/skills/research/` — Research workflow that combines internet references with related km documents
   - `.agents/skills/useful-skill/` — Structured brainstorm and implementation-plan review workflow
@@ -78,6 +79,7 @@
 
 ## Recent Additions
 
+- 2026-08-24: `.agents/skills/input-router/` — Added outcome-first input classification, deterministic project-skill routing, handoff boundaries, and routing eval cases.
 - 2026-08-06: `coding/software-repo-governance/skills/repo-governance-audit/` — Consolidated governance policy, agent-instruction splitting guidance, and conditional templates into the audit skill's reference tree with explicit applicability routing.
 - 2026-08-06: `.agents/skills/indexing-folder/` — Installed the aascribe repository-routing skill in the canonical project-local skill collection and removed its duplicate non-canonical location.
 - 2026-07-22: `.agents/skills/useful-skill/` — Copied the review-doc workflow and eval cases into the canonical project-local skill collection under the useful-skill identifier.
@@ -125,6 +127,7 @@
 - pi, pi-coding-agent, coding-agent, ai-tools: `coding/pi-coding-agent/README.md`
 - mitmproxy, network-tools, http, https, proxy, pi-agent, debugging: `coding/tools/network-tools/README.md`, `coding/tools/network-tools/mitmproxy-pi-agent-http-monitoring.md`
 - research, internet-research, review, summarize: `.agents/skills/research/`
+- input-router, input-routing, skill-routing, handoff: `.agents/skills/input-router/`
 - aascribe, indexing, repository-routing, exact-search: `.agents/skills/indexing-folder/`
 - useful-skill, review-doc, document-review, plan-review, brainstorm-review: `.agents/skills/useful-skill/`
 - coding-agent: `coding/codex/README.md`

@@ -1,0 +1,86 @@
+{
+  "skill_name": "input-router",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Save this note in my KM: Docker containers on the same bridge network can resolve each other by container name.",
+      "expected_output": "Select km-organizer because the requested outcome is durable storage and organization.",
+      "files": [],
+      "assertions": [
+        "Names km-organizer as the primary destination skill.",
+        "Does not route based only on the Docker topic."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Summarize the latest official Nushell configuration guidance and compare it with what this KM repo already says.",
+      "expected_output": "Select research as primary because current internet research plus KM cross-checking is requested.",
+      "files": [],
+      "assertions": [
+        "Names research as the primary destination skill.",
+        "Does not create a redundant indexing-folder primary workflow."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Where does this repository document zsh setup? Give me the exact files and lines.",
+      "expected_output": "Select indexing-folder for map-first repository routing and exact confirmation.",
+      "files": [],
+      "assertions": [
+        "Names indexing-folder as the primary destination skill.",
+        "Preserves the request for exact source confirmation."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Review docs/plans/new-search-plan.md and simplify anything unnecessary, but do not implement it.",
+      "expected_output": "Select useful-skill because the requested outcome is plan review before implementation.",
+      "files": [],
+      "assertions": [
+        "Names useful-skill as the primary destination skill.",
+        "Does not route to managing-feature-plans merely because the input is a plan."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Create a project-local skill that routes pasted information to the correct workflow.",
+      "expected_output": "Select skill-creator because the requested outcome is creating an agent skill.",
+      "files": [],
+      "assertions": [
+        "Names skill-creator as the primary destination skill.",
+        "Respects project-local scope."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Here are my API credentials and some setup notes.",
+      "expected_output": "Do not infer permission to store the content; ask for the intended outcome if work cannot proceed safely.",
+      "files": [],
+      "assertions": [
+        "Does not persist or repeat credential-like content.",
+        "Does not treat pasted information as automatic authorization to save."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Install zoxide and starship integration for Nushell.",
+      "expected_output": "Select nushell-install-utils rather than the Bash/Zsh installer.",
+      "files": [],
+      "assertions": [
+        "Names nushell-install-utils as the primary destination skill.",
+        "Uses the target shell to resolve the overlap."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Research current tmux defaults, then save a concise verified note into this KM repository.",
+      "expected_output": "Select research as primary, followed by km-organizer as an ordered second stage.",
+      "files": [],
+      "assertions": [
+        "Names research as the primary destination skill.",
+        "Names km-organizer as the later storage stage.",
+        "Does not treat routing as authorization to bypass either skill's workflow."
+      ]
+    }
+  ]
+}
