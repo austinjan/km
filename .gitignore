@@ -8,6 +8,7 @@
 *.exe
 *.dll
 *.exe~
+!.agents/skills/indexing-folder/bin/aascribe.exe
 
 # Log
 *.log

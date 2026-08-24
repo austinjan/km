@@ -35,7 +35,7 @@ This skill assumes the `aascribe` binary is bundled with the skill at:
 .agents/skills/indexing-folder/bin/aascribe
 ```
 
-On Windows, the binary may be:
+On Windows amd64, use the bundled executable:
 
 ```text
 .agents/skills/indexing-folder/bin/aascribe.exe
@@ -48,10 +48,33 @@ AASCRIBE=./.agents/skills/indexing-folder/bin/aascribe
 "$AASCRIBE" --version
 ```
 
+In Windows PowerShell, use:
+
+```powershell
+$AASCRIBE = ".\.agents\skills\indexing-folder\bin\aascribe.exe"
+& $AASCRIBE --version
+```
+
+The command arguments are the same on both platforms. For every POSIX example
+written as `"$AASCRIBE" <arguments>`, use `& $AASCRIBE <arguments>` in
+PowerShell. For example:
+
+```powershell
+& $AASCRIBE index . --depth 2
+& $AASCRIBE map .
+& $AASCRIBE search "GEMINI_API_KEY" . --fixed-strings --glob "*.go"
+```
+
 If the bundled binary is unavailable, fall back to `aascribe` on `PATH` only after checking it exists.
 
 ```bash
 command -v aascribe
+```
+
+In PowerShell, check the fallback with:
+
+```powershell
+Get-Command aascribe -ErrorAction SilentlyContinue
 ```
 
 ## Standard Workflow
