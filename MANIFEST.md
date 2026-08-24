@@ -11,7 +11,7 @@
   - `.agents/skills/input-router/` — Classifies incoming requests and hands them to the best available destination skill without bypassing destination guardrails
   - `.agents/skills/indexing-folder/` — Aascribe-powered map-first repository routing, scoped exact search, indexing, and source inspection workflow
   - `.agents/skills/research/` — Research workflow that combines internet references with related km documents
-  - `.agents/skills/structure-aware-archiver/` — Uses the computer's existing folder tree as the primary classification and archives files with timestamp, summary, and tag metadata
+  - `.agents/skills/structure-aware-archiver/` — Uses the computer's existing folder tree as the primary classification, archives files with metadata sidecars, and builds recursive retrieval maps
   - `.agents/skills/useful-skill/` — Structured brainstorm and implementation-plan review workflow
 - `skills/` — Skill-management documentation, templates, and verification tools
   - `skills/manage-skills-support-all-agents.md` — Project and user-scope canonical skill layout
@@ -68,6 +68,7 @@
     - `note.md` — AI/LLM 核心概念、prompt 設計、context engineering、Claude Code skills 使用原則
   - `study/fde-team/` — Forward Deployed Engineering / AI Agent 導入部門研究、playbook 與官網服務頁文案
     - `study/fde-team/fde-os-docs/` — Complete structure-preserving archive of `~/code/fde-os/docs`, including FDE practice documents, concept diagrams, and implementation specs with per-file metadata sidecars
+      - `study/fde-team/fde-os-docs/ARCHIVE-MAP.md` — Generated category, summary, and tag map that routes agents to the smallest relevant set of archived source files
     - `fde-website-page-sample.md` — 官網用 FDE 服務頁文案，說明服務內容、客戶價值與客戶投入條件
   - `study/harness-engineering/` — Harness Engineering course notes (walkinglabs): harness = everything outside model weights, 5 subsystems, 12-lecture per-lecture notes
     - `five-subsystems-framework.md` — Harness definition, 5 subsystems (Instructions/Tools/Environment/State/Feedback), canonical artifacts, critical assessment
@@ -81,6 +82,7 @@
 
 ## Recent Additions
 
+- 2026-08-24: `study/fde-team/fde-os-docs/ARCHIVE-MAP.md` — Added a deterministic recursive metadata map over all 27 archived FDE files and made archive-map inspection part of repository question routing.
 - 2026-08-24: `study/fde-team/fde-os-docs/` — Archived all 27 tracked files from `~/code/fde-os/docs` with their source hierarchy preserved and one timestamped summary/tag metadata sidecar per file.
 - 2026-08-24: `.agents/skills/structure-aware-archiver/` — Added filesystem-first classification, safe copy/move execution, dry-run review, and mandatory metadata sidecars.
 - 2026-08-24: `.agents/skills/input-router/` — Added outcome-first input classification, deterministic project-skill routing, handoff boundaries, and routing eval cases.
@@ -133,6 +135,7 @@
 - research, internet-research, review, summarize: `.agents/skills/research/`
 - input-router, input-routing, skill-routing, handoff: `.agents/skills/input-router/`
 - archive, classification, filesystem, metadata, sidecar: `.agents/skills/structure-aware-archiver/`
+- archive-map, metadata-map, agent-retrieval: `.agents/skills/structure-aware-archiver/scripts/build_metadata_map.py`, `study/fde-team/fde-os-docs/ARCHIVE-MAP.md`
 - aascribe, indexing, repository-routing, exact-search: `.agents/skills/indexing-folder/`
 - useful-skill, review-doc, document-review, plan-review, brainstorm-review: `.agents/skills/useful-skill/`
 - coding-agent: `coding/codex/README.md`

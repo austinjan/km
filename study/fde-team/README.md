@@ -10,3 +10,4 @@ Forward Deployed Engineering / AI Agent 導入部門的研究、執行手冊、�
 - `fde-file-and-directory-convention.md` — FDE engagement 文件與目錄命名規範。
 - `fde-website-page-sample.md` — 可放在官網的 FDE 服務頁面文案範例。
 - `fde-os-docs/` — 從 `~/code/fde-os/docs` 完整歸檔的 FDE 策略、engagement、operations、概念圖與實作規格；保留來源相對目錄結構，每個檔案都附帶 `.metadata.yaml`。
+  - `fde-os-docs/ARCHIVE-MAP.md` — 由 sidecar 遞迴產生的 agent retrieval map，依目錄、summary 與 tags 指向相關原始檔案。

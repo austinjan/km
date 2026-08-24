@@ -31,6 +31,9 @@ This repository is a file-based knowledge base. It stores durable notes, project
 - Markdown files are the primary interface for reading and updating knowledge.
 - `AGENTS.md` is the canonical agent instruction entry point.
 - `MANIFEST.md` is the global index for retrieval.
+- `ARCHIVE-MAP.md` files are generated collection-level retrieval maps over
+  archived file metadata; agents use them to choose source files but do not treat
+  them as factual authority.
 - `.agents/skills/*/SKILL.md` files are project-local workflow entry points for supported agents.
 - `skills/verify-skills-structure.ts` verifies or migrates project and user-scope skill layouts.
 
@@ -54,12 +57,16 @@ This repository is a file-based knowledge base. It stores durable notes, project
 ## Known Risks
 
 - Navigation drift: files can be added without updating `README.md` or `MANIFEST.md`.
+- Archive-map drift: sidecars can change without regenerating `ARCHIVE-MAP.md`;
+  `build_metadata_map.py --check` detects this condition.
 - Context drift: progress, constraints, decisions, or architecture can become stale if not updated with completed work.
 - Duplication: similar concepts can appear in multiple folders unless related links and manifest entries stay current.
 - Authority drift: copied governance rules can conflict unless the skill routes every audit through its canonical bundled standard and treats templates as conditional starting points.
 
 ## Update Log
 
+- 2026-08-24: Added generated `ARCHIVE-MAP.md` files as a collection-level
+  retrieval interface backed by validated archive metadata sidecars.
 - 2026-08-06: Consolidated repository-governance policy, guidance, and templates into the audit skill's progressive-disclosure reference tree.
 - 2026-07-20: Made `.agents/skills/` the canonical project-local skill interface and documented `skills/` as its management-tooling surface.
 - 2026-06-10: Initial architecture map for the km repository.

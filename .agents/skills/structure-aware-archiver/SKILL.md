@@ -1,6 +1,6 @@
 ---
 name: structure-aware-archiver
-description: Classify files or supplied information against the computer's existing directory structure, archive each item into the best semantic folder, and create required metadata for archive time, summary, and tags. Use when the user asks to classify, file, sort, or archive information based primarily on folders already present on the local machine or in a chosen archive root.
+description: Classify files or supplied information against the computer's existing directory structure, archive each item with timestamp, summary, and tag metadata, and build a recursive retrieval map. Use when the user asks to classify, file, sort, or archive information based primarily on folders already present on the local machine or in a chosen archive root.
 ---
 
 # Structure-aware archiver
@@ -79,7 +79,19 @@ metadata. Do not include credentials, tokens, or secret values in summaries/tags
 
 - Verify the archived file hash matches the recorded digest and that the sidecar
   parses as YAML-compatible data.
+- After all files in one archive collection are written, rebuild its recursive
+  `ARCHIVE-MAP.md` and verify that it is current:
+
+  ```bash
+  python scripts/build_metadata_map.py ARCHIVE_COLLECTION_ROOT
+  python scripts/build_metadata_map.py ARCHIVE_COLLECTION_ROOT --check
+  ```
+
+  Choose the narrowest stable collection root that contains the related batch,
+  not the entire computer or repository. Read
+  [references/metadata-map.md](references/metadata-map.md) for the generated map
+  contract and agent retrieval workflow.
 - Update the destination folder's navigation and repository-wide manifest when
   local instructions require it.
-- Report the chosen primary category, destination, metadata path, copy/move mode,
-  and any files skipped or left unresolved.
+- Report the chosen primary category, destination, metadata path, map path,
+  copy/move mode, and any files skipped or left unresolved.
