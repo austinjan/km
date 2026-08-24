@@ -34,6 +34,9 @@ This repository is a file-based knowledge base. It stores durable notes, project
 - `ARCHIVE-MAP.md` files are generated collection-level retrieval maps over
   archived file metadata; agents use them to choose source files but do not treat
   them as factual authority.
+- `.agents/skills/knowledge-map-answering/` is the question-routing interface that
+  connects aascribe discovery, archive maps, source verification, and explicit
+  fallback knowledge.
 - `.agents/skills/*/SKILL.md` files are project-local workflow entry points for supported agents.
 - `skills/verify-skills-structure.ts` verifies or migrates project and user-scope skill layouts.
 
@@ -65,6 +68,8 @@ This repository is a file-based knowledge base. It stores durable notes, project
 
 ## Update Log
 
+- 2026-08-24: Made `knowledge-map-answering` the repository-wide question router
+  over aascribe, archive maps, and verified source files.
 - 2026-08-24: Added generated `ARCHIVE-MAP.md` files as a collection-level
   retrieval interface backed by validated archive metadata sidecars.
 - 2026-08-06: Consolidated repository-governance policy, guidance, and templates into the audit skill's progressive-disclosure reference tree.

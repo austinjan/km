@@ -9,12 +9,17 @@ files or their sidecars.
 ```bash
 python scripts/build_metadata_map.py ARCHIVE_COLLECTION_ROOT
 python scripts/build_metadata_map.py ARCHIVE_COLLECTION_ROOT --check
+python scripts/build_metadata_map.py ARCHIVE_COLLECTION_ROOT --stdout
 ```
 
 The builder recursively discovers sidecars, verifies the adjacent archived file
 and its SHA-256 digest, then writes the map atomically. It refuses to replace a
 non-generated file named `ARCHIVE-MAP.md`. `--check` performs no writes and exits
 non-zero when the map is missing or stale.
+
+`--stdout` generates the same current map without modifying the archive. Use it
+for answer-only tasks when the persistent map is missing or stale; persist a map
+only when the user has authorized archive or map maintenance.
 
 The map is deterministic: it derives the displayed latest archive time from the
 sidecars rather than the wall-clock map generation time. Rebuilding unchanged

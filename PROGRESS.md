@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-08-24: Added `knowledge-map-answering` as the mandatory skill for every information-seeking project question, with repo-first aascribe routing, persistent or ephemeral archive maps, source-file verification, citations, and explicit fallback behavior.
 - 2026-08-24: Extended `structure-aware-archiver` with a recursive, deterministic `ARCHIVE-MAP.md` builder and updated repository question routing so agents use archive summaries and tags to select source files before answering.
 - 2026-08-24: Archived all 27 tracked files from `~/code/fde-os/docs` under `study/fde-team/fde-os-docs/`, preserving the complete source-relative tree and adding archive time, summary, tags, provenance, category, operation, and SHA-256 metadata sidecars.
 - 2026-08-24: Added `structure-aware-archiver` to classify input primarily by the local computer's existing folder structure, archive without silent overwrite, and attach timestamp, summary, tags, provenance, and digest metadata to every file through a sidecar.
@@ -63,6 +64,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Validation Log
 
+- 2026-08-24: Validated `knowledge-map-answering` frontmatter and five eval cases; tested broad FDE, specific alignment-gate, ordinary KM, repository-gap, and stale-map answer-only routing; verified `build_metadata_map.py --stdout` matches the persisted map without modifying it.
 - 2026-08-24: Built and checked the 27-entry FDE `ARCHIVE-MAP.md`; verified recursive category/tag coverage, valid relative links, deterministic unchanged rebuilds, stale-map detection, digest mismatch rejection, and broad `FDE` routing to the concept and operating-model source documents.
 - 2026-08-24: Confirmed the FDE docs archive contains 27 files and 27 metadata sidecars, every archived SHA-256 matches its source and recorded digest, every sidecar parses as YAML with required fields, all relative paths match the source tree, and the source files remain unchanged. Refreshed structural aascribe metadata through depth 4 with `--no-summary`; this avoided the unavailable configured Gemini model and completed with zero failures or warnings.
 - 2026-08-24: Validated `structure-aware-archiver` metadata and folder naming, exercised dry-run and copy operations against files sampled from existing project directories, verified SHA-256 and YAML-compatible sidecars, and confirmed collision and archive-root escape attempts fail closed.

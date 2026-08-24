@@ -1,0 +1,4 @@
+interface:
+  display_name: "Knowledge Map Answering"
+  short_description: "Answer questions through KM maps and sources"
+  default_prompt: "Use $knowledge-map-answering to answer my question from the KM repository and its archive maps."

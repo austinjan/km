@@ -6,3 +6,5 @@
 - `.agents/skills/structure-aware-archiver/` classifies input against an existing
   local folder tree, archives each file with a metadata sidecar, and generates a
   recursive `ARCHIVE-MAP.md` for agent retrieval.
+- `.agents/skills/knowledge-map-answering/` routes every project question through
+  aascribe, archive maps, and verified source files before using fallback knowledge.

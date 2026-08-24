@@ -10,6 +10,7 @@
 - `.agents/skills/` — Canonical project-local skills shared by supported agents
   - `.agents/skills/input-router/` — Classifies incoming requests and hands them to the best available destination skill without bypassing destination guardrails
   - `.agents/skills/indexing-folder/` — Aascribe-powered map-first repository routing, scoped exact search, indexing, and source inspection workflow
+  - `.agents/skills/knowledge-map-answering/` — Mandatory repository-first question workflow that routes through aascribe, archive maps, and verified source files before fallback knowledge
   - `.agents/skills/research/` — Research workflow that combines internet references with related km documents
   - `.agents/skills/structure-aware-archiver/` — Uses the computer's existing folder tree as the primary classification, archives files with metadata sidecars, and builds recursive retrieval maps
   - `.agents/skills/useful-skill/` — Structured brainstorm and implementation-plan review workflow
@@ -82,6 +83,7 @@
 
 ## Recent Additions
 
+- 2026-08-24: `.agents/skills/knowledge-map-answering/` — Added the mandatory question-answering router for repository maps, current or ephemeral archive maps, source verification, citations, and explicit KM-gap fallback.
 - 2026-08-24: `study/fde-team/fde-os-docs/ARCHIVE-MAP.md` — Added a deterministic recursive metadata map over all 27 archived FDE files and made archive-map inspection part of repository question routing.
 - 2026-08-24: `study/fde-team/fde-os-docs/` — Archived all 27 tracked files from `~/code/fde-os/docs` with their source hierarchy preserved and one timestamped summary/tag metadata sidecar per file.
 - 2026-08-24: `.agents/skills/structure-aware-archiver/` — Added filesystem-first classification, safe copy/move execution, dry-run review, and mandatory metadata sidecars.
@@ -136,6 +138,7 @@
 - input-router, input-routing, skill-routing, handoff: `.agents/skills/input-router/`
 - archive, classification, filesystem, metadata, sidecar: `.agents/skills/structure-aware-archiver/`
 - archive-map, metadata-map, agent-retrieval: `.agents/skills/structure-aware-archiver/scripts/build_metadata_map.py`, `study/fde-team/fde-os-docs/ARCHIVE-MAP.md`
+- question-answering, knowledge-map, repo-first, source-verification: `.agents/skills/knowledge-map-answering/`
 - aascribe, indexing, repository-routing, exact-search: `.agents/skills/indexing-folder/`
 - useful-skill, review-doc, document-review, plan-review, brainstorm-review: `.agents/skills/useful-skill/`
 - coding-agent: `coding/codex/README.md`

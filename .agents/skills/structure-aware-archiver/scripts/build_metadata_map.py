@@ -47,10 +47,16 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="Map path inside the archive root (default: ARCHIVE-MAP.md).",
     )
-    parser.add_argument(
+    output_mode = parser.add_mutually_exclusive_group()
+    output_mode.add_argument(
         "--check",
         action="store_true",
         help="Do not write; fail when the generated map is missing or stale.",
+    )
+    output_mode.add_argument(
+        "--stdout",
+        action="store_true",
+        help="Print the generated Markdown map without writing it.",
     )
     return parser.parse_args()
 
@@ -292,6 +298,9 @@ def main() -> int:
     output = resolve_output(root, args.output)
     entries = load_entries(root)
     content = render_map(entries)
+    if args.stdout:
+        print(content, end="")
+        return 0
     if args.check:
         if not output.is_file() or output.read_text(encoding="utf-8") != content:
             print(f"build_metadata_map.py: map is missing or stale: {output}", file=sys.stderr)

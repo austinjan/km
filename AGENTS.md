@@ -24,6 +24,7 @@ This is a file-based knowledge management repository that consolidates developme
 
 When asked a question in this project, **search this km repo first** before answering from general knowledge. Treat the repo as the primary source of truth.
 
+- Invoke the **`knowledge-map-answering` skill for every information-seeking user question** in this project. It owns the repository map → archive map → source-file workflow and the explicit fallback when KM does not cover the question.
 - Use the **`indexing-folder` skill** (aascribe) to locate relevant content. Start with `aascribe map <folder>` and use its summaries to narrow the question to the smallest plausible subtree or set of files. If the map already identifies where the topic is covered, inspect those source files directly; do not run `search` automatically. Use `aascribe search <query> <narrowed-folder> --fixed-strings` only when exact mentions, line numbers, or exhaustive confirmation are needed. Search the whole repository only when the map cannot narrow the scope or the user explicitly requests repository-wide results. If the relevant folder is unindexed or stale, run `aascribe index <folder> --depth 2` first.
 - When the narrowed subtree contains `ARCHIVE-MAP.md`, read that generated map before opening archived files. Match the question against its paths, summaries, and tag index; then read the smallest plausible set of linked source files. Treat the archive map as routing evidence, not as the factual source.
 - Do not use `rg` / `fd` / `grep` for question-answering routing in this repo — go through aascribe so the index stays the canonical entry point.
@@ -47,6 +48,8 @@ python build.py          # Build km-tools (requires external aaagent-rs repo)
 ## Skills
 
 Skills are invoked through the agent harness, not run directly. Key skills:
+- **knowledge-map-answering** — Route every information-seeking question through KM maps, archive metadata maps, and verified source files
+- **structure-aware-archiver** — Archive information against the existing folder structure and generate metadata sidecars plus retrieval maps
 - **bash-install-utils** — Install CLI utilities (zoxide, starship, carapace, bat, rg, fd, xh) for bash/zsh
 - **nushell-install-utils** — Install the same utilities with Nushell integration
 - **nushell-config-sync** — Sync Nushell config between repo and system

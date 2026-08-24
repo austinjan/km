@@ -1,0 +1,61 @@
+{
+  "skill_name": "knowledge-map-answering",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "FDE 是什麼？",
+      "expected_output": "Route through aascribe and the FDE archive map, select a small overview/concept source set, read those files, and cite their paths.",
+      "files": [],
+      "assertions": [
+        "Uses the FDE ARCHIVE-MAP.md as routing evidence.",
+        "Selects overview or concept sources rather than every fde-tagged file.",
+        "Reads selected source files before answering.",
+        "Cites actual FDE source paths rather than only the map."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "FDE engagement 進場前的 alignment gates 有哪些？",
+      "expected_output": "Use the archive map to select concept or qualification sources, read them, and answer the gate question without unrelated strategy files.",
+      "files": [],
+      "assertions": [
+        "Uses the archive map to prefer concept or qualification sources.",
+        "Reads the selected source content.",
+        "Does not load unrelated strategy files."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Codex 有哪些實用快速鍵？",
+      "expected_output": "Use aascribe to route outside archive collections, read coding/codex/hotkeys.md, and cite that source.",
+      "files": [],
+      "assertions": [
+        "Uses aascribe for ordinary KM routing.",
+        "Reads coding/codex/hotkeys.md.",
+        "Cites the source path."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "今天台北天氣如何？",
+      "expected_output": "Check KM first, state that current weather is not covered, then use the required current external source.",
+      "files": [],
+      "assertions": [
+        "Performs the repository pass before fallback.",
+        "States that current weather is not covered by KM.",
+        "Uses a current external source rather than inventing an answer."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Map 過期了，但先回答 FDE 的核心價值。",
+      "expected_output": "Generate a current ephemeral map with --stdout, keep the workspace unchanged, then read and cite the selected source.",
+      "files": [],
+      "assertions": [
+        "Uses build_metadata_map.py --stdout for a current ephemeral map.",
+        "Does not modify the workspace during the answer-only task.",
+        "Reads the selected archived source before answering."
+      ]
+    }
+  ]
+}
