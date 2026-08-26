@@ -65,6 +65,7 @@
     - `gaming/pawapuro/abilities-glossary.md` — 特殊能力推薦、紅特消除優先與日文原文中文翻譯名詞表
 - `study/` — Learning resources
   - `study/AI/` — AI/LLM 學習筆記、Prompt 設計與 Agent Skill 評測概念
+    - `machine-learning-24-week-learning-plan.md` — 初學者由 Python 與資料基礎進展到傳統 ML、深度學習和端到端專題的 24 週計畫
     - `train-validation-test-split-in-skill-improvement.md` — ts-agent 專案自我改進工作流中機器學習經典切分概念在 Skill 改進上的套用
     - `note.md` — AI/LLM 核心概念、prompt 設計、context engineering、Claude Code skills 使用原則
   - `study/fde-team/` — Forward Deployed Engineering / AI Agent 導入部門研究、playbook 與官網服務頁文案
@@ -83,6 +84,7 @@
 
 ## Recent Additions
 
+- 2026-08-26: `study/AI/machine-learning-24-week-learning-plan.md` — Added a Traditional Chinese, beginner-friendly 24-week Machine Learning roadmap with weekly outputs, stage gates, adjustment rules, and a reproducible capstone.
 - 2026-08-24: `.agents/skills/knowledge-map-answering/` — Added the mandatory question-answering router for repository maps, current or ephemeral archive maps, source verification, citations, and explicit KM-gap fallback.
 - 2026-08-24: `study/fde-team/fde-os-docs/ARCHIVE-MAP.md` — Added a deterministic recursive metadata map over all 27 archived FDE files and made archive-map inspection part of repository question routing.
 - 2026-08-24: `study/fde-team/fde-os-docs/` — Archived all 27 tracked files from `~/code/fde-os/docs` with their source hierarchy preserved and one timestamped summary/tag metadata sidecar per file.
@@ -123,6 +125,7 @@
 - decisions, rationale, rejected-alternatives: `DECISIONS.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/templates/DECISIONS.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md`
 - architecture, knowledge-base, dependencies: `ARCHITECTURE.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/templates/ARCHITECTURE.md`
 - ai, llm, prompt: `study/AI/note.md`, `study/AI/train-validation-test-split-in-skill-improvement.md`
+- machine-learning, learning-plan, python, data-science, scikit-learn, deep-learning, ml-project: `study/AI/machine-learning-24-week-learning-plan.md`
 - ts-agent, machine-learning, train-validation-test, agent-skills, skill-evaluation: `study/AI/train-validation-test-split-in-skill-improvement.md`
 - harness-engineering, harness-init, software-project-init, repo-init, repo-check, repo-audit, state-management: `coding/software-repo-governance/README.md`, `coding/software-repo-governance/skills/repo-governance-audit/SKILL.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md`, `study/harness-engineering/five-subsystems-framework.md`, `study/harness-engineering/course-notes.md`
 - ai-tools: `coding/codex/README.md`

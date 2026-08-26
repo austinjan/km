@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-08-26: Added a beginner-oriented 24-week Machine Learning learning plan covering Python, data work, mathematical intuition, supervised and unsupervised learning, reliable evaluation, deep learning, and a reproducible capstone.
 - 2026-08-24: Added `knowledge-map-answering` as the mandatory skill for every information-seeking project question, with repo-first aascribe routing, persistent or ephemeral archive maps, source-file verification, citations, and explicit fallback behavior.
 - 2026-08-24: Extended `structure-aware-archiver` with a recursive, deterministic `ARCHIVE-MAP.md` builder and updated repository question routing so agents use archive summaries and tags to select source files before answering.
 - 2026-08-24: Archived all 27 tracked files from `~/code/fde-os/docs` under `study/fde-team/fde-os-docs/`, preserving the complete source-relative tree and adding archive time, summary, tags, provenance, category, operation, and SHA-256 metadata sidecars.
@@ -64,6 +65,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Validation Log
 
+- 2026-08-26: Verified the Machine Learning plan's 24-week sequence, weekly deliverables, stage gates, frontmatter, related links, study navigation, manifest entries, Markdown whitespace, and scoped Git diff. A scoped aascribe refresh was attempted with normal and structural-only indexing, but the bundled indexer marked all four existing `study/AI` Markdown files as failed; source navigation and direct-file retrieval remain available.
 - 2026-08-24: Validated `knowledge-map-answering` frontmatter and five eval cases; tested broad FDE, specific alignment-gate, ordinary KM, repository-gap, and stale-map answer-only routing; verified `build_metadata_map.py --stdout` matches the persisted map without modifying it.
 - 2026-08-24: Built and checked the 27-entry FDE `ARCHIVE-MAP.md`; verified recursive category/tag coverage, valid relative links, deterministic unchanged rebuilds, stale-map detection, digest mismatch rejection, and broad `FDE` routing to the concept and operating-model source documents.
 - 2026-08-24: Confirmed the FDE docs archive contains 27 files and 27 metadata sidecars, every archived SHA-256 matches its source and recorded digest, every sidecar parses as YAML with required fields, all relative paths match the source tree, and the source files remain unchanged. Refreshed structural aascribe metadata through depth 4 with `--no-summary`; this avoided the unavailable configured Gemini model and completed with zero failures or warnings.
