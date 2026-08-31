@@ -32,6 +32,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Done
 
+- 2026-08-31: Created and verified an isolated secondary Codex CLI environment at `~/.codex-cli-secondary`, preserved the existing Desktop/default login state, installed the `codex-secondary` launcher, and archived the operating guide under `coding/codex/` with metadata and retrieval navigation.
 - 2026-08-26: Added a beginner-oriented 24-week Machine Learning learning plan covering Python, data work, mathematical intuition, supervised and unsupervised learning, reliable evaluation, deep learning, and a reproducible capstone.
 - 2026-08-24: Added `knowledge-map-answering` as the mandatory skill for every information-seeking project question, with repo-first aascribe routing, persistent or ephemeral archive maps, source-file verification, citations, and explicit fallback behavior.
 - 2026-08-24: Extended `structure-aware-archiver` with a recursive, deterministic `ARCHIVE-MAP.md` builder and updated repository question routing so agents use archive summaries and tags to select source files before answering.
@@ -65,6 +66,7 @@ This file tracks repository-level progress for the km knowledge base.
 
 ## Validation Log
 
+- 2026-08-31: Verified default and secondary `codex login status` both report ChatGPT login; confirmed distinct auth caches with `0600` permissions, secondary state root `0700`, launcher `0755`, Codex CLI `0.151.0`, unchanged global `CODEX_HOME`, continued Desktop operation, archive digest/metadata validity, generated map freshness, navigation, and scoped Git diff. Both summarized and structural-only `aascribe` refreshes reported three consecutive failures for `coding/codex`; direct README, MANIFEST, source-file, and `ARCHIVE-MAP.md` retrieval remain validated.
 - 2026-08-26: Verified the Machine Learning plan's 24-week sequence, weekly deliverables, stage gates, frontmatter, related links, study navigation, manifest entries, Markdown whitespace, and scoped Git diff. A scoped aascribe refresh was attempted with normal and structural-only indexing, but the bundled indexer marked all four existing `study/AI` Markdown files as failed; source navigation and direct-file retrieval remain available.
 - 2026-08-24: Validated `knowledge-map-answering` frontmatter and five eval cases; tested broad FDE, specific alignment-gate, ordinary KM, repository-gap, and stale-map answer-only routing; verified `build_metadata_map.py --stdout` matches the persisted map without modifying it.
 - 2026-08-24: Built and checked the 27-entry FDE `ARCHIVE-MAP.md`; verified recursive category/tag coverage, valid relative links, deterministic unchanged rebuilds, stale-map detection, digest mismatch rejection, and broad `FDE` routing to the concept and operating-model source documents.

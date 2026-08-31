@@ -22,6 +22,8 @@
   - `coding/claude-code/` — Claude Code global settings and CLI tool preferences
   - `coding/codex/` — Codex Desktop and CLI workflow notes, hotkeys, skills, and practical usage patterns
     - `hotkeys.md` — Codex Desktop and CLI keyboard shortcuts with source confidence and local verification notes
+    - `codex-desktop-cli-multi-account-isolation.md` — Verified macOS setup that preserves the existing Desktop environment and isolates a second ChatGPT account in Codex CLI with `CODEX_HOME`
+    - `ARCHIVE-MAP.md` — Generated metadata map for archived Codex setup documents
   - `coding/agent-skills/` — Reusable agent skill/plugin notes across Claude Code, Codex, and related coding agents
     - `compound-engineering-plugin.md` — Every Compound Engineering plugin overview: skills, agents, Codex install caveats, and knowledge-compounding workflow
     - `matt-van-horn-claude-code-workflow.md` — Extracted workflow patterns from Matt Van Horn's Claude Code / Compound Engineering usage: plan-first, voice, parallel sessions, context compounding
@@ -84,6 +86,7 @@
 
 ## Recent Additions
 
+- 2026-08-31: `coding/codex/codex-desktop-cli-multi-account-isolation.md` — Added and locally verified a two-login Codex setup with separate default/Desktop and secondary CLI state roots, a reusable launcher, security boundaries, and recovery guidance.
 - 2026-08-26: `study/AI/machine-learning-24-week-learning-plan.md` — Added a Traditional Chinese, beginner-friendly 24-week Machine Learning roadmap with weekly outputs, stage gates, adjustment rules, and a reproducible capstone.
 - 2026-08-24: `.agents/skills/knowledge-map-answering/` — Added the mandatory question-answering router for repository maps, current or ephemeral archive maps, source verification, citations, and explicit KM-gap fallback.
 - 2026-08-24: `study/fde-team/fde-os-docs/ARCHIVE-MAP.md` — Added a deterministic recursive metadata map over all 27 archived FDE files and made archive-map inspection part of repository question routing.
@@ -120,6 +123,9 @@
 
 ## Tags Index
 
+- **authentication**: `coding/codex/codex-desktop-cli-multi-account-isolation.md`
+- **CODEX_HOME**: `coding/codex/codex-desktop-cli-multi-account-isolation.md`
+- **multi-account**: `coding/codex/codex-desktop-cli-multi-account-isolation.md`
 - convention, repo-structure, agents-md, claude-md, symlink: `docs/repo-structure-convention.md`
 - atomic-commit, rollback, constraints: `CONSTRAINS.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/templates/CONSTRAINTS.md`
 - decisions, rationale, rejected-alternatives: `DECISIONS.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/templates/DECISIONS.md`, `coding/software-repo-governance/skills/repo-governance-audit/references/repo-state-files-standard.md`
@@ -134,7 +140,7 @@
 - claude-code-workflow, plan-first, voice-input: `coding/agent-skills/matt-van-horn-claude-code-workflow.md`
 - atop, asset, asset-transfer: `projects/atop/asset-transfer-bob-to-austin.md`
 - claude-code, skills: `study/AI/note.md`, `coding/claude-code/`
-- codex, codex-desktop, codex-cli: `coding/codex/README.md`, `coding/codex/hotkeys.md`
+- codex, codex-desktop, codex-cli: `coding/codex/README.md`, `coding/codex/hotkeys.md`, `coding/codex/codex-desktop-cli-multi-account-isolation.md`
 - pi, pi-coding-agent, coding-agent, ai-tools: `coding/pi-coding-agent/README.md`
 - mitmproxy, network-tools, http, https, proxy, pi-agent, debugging: `coding/tools/network-tools/README.md`, `coding/tools/network-tools/mitmproxy-pi-agent-http-monitoring.md`
 - research, internet-research, review, summarize: `.agents/skills/research/`

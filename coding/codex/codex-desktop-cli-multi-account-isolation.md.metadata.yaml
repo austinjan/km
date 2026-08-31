@@ -1,0 +1,16 @@
+schema_version: 1
+archived_at: "2026-08-31T08:36:24+08:00"
+summary: "在 macOS 保留既有 Codex Desktop 環境，並用獨立 CODEX_HOME 驗證第二 ChatGPT 帳戶 CLI 登入與操作。"
+tags:
+  - "codex"
+  - "multi-account"
+  - "macOS"
+  - "authentication"
+  - "CODEX_HOME"
+source:
+  original_path: "/private/tmp/codex-desktop-cli-multi-account-isolation.md"
+  sha256: "8cb0220d9e1f6b497d971e99961192a3e0cf6e914e0d787b055b070fc2409f86"
+destination:
+  relative_path: "coding/codex/codex-desktop-cli-multi-account-isolation.md"
+  primary_category: "coding/codex"
+operation: "copy"
